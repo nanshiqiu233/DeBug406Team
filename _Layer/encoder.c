@@ -27,16 +27,16 @@ static void _CaptureFrequency(TIM_TypeDef* TIMx, uint32_t captureNum, uint8_t ti
 
 /* Private functions ---------------------------------------------------------*/
 
-/**
-  * @brief  
+/** 
+  * @brief  Initialization of Timer-Input Capture
   * @param  None
   * @retval None
   */
 void EncoderInit(void)
 {  
-	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
+  TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
   TIM_ICInitTypeDef TIM_ICInitStructure;
-	NVIC_InitTypeDef NVIC_InitStructure;
+  NVIC_InitTypeDef NVIC_InitStructure;
   GPIO_InitTypeDef GPIO_InitStructure;
   
   /* Enable TIM5, TIM2 and GPIOA clocks **********************************/
@@ -64,11 +64,11 @@ void EncoderInit(void)
 
   /* Time Base configuration *********************************************/
   /* Timer4 Base configured as follows:
-        - Prescaler (Psc) = 500 KHz
+        - Prescaler (Psc) = _timerClock / 500000 -> 500 KHz
         - Count up mode
         - Auto-Reload Register (ARR) value = 50000 -> 50KHz -> 0.1s
         - not divide system clock
-     ## - RepetitionCounter
+     ## - Repetition Counter
   */
 	TIM_TimeBaseStructure.TIM_Prescaler = (_timerClock / 500000) - 1;
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
@@ -78,8 +78,8 @@ void EncoderInit(void)
 	TIM_TimeBaseInit(TIM5, &TIM_TimeBaseStructure);
   TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
   
-  /* Channel 1,2 and 3 Configuration in PWM mode *************************/
-  /* TIM5 Input Compare configured as follows:
+  /* Channel 1 Configuration in Input Capture mode *************************/
+  /* TIM5 Input Capture configured as follows:
         - TIM5 channel1
         - Capture rising signal
         
@@ -118,8 +118,7 @@ void EncoderInit(void)
         - pre-emption priority = 2 (low)
      ** - subpriority level = 0 (Very high)
         - NVIC_IRQChannel enable
-  */
-  
+  */  
 	NVIC_InitStructure.NVIC_IRQChannel = TIM5_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;		   
@@ -134,7 +133,7 @@ void EncoderInit(void)
 }  
 
 /**----------------------------------------------------------** 
-  * Right Front encoder 
+  * Right Front encoder ***************************************
   * @{
   */
 
@@ -205,7 +204,7 @@ void _Timer5Capture_Interrupt(void)
   *----------------------------------------------------------*/
 
 /**----------------------------------------------------------**
-  * Left Rear encoder
+  * Left Rear encoder *****************************************
   * @{
   */
 

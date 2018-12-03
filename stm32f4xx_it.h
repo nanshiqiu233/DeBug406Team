@@ -37,10 +37,8 @@
 #include "stm32f4xx.h"
 #include "systick.h"
 #include "serial.h"
-#include "encoder.h"
 #include "board.h"
-#include "motor.h"
-#include "line.h"
+#include "encoder.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/

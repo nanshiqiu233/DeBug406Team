@@ -1,5 +1,5 @@
-stm32f40_41xxx\systick.o: ..\Hardware_Layer\C_code\systick.c
-stm32f40_41xxx\systick.o: ..\Hardware_Layer\H_head\systick.h
+stm32f40_41xxx\systick.o: ..\_Layer\systick.c
+stm32f40_41xxx\systick.o: ..\_Layer\systick.h
 stm32f40_41xxx\systick.o: E:\ARM\ARM\ARMCC\Bin\..\include\stdint.h
 stm32f40_41xxx\systick.o: ../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 stm32f40_41xxx\systick.o: E:\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include\core_cm4.h

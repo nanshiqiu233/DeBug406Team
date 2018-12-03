@@ -74,16 +74,16 @@ void MotorInit(void)
 	  
   /* Time Base configuration *********************************************/
   /* Timer3 Base configured as follows:
-        - Prescaler (Psc) = 84 -> 1000 KHz
+        - Prescaler (Psc) = 4200 -> 40 KHz
         - Count up mode
-        - Auto-Reload Register (ARR) value = 20000 -> 20Khz
+        - Auto-Reload Register (ARR) value = 20000 -> 20ms
         - not divide system clock
      ## - RepetitionCounter 
   */
 	TIM_TimeBaseStructure.TIM_Prescaler = (_timerClock / 1000000) - 1;  
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
 	TIM_TimeBaseStructure.TIM_Period = _autoReload;
-	TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1; 
+	TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
 	
 	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
 

@@ -1,5 +1,5 @@
-stm32f40_41xxx\motor.o: ..\Hardware_Layer\C_code\motor.c
-stm32f40_41xxx\motor.o: ..\Hardware_Layer\H_head\motor.h
+stm32f40_41xxx\motor.o: ..\_Layer\motor.c
+stm32f40_41xxx\motor.o: ..\_Layer\motor.h
 stm32f40_41xxx\motor.o: E:\ARM\ARM\ARMCC\Bin\..\include\stdint.h
 stm32f40_41xxx\motor.o: ../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 stm32f40_41xxx\motor.o: E:\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include\core_cm4.h
@@ -36,4 +36,4 @@ stm32f40_41xxx\motor.o: ../../../Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f
 stm32f40_41xxx\motor.o: ../../../Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dac.h
 stm32f40_41xxx\motor.o: ../../../Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dcmi.h
 stm32f40_41xxx\motor.o: ../../../Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_fsmc.h
-stm32f40_41xxx\motor.o: ..\Hardware_Layer\H_head\systick.h
+stm32f40_41xxx\motor.o: ..\_Layer\systick.h

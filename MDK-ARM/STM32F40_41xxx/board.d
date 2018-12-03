@@ -1,5 +1,5 @@
-stm32f40_41xxx\board.o: ..\Hardware_Layer\C_code\board.c
-stm32f40_41xxx\board.o: ..\Hardware_Layer\H_head\board.h
+stm32f40_41xxx\board.o: ..\_Layer\board.c
+stm32f40_41xxx\board.o: ..\_Layer\board.h
 stm32f40_41xxx\board.o: E:\ARM\ARM\ARMCC\Bin\..\include\stdint.h
 stm32f40_41xxx\board.o: ../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 stm32f40_41xxx\board.o: E:\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include\core_cm4.h

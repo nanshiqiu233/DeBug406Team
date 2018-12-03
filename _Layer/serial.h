@@ -24,8 +24,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include <stdio.h>
 #include <stdint.h>
-#include "point.h"
-#include "line.h"
 #include "main.h"
 
 /* Exported types ------------------------------------------------------------*/

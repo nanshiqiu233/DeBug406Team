@@ -168,26 +168,10 @@ void _BufferIntegrate_Callback(uint8_t upperBuffer[])
 {  
   int lenth = upperBuffer[0];
 
-  /* Method as follow:
-        - upperBuffer is like:
-  
-          ---------------------------------------------------
-          |   0    !   1    !   2    ! ... !lenth-1 ! lenth |
-          ---------------------------------------------------
-          | LENTH  !  MES1  !  MES2  ! ... !  MESn  !  END  |
-          ---------------------------------------------------
-          |  0xhh  !  0xhh  !  0xhh  ! ... !  0xhh  ! '\n'  |
-          ---------------------------------------------------
-
-   */
-  if( lenth  == 5 )
+  switch(lenth)
   {
-    _CommandUpdate_Callback((PointCommand_t) upperBuffer[1],
-                                           & upperBuffer[2]);
-  }
-  else if( lenth  == 4 )
-  {
-    _ArgumentsUpdate_Callback(& upperBuffer[1]);
+  case 2: break;
+  default:break;
   }
 }
 
@@ -356,29 +340,13 @@ void _UsartReceive_Interrupt(void)
   * @retval None
   */
 void _BufferIntegrate_Callback(uint8_t upperBuffer[])
-{
+{  
   int lenth = upperBuffer[0];
 
-  /* Method as follow:
-        - upperBuffer is like:
-  
-          ---------------------------------------------------
-          |   0    !   1    !   2    ! ... !lenth-1 ! lenth |
-          ---------------------------------------------------
-          | LENTH  !  MES1  !  MES2  ! ... !  MESn  !  END  |
-          ---------------------------------------------------
-          |  0xhh  !  0xhh  !  0xhh  ! ... !  0xhh  ! '\n'  |
-          ---------------------------------------------------
-
-   */
-  if( lenth  == 5 )
+  switch(lenth)
   {
-    _CommandUpdate_Callback((PointCommand_t) upperBuffer[1],
-                                           & upperBuffer[2]);
-  }
-  else if( lenth  == 4 )
-  {
-    _ArgumentsUpdate_Callback(& upperBuffer[1]);
+  case 2: break;
+  default:break;
   }
 }
 
