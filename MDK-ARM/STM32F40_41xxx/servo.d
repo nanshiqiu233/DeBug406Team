@@ -1,5 +1,5 @@
-stm32f40_41xxx\servo.o: ..\Hardware_Layer\C_code\servo.c
-stm32f40_41xxx\servo.o: ..\Hardware_Layer\H_head\servo.h
+stm32f40_41xxx\servo.o: ..\_Layer\servo.c
+stm32f40_41xxx\servo.o: ..\_Layer\servo.h
 stm32f40_41xxx\servo.o: E:\ARM\ARM\ARMCC\Bin\..\include\stdint.h
 stm32f40_41xxx\servo.o: ../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 stm32f40_41xxx\servo.o: E:\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include\core_cm4.h

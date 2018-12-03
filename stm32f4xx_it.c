@@ -142,8 +142,6 @@ void SysTick_Handler(void)
 {
   _updateSysTick_Interrupt();
   _DelayOneMs_Interrupt();
-  _forwardTime_Interrupt(); 
-	_PointDelay_Interruput();
 }
 
 /******************************************************************************/
@@ -173,7 +171,6 @@ void USART3_IRQHandler(void)
   _UsartReceive_Interrupt();
 }
 
-
 /**
   * @brief  This function handles TIM2 interrupt request.
   * @param  None
@@ -193,6 +190,7 @@ void TIM5_IRQHandler(void)
 {
   _Timer5Capture_Interrupt();
 }
+
 
 /**
   * @}
