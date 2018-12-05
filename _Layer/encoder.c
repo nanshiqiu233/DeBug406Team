@@ -126,6 +126,8 @@ void EncoderInit(void)
 	NVIC_Init(&NVIC_InitStructure);
 
 	NVIC_InitStructure.NVIC_IRQChannel = TIM2_IRQn;
+  	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;	
 	NVIC_Init(&NVIC_InitStructure);
 
   TIM_Cmd(TIM5, ENABLE);
@@ -332,7 +334,7 @@ void _CaptureFrequency(TIM_TypeDef* TIMx, uint32_t captureNum, uint8_t timerOver
       _speedValueRF = 0;
       return;
     }
-    _speedValueRF = timerOverFlow * 50000 + captureNum;
+    _speedValueRF = timerOverFlow * 50000 + captureNum + 1;
     _updateTimesRF++;
   }
   else if(TIMx == TIM2)
@@ -342,7 +344,7 @@ void _CaptureFrequency(TIM_TypeDef* TIMx, uint32_t captureNum, uint8_t timerOver
       _speedValueLR = 0;
       return;
     }
-    _speedValueLR = timerOverFlow * 50000 + captureNum;
+    _speedValueLR = timerOverFlow * 50000 + captureNum + 1;
     _updateTimesLR++;
   }
 }

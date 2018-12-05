@@ -142,6 +142,7 @@ void SysTick_Handler(void)
 {
   _updateSysTick_Interrupt();
   _DelayOneMs_Interrupt();
+  _forwardTime_Interrupt();
 }
 
 /******************************************************************************/
