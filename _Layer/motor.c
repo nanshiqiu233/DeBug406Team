@@ -8,11 +8,12 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-const static uint32_t _timerClock = 84000000;
-const static int32_t _autoReload = 20000 - 1;
+const static uint32_t _timerClockAPB1 = 84000000;
+const static uint32_t _timerClockSet  = 84000000;
+const static int32_t _autoReload = 4200 - 1;
+const static int _motorPolarity[2] = {1/*Left*/, 1/*Right*/};
 
-static int32_t _leftSpeed = 0;
-static int32_t _rightSpeed = 0;
+static int32_t _motorSpeed[2] = {0/*Left*/, 0/*Right*/};
 
 static MotorMode_t _motorMode = MOTOR_STOP;  
 static int _motorUpgradeTag = 0;
@@ -74,13 +75,13 @@ void MotorInit(void)
 	  
   /* Time Base configuration *********************************************/
   /* Timer3 Base configured as follows:
-        - Prescaler (Psc) = 4200 -> 40 KHz
+        - Prescaler (Psc) = 84MHz
         - Count up mode
-        - Auto-Reload Register (ARR) value = 20000 -> 20ms
+        - Auto-Reload Register (ARR) value = 4200 -> 20KHz
         - not divide system clock
      ## - RepetitionCounter 
   */
-	TIM_TimeBaseStructure.TIM_Prescaler = (_timerClock / 1000000) - 1;  
+	TIM_TimeBaseStructure.TIM_Prescaler = (_timerClockAPB1 / _timerClockSet) - 1;  
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
 	TIM_TimeBaseStructure.TIM_Period = _autoReload;
 	TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
@@ -93,7 +94,7 @@ void MotorInit(void)
         - Output polarity High level
           ## PWM mode 1 is When CNT < CCRx, output the polarity e-level
              our e-level is High level. 
-        
+
                        CNT ^
                            |
                        ARR |-----/-----/-----/-----/---
@@ -161,11 +162,11 @@ int SetMotorPulse(int32_t leftPulse, int32_t rightPulse)
   if(leftPulse >  _autoReload) leftPulse = _autoReload;
   else if (leftPulse <  0) leftPulse = 0;
   
-  _rightSpeed = rightPulse;
-  _leftSpeed  = leftPulse;
+  _motorSpeed[1] = rightPulse;
+  _motorSpeed[0] =  leftPulse;
   
-  TIM_SetCompare1(TIM3, (uint32_t)(_rightSpeed));
-	TIM_SetCompare2(TIM3, (uint32_t)(_leftSpeed));
+  TIM_SetCompare1(TIM3, (uint32_t)(_motorSpeed[1]));
+	TIM_SetCompare2(TIM3, (uint32_t)(_motorSpeed[0]));
 
   return _motorUpgradeTag;
 }
@@ -198,20 +199,20 @@ MotorMode_t UpgradeMotorState(void)
     SysTickDelay(100);
 
     switch (_motorMode) {
-    case MOTOR_STOP: break;
+    case MOTOR_STOP:                         break;
     case MOTOR_FRONT: {
       GPIO_SetBits(GPIOG, GPIO_Pin_5 | GPIO_Pin_2);
-    }break;
+    }                                        break;
     case MOTOR_TURN_LEFT: {
       GPIO_SetBits(GPIOG, GPIO_Pin_2 | GPIO_Pin_4);
-    }break;
+    }                                        break;
     case MOTOR_TURN_RIGHT: {
       GPIO_SetBits(GPIOG, GPIO_Pin_3 | GPIO_Pin_5);
-    }break;
-    case MOTOR_Back: {
+    }                                        break;
+    case MOTOR_BACK: {
       GPIO_SetBits(GPIOG, GPIO_Pin_4 | GPIO_Pin_3);
-    }break;
-    default:break;
+    }                                        break;
+    default:                                 break;
     }
   }
   
@@ -231,20 +232,20 @@ MotorMode_t UpdateMotorState(MotorMode_t motorMode)
     SysTickDelay(100);
 
     switch (motorMode) {
-    case MOTOR_STOP: break;
+    case MOTOR_STOP:                         break;
     case MOTOR_FRONT: {
       GPIO_SetBits(GPIOG, GPIO_Pin_5 | GPIO_Pin_2);
-    }break;
+    }                                        break;
     case MOTOR_TURN_LEFT: {
       GPIO_SetBits(GPIOG, GPIO_Pin_2 | GPIO_Pin_4);
-    }break;
+    }                                        break;
     case MOTOR_TURN_RIGHT: {
       GPIO_SetBits(GPIOG, GPIO_Pin_3 | GPIO_Pin_5);
-    }break;
-    case MOTOR_Back: {
+    }                                        break;
+    case MOTOR_BACK: {
       GPIO_SetBits(GPIOG, GPIO_Pin_4 | GPIO_Pin_3);
-    }break;
-    default:break;
+    }                                        break;
+    default:                                 break;
     }
     
     _motorMode = motorMode;
@@ -253,6 +254,18 @@ MotorMode_t UpdateMotorState(MotorMode_t motorMode)
   return _motorMode;
 }
 
+/**
+  * @brief  GetSpeed  '0' is Left
+                      '1' is Right
+  * @param  None
+  * @retval None
+  */
+int32_t GetMotorSpeed(int8_t leftOrRight)
+{
+  return _motorSpeed[leftOrRight & 0x01];
+}
+
+/* Test functions ------------------------------------------------------------*/
 /**
   * @brief  
   * @param  None
@@ -270,7 +283,7 @@ void SetMotorForwardTime(uint32_t sec)
   */
 void _forwardTime_Interrupt()
 {
-  if(_timeTick > 1)
+  ;    if(_timeTick >  1)
   {
     _timeTick--;
   }
@@ -282,24 +295,4 @@ void _forwardTime_Interrupt()
       _motorMode = MOTOR_STOP;
     }
   }
-}
-
-/**
-  * @brief  
-  * @param  None
-  * @retval None
-  */
-int32_t GetLeftSpeed(void)
-{
-  return _leftSpeed;
-}
-
-/**
-  * @brief  
-  * @param  None
-  * @retval None
-  */
-int32_t GetRightSpeed(void)
-{
-  return _rightSpeed;
 }

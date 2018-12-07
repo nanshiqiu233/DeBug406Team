@@ -1270,11 +1270,6 @@
           <GroupName>Doc</GroupName>
           <Files>
             <File>
-              <FileName>readme.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\readme.txt</FilePath>
-            </File>
-            <File>
               <FileName>README.MD</FileName>
               <FileType>5</FileType>
               <FilePath>..\README.MD</FilePath>
@@ -2643,11 +2638,6 @@
           <GroupName>Doc</GroupName>
           <Files>
             <File>
-              <FileName>readme.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\readme.txt</FilePath>
-            </File>
-            <File>
               <FileName>README.MD</FileName>
               <FileType>5</FileType>
               <FilePath>..\README.MD</FilePath>
@@ -4015,11 +4005,6 @@
         <Group>
           <GroupName>Doc</GroupName>
           <Files>
-            <File>
-              <FileName>readme.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\readme.txt</FilePath>
-            </File>
             <File>
               <FileName>README.MD</FileName>
               <FileType>5</FileType>
@@ -5436,11 +5421,6 @@
           <GroupName>Doc</GroupName>
           <Files>
             <File>
-              <FileName>readme.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\readme.txt</FilePath>
-            </File>
-            <File>
               <FileName>README.MD</FileName>
               <FileType>5</FileType>
               <FilePath>..\README.MD</FilePath>
@@ -6806,11 +6786,6 @@
           <GroupName>Doc</GroupName>
           <Files>
             <File>
-              <FileName>readme.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\readme.txt</FilePath>
-            </File>
-            <File>
               <FileName>README.MD</FileName>
               <FileType>5</FileType>
               <FilePath>..\README.MD</FilePath>
@@ -8075,11 +8050,6 @@
         <Group>
           <GroupName>Doc</GroupName>
           <Files>
-            <File>
-              <FileName>readme.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\readme.txt</FilePath>
-            </File>
             <File>
               <FileName>README.MD</FileName>
               <FileType>5</FileType>
@@ -9348,11 +9318,6 @@
           <GroupName>Doc</GroupName>
           <Files>
             <File>
-              <FileName>readme.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\readme.txt</FilePath>
-            </File>
-            <File>
               <FileName>README.MD</FileName>
               <FileType>5</FileType>
               <FilePath>..\README.MD</FilePath>
@@ -10568,11 +10533,6 @@
           <GroupName>Doc</GroupName>
           <Files>
             <File>
-              <FileName>readme.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\readme.txt</FilePath>
-            </File>
-            <File>
               <FileName>README.MD</FileName>
               <FileType>5</FileType>
               <FilePath>..\README.MD</FilePath>
@@ -11741,11 +11701,6 @@
           <GroupName>Doc</GroupName>
           <Files>
             <File>
-              <FileName>readme.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\readme.txt</FilePath>
-            </File>
-            <File>
               <FileName>README.MD</FileName>
               <FileType>5</FileType>
               <FilePath>..\README.MD</FilePath>
@@ -12913,11 +12868,6 @@
         <Group>
           <GroupName>Doc</GroupName>
           <Files>
-            <File>
-              <FileName>readme.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\readme.txt</FilePath>
-            </File>
             <File>
               <FileName>README.MD</FileName>
               <FileType>5</FileType>

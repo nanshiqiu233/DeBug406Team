@@ -65,7 +65,7 @@ typedef enum motorMode__
   /* Turn Right */
   MOTOR_TURN_RIGHT,
   /* Go Back */
-  MOTOR_Back
+  MOTOR_BACK
   
 } MotorMode_t;
 
@@ -73,16 +73,16 @@ typedef enum motorMode__
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 void MotorInit(void);
+//void MotorDemo(void);
 
-int32_t inline GetLeftSpeed(void);
-int32_t inline GetRightSpeed(void);
+int SetMotorDutyRatio(double leftDutyRatio, double rightDutyRatio);
+int SetMotorPulse(int32_t leftPulse, int32_t rightPulse);
+
+int32_t inline GetMotorSpeed(int8_t leftOrRight);
 
 void inline SetMotorState(MotorMode_t motorMode);
 MotorMode_t UpgradeMotorState(void);
 MotorMode_t UpdateMotorState(MotorMode_t motorMode);
-
-int SetMotorDutyRatio(double leftDutyRatio, double rightDutyRatio);
-int SetMotorPulse(int32_t leftPulse, int32_t rightPulse);
 
 /* Test functions ------------------------------------------------------------*/
 void SetMotorForwardTime(uint32_t sec);

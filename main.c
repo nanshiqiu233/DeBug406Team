@@ -5,7 +5,6 @@
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-/* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 #ifndef _TEST_TAG_
 
@@ -25,17 +24,21 @@ int main(void)
   MotorInit();
   
   SysTickDelay(1000);
-  SetMotorDutyRatio(0.5, 0.2);
+  printf(" Hello World!");
+  
+  SetMotorDutyRatio(0.5, 0.5);
+  SetMotorForwardTime(5000);
 
   /* Infinite loop *******************************************************/
   while (TRUE)
   {
-    printf("Hello STM32!\n");
-    SysTickDelay(1000);
+    UpgradeMotorState();
   }
 }
 
 #else
+/* Private function prototypes -----------------------------------------------*/
+void MotorTest(void);
 
 /**
   * @brief  Test main program
@@ -47,12 +50,53 @@ int /*Test*/ main(void)
   /* Local variables */
   
   /* Initialize Step *****************************************************/
-
+  SysTickInit();
+  STMMiniBoardInit();
+  SerialInit();
+  EncoderInit();
+  MotorInit();
+  
+  SysTickDelay(1000);
+  printf(" Hello World!\r\n");
+  MotorTest();
+  
   /* Infinite loop */
   while (TRUE)
   {
 
   }
+}
+
+/**
+  * @brief  
+  * @param  None
+  * @retval None
+  */
+void MotorTest(void)
+{
+  uint32_t timerCount[2];
+  double duty = 0.00;
+  
+  SetMotorDutyRatio(0, 0);
+  UpdateMotorState(MOTOR_FRONT);
+  printf("L, R,\r\n");
+  for(; duty < 0.8; duty += 0.04)
+  {
+    SetMotorDutyRatio(duty, duty);
+    SysTickDelay(1000);
+    timerCount[0] = GetLRSpeed(2);
+    timerCount[1] = GetRFSpeed(2);
+    printf("%f,%f,\r\n", 1.0*timerCount[0]/500000, 1.0*timerCount[1]/500000);
+  }
+  
+  for(; duty > 0; duty -= 0.04)
+  {
+    SetMotorDutyRatio(duty, duty);
+    SysTickDelay(1000);
+    timerCount[0] = GetLRSpeed(2);
+    timerCount[1] = GetRFSpeed(2);
+    printf("%f,%f,\r\n", 1.0*timerCount[0]/500000, 1.0*timerCount[1]/500000);
+  }  
 }
 
 #endif //!_TEST_TAG_
