@@ -80,19 +80,19 @@ void MotorTest(void)
   SetMotorDutyRatio(0, 0);
   UpdateMotorState(MOTOR_FRONT);
   printf("L, R,\r\n");
-  for(; duty < 0.8; duty += 0.04)
+  for(; duty < 0.8; duty += 0.02)
   {
     SetMotorDutyRatio(duty, duty);
-    SysTickDelay(1000);
+    SysTickDelay(10000);
     timerCount[0] = GetLRSpeed(2);
     timerCount[1] = GetRFSpeed(2);
     printf("%f,%f,\r\n", 1.0*timerCount[0]/500000, 1.0*timerCount[1]/500000);
   }
   
-  for(; duty > 0; duty -= 0.04)
+  for(; duty > 0; duty -= 0.02)
   {
     SetMotorDutyRatio(duty, duty);
-    SysTickDelay(1000);
+    SysTickDelay(10000);
     timerCount[0] = GetLRSpeed(2);
     timerCount[1] = GetRFSpeed(2);
     printf("%f,%f,\r\n", 1.0*timerCount[0]/500000, 1.0*timerCount[1]/500000);
