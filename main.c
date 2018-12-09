@@ -38,7 +38,9 @@ int main(void)
 
 #else
 /* Private function prototypes -----------------------------------------------*/
-void MotorTest(void);
+void Motor_EncoderFeedback_Test(void);
+void MotorForward_Test(uint32_t sec);
+void ADC_Test(void);
 
 /**
   * @brief  Test main program
@@ -58,7 +60,7 @@ int /*Test*/ main(void)
   
   SysTickDelay(1000);
   printf(" Hello World!\r\n");
-  MotorTest();
+  ADC_Test();
   
   /* Infinite loop */
   while (TRUE)
@@ -72,7 +74,7 @@ int /*Test*/ main(void)
   * @param  None
   * @retval None
   */
-void MotorTest(void)
+void Motor_EncoderFeedback_Test(void)
 {
   uint32_t timerCount[2];
   double duty = 0.00;
@@ -96,7 +98,50 @@ void MotorTest(void)
     timerCount[0] = GetLRSpeed(2);
     timerCount[1] = GetRFSpeed(2);
     printf("%f,%f,\r\n", 1.0*timerCount[0]/500000, 1.0*timerCount[1]/500000);
-  }  
+  }
+}
+
+/**
+  * @brief  
+  * @param  None
+  * @retval None
+  */
+void MotorForward_Test(uint32_t sec)
+{
+  SetMotorDutyRatio(0.2, 0.2);
+  SetMotorState(MOTOR_FRONT);
+  SetMotorForwardTime(sec);
+  
+  /* !!! */
+  while(UpgradeMotorState() != MOTOR_STOP)
+  {
+    
+  }
+}
+
+/**
+  * @brief  
+  * @param  None
+  * @retval None
+  */
+void ADC_Test(void) // NEED TEST
+{
+  const AdcData_t * adcData;
+  while(1)
+  {
+    adcData = UpdateButtom();
+    for (int i = 0; i < 2; ++i)
+    {
+      for (int j = 0; j < 8; ++j)
+      {
+        printf("%5d,", adcData->array[i][j]);
+      }
+      printf(" ,");
+    }
+    printf("\r\n");
+    
+    SysTickDelay(3000);
+  }
 }
 
 #endif //!_TEST_TAG_
