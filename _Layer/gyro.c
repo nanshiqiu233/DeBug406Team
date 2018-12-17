@@ -245,10 +245,11 @@ double GetYawAngle(void)
   * @param  None
   * @retval None
   */
-void GetInfoFromGyro(void)
+float* GetInfoFromGyro(void)
 {
   uint8_t chrTemp[24];
   float a[3], w[3], h[3], Angle[3];
+  static float _bufferReturn[12] = {0};
 	
 	IICreadBytes(0x50, 0x34, 24,&chrTemp[0]);
 	a[0] = (float)_CharToShort(&chrTemp[0])/32768*16;
@@ -264,19 +265,20 @@ void GetInfoFromGyro(void)
 	Angle[1] = (float)_CharToShort(&chrTemp[20])/32768*180;
 	Angle[2] = (float)_CharToShort(&chrTemp[22])/32768*180;
 
-	printf("%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\r\n",
-					a[0],			 
-					a[1],
-					a[2],
-					w[0],
-					w[1],
-					w[2],
-					h[0],
-					h[1],
-					h[2],
-					Angle[0],
-					Angle[1],
-					Angle[2]);
+	_bufferReturn[0] = a[0];
+	_bufferReturn[1] = a[1];
+	_bufferReturn[2] = a[2];
+	_bufferReturn[3] = w[0];
+	_bufferReturn[4] = w[1];
+	_bufferReturn[5] = w[2];
+	_bufferReturn[6] = h[0];
+	_bufferReturn[7] = h[1];
+	_bufferReturn[8] = h[2];
+	_bufferReturn[9] = Angle[0];
+	_bufferReturn[10] = Angle[1];
+	_bufferReturn[11] = Angle[2];
+  
+  return _bufferReturn;
 }
 
 /**

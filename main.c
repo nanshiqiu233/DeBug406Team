@@ -22,6 +22,8 @@ int main(void)
   STMMiniBoardInit();
   SerialInit();
   MotorInit();
+  AdcInit();
+  GyroInit();
   
   SysTickDelay(1000);
   printf(" Hello World!");
@@ -41,6 +43,7 @@ int main(void)
 void Motor_EncoderFeedback_Test(void);
 void MotorForward_Test(uint32_t sec);
 void ADC_Test(void);
+void Gyro_Test(void);
 
 /**
   * @brief  Test main program
@@ -57,15 +60,17 @@ int /*Test*/ main(void)
   SerialInit();
   EncoderInit();
   MotorInit();
+  AdcInit();
+  GyroInit();
   
   SysTickDelay(1000);
   printf(" Hello World!\r\n");
-  ADC_Test();
+  Gyro_Test();
   
   /* Infinite loop */
   while (TRUE)
   {
-
+    
   }
 }
 
@@ -143,6 +148,27 @@ void ADC_Test(void) // NEED TEST
     SysTickDelay(3000);
   }
 }
+
+/**
+  * @brief  
+  * @param  None
+  * @retval None
+  */
+void Gyro_Test(void)
+{
+  while(TRUE)
+  {
+    float* gyroValueArray = GetInfoFromGyro();
+    for(int i = 0; i < 12; i++)
+    {
+      if(i%3 == 0) printf("\r\n");
+      printf("%.3f ", gyroValueArray[i]);
+    }
+    printf("\r\n");
+    SysTickDelay(400);
+  }
+}
+
 
 #endif //!_TEST_TAG_
 
