@@ -299,7 +299,7 @@ void _UsartReceive_Interrupt(void)
   /* Protocol configuration *************************************************/
   /* Protocol as follows:
         - Message Frame is setting as:
-  
+
           ---------------------------------------------------
           | STR_SIG ! LENTH ! MES1_H ! MES1_L ! ... ! END_L |
           ---------------------------------------------------

@@ -40,7 +40,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <stdint.h>
-#include "main.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
@@ -60,7 +59,7 @@ double GetPitchAngle(void);
 double GetYawAngle(void);
 
 /* Test for gyro */
-void GetInfoFromGyro(void);
+float* GetInfoFromGyro(void);
 
 #ifdef _USE_SOFTIIC
   
