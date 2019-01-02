@@ -1319,11 +1319,21 @@
               <FileType>1</FileType>
               <FilePath>..\_Layer\servo.c</FilePath>
             </File>
+            <File>
+              <FileName>laser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Layer\laser.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>_Layer_H</GroupName>
           <Files>
+            <File>
+              <FileName>laser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Layer\laser.h</FilePath>
+            </File>
             <File>
               <FileName>board.h</FileName>
               <FileType>5</FileType>
@@ -2687,11 +2697,21 @@
               <FileType>1</FileType>
               <FilePath>..\_Layer\servo.c</FilePath>
             </File>
+            <File>
+              <FileName>laser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Layer\laser.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>_Layer_H</GroupName>
           <Files>
+            <File>
+              <FileName>laser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Layer\laser.h</FilePath>
+            </File>
             <File>
               <FileName>board.h</FileName>
               <FileType>5</FileType>
@@ -4055,11 +4075,21 @@
               <FileType>1</FileType>
               <FilePath>..\_Layer\servo.c</FilePath>
             </File>
+            <File>
+              <FileName>laser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Layer\laser.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>_Layer_H</GroupName>
           <Files>
+            <File>
+              <FileName>laser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Layer\laser.h</FilePath>
+            </File>
             <File>
               <FileName>board.h</FileName>
               <FileType>5</FileType>
@@ -5470,11 +5500,21 @@
               <FileType>1</FileType>
               <FilePath>..\_Layer\servo.c</FilePath>
             </File>
+            <File>
+              <FileName>laser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Layer\laser.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>_Layer_H</GroupName>
           <Files>
+            <File>
+              <FileName>laser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Layer\laser.h</FilePath>
+            </File>
             <File>
               <FileName>board.h</FileName>
               <FileType>5</FileType>
@@ -6835,11 +6875,21 @@
               <FileType>1</FileType>
               <FilePath>..\_Layer\servo.c</FilePath>
             </File>
+            <File>
+              <FileName>laser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Layer\laser.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>_Layer_H</GroupName>
           <Files>
+            <File>
+              <FileName>laser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Layer\laser.h</FilePath>
+            </File>
             <File>
               <FileName>board.h</FileName>
               <FileType>5</FileType>
@@ -8100,11 +8150,21 @@
               <FileType>1</FileType>
               <FilePath>..\_Layer\servo.c</FilePath>
             </File>
+            <File>
+              <FileName>laser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Layer\laser.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>_Layer_H</GroupName>
           <Files>
+            <File>
+              <FileName>laser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Layer\laser.h</FilePath>
+            </File>
             <File>
               <FileName>board.h</FileName>
               <FileType>5</FileType>
@@ -9367,11 +9427,21 @@
               <FileType>1</FileType>
               <FilePath>..\_Layer\servo.c</FilePath>
             </File>
+            <File>
+              <FileName>laser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Layer\laser.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>_Layer_H</GroupName>
           <Files>
+            <File>
+              <FileName>laser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Layer\laser.h</FilePath>
+            </File>
             <File>
               <FileName>board.h</FileName>
               <FileType>5</FileType>
@@ -10582,11 +10652,21 @@
               <FileType>1</FileType>
               <FilePath>..\_Layer\servo.c</FilePath>
             </File>
+            <File>
+              <FileName>laser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Layer\laser.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>_Layer_H</GroupName>
           <Files>
+            <File>
+              <FileName>laser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Layer\laser.h</FilePath>
+            </File>
             <File>
               <FileName>board.h</FileName>
               <FileType>5</FileType>
@@ -11750,11 +11830,21 @@
               <FileType>1</FileType>
               <FilePath>..\_Layer\servo.c</FilePath>
             </File>
+            <File>
+              <FileName>laser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Layer\laser.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>_Layer_H</GroupName>
           <Files>
+            <File>
+              <FileName>laser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Layer\laser.h</FilePath>
+            </File>
             <File>
               <FileName>board.h</FileName>
               <FileType>5</FileType>
@@ -12918,11 +13008,21 @@
               <FileType>1</FileType>
               <FilePath>..\_Layer\servo.c</FilePath>
             </File>
+            <File>
+              <FileName>laser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Layer\laser.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>_Layer_H</GroupName>
           <Files>
+            <File>
+              <FileName>laser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Layer\laser.h</FilePath>
+            </File>
             <File>
               <FileName>board.h</FileName>
               <FileType>5</FileType>

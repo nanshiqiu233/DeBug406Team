@@ -87,7 +87,7 @@ uint8_t _IIC_Read_Byte(uint8_t ack);
   * @param  None
   * @retval None
   */
-void GyroInit()
+void Gyro_Init()
 {
   GPIO_InitTypeDef GPIO_InitStructure;
 

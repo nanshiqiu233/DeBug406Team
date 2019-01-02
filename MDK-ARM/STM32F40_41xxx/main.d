@@ -11,3 +11,4 @@ stm32f40_41xxx\main.o: ..\_Layer\servo.h
 stm32f40_41xxx\main.o: ..\_Layer\encoder.h
 stm32f40_41xxx\main.o: ..\_Layer\buttom.h
 stm32f40_41xxx\main.o: ..\_Layer\gyro.h
+stm32f40_41xxx\main.o: ..\_Layer\laser.h

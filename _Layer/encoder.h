@@ -28,7 +28,7 @@
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
-void EncoderInit(void);
+void Encoder_Init(void);
 uint32_t inline GetRFSpeed(uint8_t nTimesAverage);
 uint32_t inline GetLRSpeed(uint8_t nTimesAverage);
 uint32_t GetRFTriggerTimes(void);

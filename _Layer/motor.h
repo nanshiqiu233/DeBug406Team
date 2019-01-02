@@ -72,7 +72,7 @@ typedef enum motorMode__
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
-void MotorInit(void);
+void MotorPWM_Init(void);
 
 int SetMotorDutyRatio(double leftDutyRatio, double rightDutyRatio);
 int SetMotorPulse(int32_t leftPulse, int32_t rightPulse);

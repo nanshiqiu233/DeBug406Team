@@ -53,7 +53,7 @@ void _ADCSwitcher(int adc);
   * @param  None
   * @retval None
   */
-void AdcInit(void)
+void Adc_Init(void)
 {
   ADC_CommonInitTypeDef ADC_CommonInitStructure;
   GPIO_InitTypeDef GPIO_InitStructure;

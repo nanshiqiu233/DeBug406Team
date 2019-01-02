@@ -30,7 +30,7 @@
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
-void SerialInit(void);
+void Serial_Init(void);
 void SerialSend(char buffer[], int lenth);
 
 /* Reference Only -> (F12) USART1_IRQHandler(); */

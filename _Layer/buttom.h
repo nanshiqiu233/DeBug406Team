@@ -41,7 +41,7 @@ typedef struct adcDataStruct__
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions --------------------------------------------------------*/
-void AdcInit(void);
+void Adc_Init(void);
 uint16_t GetAdcValueInChannal(uint8_t channal);
 uint16_t GetAdcNTimesValueAverageInChannal(uint8_t channal, uint8_t times);
 

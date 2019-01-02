@@ -48,3 +48,4 @@ stm32f40_41xxx\stm32f4xx_it.o: ..\_Layer\encoder.h
 stm32f40_41xxx\stm32f4xx_it.o: ..\_Layer\buttom.h
 stm32f40_41xxx\stm32f4xx_it.o: ../main.h
 stm32f40_41xxx\stm32f4xx_it.o: ..\_Layer\gyro.h
+stm32f40_41xxx\stm32f4xx_it.o: ..\_Layer\laser.h

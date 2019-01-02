@@ -18,12 +18,12 @@ int main(void)
   /* Local variables *****************************************************/
   
   /* Initialize Step *****************************************************/
-  SysTickInit();
-  STMMiniBoardInit();
-  SerialInit();
-  MotorInit();
-  AdcInit();
-  GyroInit();
+  SysTick_Init();
+  STMMiniBoard_Init();
+  Serial_Init();
+  MotorPWM_Init();
+  Adc_Init();
+  Gyro_Init();
   
   SysTickDelay(1000);
   printf(" Hello World!");
@@ -44,6 +44,7 @@ void Motor_EncoderFeedback_Test(void);
 void MotorForward_Test(uint32_t sec);
 void ADC_Test(void);
 void Gyro_Test(void);
+void Laser_Test(void);
 
 /**
   * @brief  Test main program
@@ -55,22 +56,23 @@ int /*Test*/ main(void)
   /* Local variables */
   
   /* Initialize Step *****************************************************/
-  SysTickInit();
-  STMMiniBoardInit();
-  SerialInit();
-  EncoderInit();
-  MotorInit();
-  AdcInit();
-  GyroInit();
+  SysTick_Init();
+  STMMiniBoard_Init();
+  Serial_Init();
+  Encoder_Init();
+  MotorPWM_Init();
+  Adc_Init();
+  Gyro_Init();
+  Laser_Init();
   
   SysTickDelay(1000);
   printf(" Hello World!\r\n");
-  Gyro_Test();
   
   /* Infinite loop */
   while (TRUE)
   {
-    
+    Laser_Test();
+    SysTickDelay(1000);
   }
 }
 
@@ -169,6 +171,22 @@ void Gyro_Test(void)
   }
 }
 
+/**
+  * @brief  
+  * @param  None
+  * @retval None
+  */
+void Laser_Test(void)
+{
+  if(GetLaserState() == COVERED)
+  {
+    printf("Was covered.\r\n");
+  }
+  else
+  {
+    printf("Was not covered.\r\n");    
+  }
+}
 
 #endif //!_TEST_TAG_
 

@@ -25,7 +25,7 @@ static uint32_t _timeTick = 0;
   * @param  None
   * @retval None
   */
-void STMMiniBoardInit(void)
+void STMMiniBoard_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
   
