@@ -32,7 +32,7 @@
 #define FALSE 0
 
 /* Exported functions (F12)-------------------------------------------------- */
-void SysTickInit(void);
+void SysTick_Init(void);
 void SysTickDelay(uint32_t nTime);
 
 /* Reference Only -> (F12) SysTick_Handler(); */

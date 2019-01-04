@@ -192,6 +192,15 @@ void TIM5_IRQHandler(void)
   _Timer5Capture_Interrupt();
 }
 
+/**
+  * @brief  This function handles EXIT0 interrupt request.
+  * @param  None
+  * @retval None
+  */
+void EXTI0_IRQHandler(void)
+{
+  _LaserEdgeTrigger_Interrupt();
+}	
 
 /**
   * @}

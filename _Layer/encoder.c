@@ -32,7 +32,7 @@ static void _CaptureFrequency(TIM_TypeDef* TIMx, uint32_t captureNum, uint8_t ti
   * @param  None
   * @retval None
   */
-void EncoderInit(void)
+void Encoder_Init(void)
 {  
   TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
   TIM_ICInitTypeDef TIM_ICInitStructure;

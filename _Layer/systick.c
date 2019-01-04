@@ -19,7 +19,7 @@ static volatile uint32_t _timingDelay;
   * @param  None
   * @retval None
   */
-void SysTickInit(void)
+void SysTick_Init(void)
 {
   /* SystemCoreClock = 1s -> 1s / 1000 = 1ms */
   SysTick_Config(SystemCoreClock / 1000);

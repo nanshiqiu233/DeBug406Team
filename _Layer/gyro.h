@@ -48,7 +48,7 @@
 #define _USE_SOFTIIC
 
 /* Exported functions --------------------------------------------------------*/
-void GyroInit(void);
+void Gyro_Init(void);
 uint8_t IICreadBytes(uint8_t dev, uint8_t reg, uint8_t length, uint8_t *data);
 uint8_t IICwriteBytes(uint8_t dev, uint8_t reg, uint8_t length, uint8_t *data);
 

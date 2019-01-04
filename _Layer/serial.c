@@ -28,7 +28,7 @@ void _BufferIntegrate_Callback(uint8_t upperBuffer[static _BUFFERSIZE]);
   * @param  None
   * @retval None
   */
-void SerialInit(void)
+void Serial_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
   USART_InitTypeDef USART_InitStructure;
@@ -203,7 +203,7 @@ PUTCHAR_PROTOTYPE
   * @param  None
   * @retval None
   */
-void SerialInit(void)
+void Serial_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
   USART_InitTypeDef USART_InitStructure;

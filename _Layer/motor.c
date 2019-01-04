@@ -29,7 +29,7 @@ static uint32_t _timeTick = 0;
   * @param  None
   * @retval None
   */
-void MotorInit(void)
+void MotorPWM_Init(void)
 {
   TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
 	TIM_OCInitTypeDef TIM_OCInitStructure;

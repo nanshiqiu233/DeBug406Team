@@ -27,6 +27,7 @@
 #include "encoder.h"
 #include "buttom.h"
 #include "gyro.h"
+#include "laser.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/

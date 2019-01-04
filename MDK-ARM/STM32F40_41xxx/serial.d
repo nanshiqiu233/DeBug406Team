@@ -12,6 +12,7 @@ stm32f40_41xxx\serial.o: ..\_Layer\encoder.h
 stm32f40_41xxx\serial.o: ..\_Layer\buttom.h
 stm32f40_41xxx\serial.o: ../main.h
 stm32f40_41xxx\serial.o: ..\_Layer\gyro.h
+stm32f40_41xxx\serial.o: ..\_Layer\laser.h
 stm32f40_41xxx\serial.o: ../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 stm32f40_41xxx\serial.o: E:\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include\core_cm4.h
 stm32f40_41xxx\serial.o: E:\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include\cmsis_version.h
