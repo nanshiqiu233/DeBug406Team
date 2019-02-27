@@ -274,6 +274,7 @@ int32_t GetMotorSpeed(int8_t leftOrRight)
 void SetMotorForwardTime(uint32_t sec)
 {
   _timeTick = sec;
+  UpdateMotorState(MOTOR_FRONT);
 }
 
 /**

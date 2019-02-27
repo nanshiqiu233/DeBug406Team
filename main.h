@@ -32,7 +32,7 @@
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Main Function select */
-#define _TEST_TAG_
+//#define _TEST_TAG_
 
 /* Serial Settings */
 #define _USE_BLUETOOTH

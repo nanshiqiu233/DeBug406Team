@@ -12,8 +12,17 @@
 #define _USART_SILENT  0x00
 #define _USART_RESPON  0x11
 
+/* DMA define */
+#define DEBUG_USART_DR_BASE    (USART1_BASE+0x04)
+#define SENDBUFF_SIZE           100
+#define DEBUG_USART_DMA_CLK     RCC_AHB1Periph_DMA2
+#define DEBUG_USART_DMA_CHANNEL DMA_Channel_4
+#define DEBUG_USART_DMA_STREAM  DMA2_Stream7
+
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
+int8_t SendBuff[SENDBUFF_SIZE] = "USART1 DMA TEST\r\n";
+
 /* Private function prototypes -----------------------------------------------*/
 void _BufferIntegrate_Callback(uint8_t upperBuffer[static _BUFFERSIZE]);
 
@@ -32,11 +41,14 @@ void Serial_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
   USART_InitTypeDef USART_InitStructure;
-
-  /* Enable USART1 and GPIOA clocks *************************************/
+  DMA_InitTypeDef DMA_InitStructure;
+  NVIC_InitTypeDef NVIC_InitStructure;
+  
+  /* Enable USART1, DMA2_Stream7 and GPIOA clocks *************************************/
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);
-
+  RCC_AHB1PeriphClockCmd(DEBUG_USART_DMA_CLK, ENABLE);
+  
   /* GPIO configuration *************************************************/
   /* GPIO configured as follows:
         - Pin -> PA9 & PA10  
@@ -76,7 +88,50 @@ void Serial_Init(void)
   /* Enable USART1 ********************************************************/
   USART_Cmd(USART1, ENABLE);
   
-  NVIC_InitTypeDef NVIC_InitStructure;
+  /* DMAx configuration ***************************************************/
+  /* DMA2 configured as follows:
+        - Channel select = channel 4
+        - Peripheral address = USART1_BASE+0x04
+        - Memory address = SendBuff(array's head address)
+        - DMA direction _ From Memory(array, string) To Peripheral(USART)
+        - Buffer size = 100
+        
+     ** - Peripheral address auto incremented
+     ** - Memory address auto incremented
+     ** - Peripheral dataSize = Byte _uint8_t_
+     ** - Memory dataSize = Byte _uint8_t_
+        - DMA mode = circular (loop)
+        
+        - Priority = Medium
+        - do not use FIFO mode
+     ## - FIFO threshold used in full
+        - use memory single burst mode.
+        - use peripheral single burst mode.
+  */
+  DMA_DeInit(DEBUG_USART_DMA_STREAM);
+  while(DMA_GetCmdStatus(DEBUG_USART_DMA_STREAM) != DISABLE) {}
+  
+  DMA_InitStructure.DMA_Channel = DEBUG_USART_DMA_CHANNEL;
+  DMA_InitStructure.DMA_PeripheralBaseAddr = DEBUG_USART_DR_BASE;
+  DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)SendBuff;
+  DMA_InitStructure.DMA_DIR = DMA_DIR_MemoryToPeripheral;
+  DMA_InitStructure.DMA_BufferSize = SENDBUFF_SIZE;
+    
+  DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+  DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
+  DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;
+  DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_Byte;
+  DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
+    
+  DMA_InitStructure.DMA_Priority = DMA_Priority_Medium;
+  DMA_InitStructure.DMA_FIFOMode = DMA_FIFOMode_Disable;
+  DMA_InitStructure.DMA_FIFOThreshold = DMA_FIFOThreshold_Full;
+  DMA_InitStructure.DMA_MemoryBurst = DMA_MemoryBurst_Single;
+  DMA_InitStructure.DMA_PeripheralBurst = DMA_PeripheralBurst_Single;
+  DMA_Init(DEBUG_USART_DMA_STREAM, &DMA_InitStructure);
+    
+  DMA_Cmd(DEBUG_USART_DMA_STREAM, ENABLE);
+  while(DMA_GetCmdStatus(DEBUG_USART_DMA_STREAM) != ENABLE) {}
   
   /* NVIC configuration ***************************************************/
   /* NVIC configured as follows:
@@ -86,6 +141,7 @@ void Serial_Init(void)
         - NVIC_IRQChannel enable
   */
   USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);  
+  DMA_ITConfig(DEBUG_USART_DMA_STREAM, DMA_IT_TC, ENABLE);
 
   NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 
@@ -94,6 +150,15 @@ void Serial_Init(void)
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);
+    
+  NVIC_InitStructure.NVIC_IRQChannel = DMA2_Stream7_IRQn;     
+  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;          
+  NVIC_Init(&NVIC_InitStructure);
+
+  // TEST
+  // USART_DMACmd(USART1, USART_DMAReq_Tx, ENABLE);
 }
 
 /**

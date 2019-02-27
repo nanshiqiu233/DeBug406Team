@@ -29,6 +29,7 @@ typedef enum laserState__
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions (F12)-------------------------------------------------- */
 void Laser_Init(void);
+LaserState_t GetLaserState(void);
 
 /* Reference Only -> (F12) EXTI0_IRQHandler(); */
 /*static*/ inline void _LaserEdgeTrigger_Interrupt(void);
