@@ -45,6 +45,7 @@ void MotorForward_Test(uint32_t sec);
 void ADC_Test(void);
 void Gyro_Test(void);
 void Laser_Test(void);
+void DMA_USART_Test(void);
 
 /**
   * @brief  Test main program
@@ -63,7 +64,7 @@ int /*Test*/ main(void)
   MotorPWM_Init();
   Adc_Init();
   Gyro_Init();
-  Laser_Init();
+  //Laser_Init();
   
   SysTickDelay(1000);
   printf(" Hello World!\r\n");
@@ -71,7 +72,7 @@ int /*Test*/ main(void)
   /* Infinite loop */
   while (TRUE)
   {
-    Laser_Test();
+    Motor_EncoderFeedback_Test();
     SysTickDelay(1000);
   }
 }
@@ -92,19 +93,19 @@ void Motor_EncoderFeedback_Test(void)
   for(; duty < 0.8; duty += 0.02)
   {
     SetMotorDutyRatio(duty, duty);
-    SysTickDelay(10000);
-    timerCount[0] = GetLRSpeed(2);
-    timerCount[1] = GetRFSpeed(2);
-    printf("%f,%f,\r\n", 1.0*timerCount[0]/500000, 1.0*timerCount[1]/500000);
+    SysTickDelay(1000);
+    //timerCount[0] = GetLRSpeed(2);
+    //timerCount[1] = GetRFSpeed(2);
+    //printf("%f,%f,\r\n", 1.0*timerCount[0]/500000, 1.0*timerCount[1]/500000);
   }
   
-  for(; duty > 0; duty -= 0.02)
+  for(; duty > 0; duty -= 0.1)
   {
     SetMotorDutyRatio(duty, duty);
-    SysTickDelay(10000);
-    timerCount[0] = GetLRSpeed(2);
-    timerCount[1] = GetRFSpeed(2);
-    printf("%f,%f,\r\n", 1.0*timerCount[0]/500000, 1.0*timerCount[1]/500000);
+    SysTickDelay(1000);
+    //timerCount[0] = GetLRSpeed(2);
+    //timerCount[1] = GetRFSpeed(2);
+    //printf("%f,%f,\r\n", 1.0*timerCount[0]/500000, 1.0*timerCount[1]/500000);
   }
 }
 
@@ -186,6 +187,16 @@ void Laser_Test(void)
   {
     printf("Was not covered.\r\n");    
   }
+}
+
+/**
+  * @brief  
+  * @param  None
+  * @retval None
+  */
+void DMA_USART_Test(void)
+{
+  //printf("DMA Test\r\n");
 }
 
 #endif //!_TEST_TAG_

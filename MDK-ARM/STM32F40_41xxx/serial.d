@@ -14,11 +14,11 @@ stm32f40_41xxx\serial.o: ../main.h
 stm32f40_41xxx\serial.o: ..\_Layer\gyro.h
 stm32f40_41xxx\serial.o: ..\_Layer\laser.h
 stm32f40_41xxx\serial.o: ../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
-stm32f40_41xxx\serial.o: E:\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include\core_cm4.h
-stm32f40_41xxx\serial.o: E:\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include\cmsis_version.h
-stm32f40_41xxx\serial.o: E:\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include\cmsis_compiler.h
-stm32f40_41xxx\serial.o: E:\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include\cmsis_armcc.h
-stm32f40_41xxx\serial.o: E:\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include\mpu_armv7.h
+stm32f40_41xxx\serial.o: E:\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\core_cm4.h
+stm32f40_41xxx\serial.o: E:\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_version.h
+stm32f40_41xxx\serial.o: E:\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_compiler.h
+stm32f40_41xxx\serial.o: E:\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_armcc.h
+stm32f40_41xxx\serial.o: E:\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\mpu_armv7.h
 stm32f40_41xxx\serial.o: ../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 stm32f40_41xxx\serial.o: ../stm32f4xx_conf.h
 stm32f40_41xxx\serial.o: ../../../Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_adc.h
