@@ -321,6 +321,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -509,6 +510,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -584,6 +586,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -679,6 +682,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -734,6 +738,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -814,6 +819,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -1373,6 +1379,19 @@
               <FileName>servo.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Layer\servo.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>_Logic</GroupName>
+        </Group>
+        <Group>
+          <GroupName>_Logic_H</GroupName>
+          <Files>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>9</FileType>
+              <FilePath>..\_Logic\README.md</FilePath>
             </File>
           </Files>
         </Group>
@@ -1699,6 +1718,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -1887,6 +1907,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -1962,6 +1983,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -2057,6 +2079,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -2112,6 +2135,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -2192,6 +2216,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -2751,6 +2776,19 @@
               <FileName>servo.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Layer\servo.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>_Logic</GroupName>
+        </Group>
+        <Group>
+          <GroupName>_Logic_H</GroupName>
+          <Files>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>9</FileType>
+              <FilePath>..\_Logic\README.md</FilePath>
             </File>
           </Files>
         </Group>
@@ -3077,6 +3115,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>3</v6Lang>
             <v6LangP>3</v6LangP>
@@ -3089,7 +3128,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F40_41xxx,USE_STM324xG_EVAL</Define>
               <Undefine></Undefine>
-              <IncludePath>../;../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include;../../../Libraries/STM32F4xx_StdPeriph_Driver/inc;../../../Utilities/STM32_EVAL/Common;../../../Utilities/STM32_EVAL/STM3240_41_G_EVAL;..\_Layer</IncludePath>
+              <IncludePath>../;../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include;../../../Libraries/STM32F4xx_StdPeriph_Driver/inc;../../../Utilities/STM32_EVAL/Common;../../../Utilities/STM32_EVAL/STM3240_41_G_EVAL;..\_Layer;..\_Logic</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -3265,6 +3304,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -3340,6 +3380,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -3440,6 +3481,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -3520,6 +3562,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -3605,6 +3648,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -4129,6 +4173,19 @@
               <FileName>servo.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Layer\servo.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>_Logic</GroupName>
+        </Group>
+        <Group>
+          <GroupName>_Logic_H</GroupName>
+          <Files>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>9</FileType>
+              <FilePath>..\_Logic\README.md</FilePath>
             </File>
           </Files>
         </Group>
@@ -4452,6 +4509,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -4640,6 +4698,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -4715,6 +4774,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -4810,6 +4870,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -4865,6 +4926,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -4945,6 +5007,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -5030,6 +5093,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -5554,6 +5618,19 @@
               <FileName>servo.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Layer\servo.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>_Logic</GroupName>
+        </Group>
+        <Group>
+          <GroupName>_Logic_H</GroupName>
+          <Files>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>9</FileType>
+              <FilePath>..\_Logic\README.md</FilePath>
             </File>
           </Files>
         </Group>
@@ -5877,6 +5954,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -6090,6 +6168,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -6185,6 +6264,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -6240,6 +6320,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -6320,6 +6401,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -6405,6 +6487,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -6929,6 +7012,19 @@
               <FileName>servo.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Layer\servo.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>_Logic</GroupName>
+        </Group>
+        <Group>
+          <GroupName>_Logic_H</GroupName>
+          <Files>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>9</FileType>
+              <FilePath>..\_Logic\README.md</FilePath>
             </File>
           </Files>
         </Group>
@@ -7252,6 +7348,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -7440,6 +7537,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -7560,6 +7658,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -7615,6 +7714,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -8204,6 +8304,19 @@
               <FileName>servo.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Layer\servo.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>_Logic</GroupName>
+        </Group>
+        <Group>
+          <GroupName>_Logic_H</GroupName>
+          <Files>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>9</FileType>
+              <FilePath>..\_Logic\README.md</FilePath>
             </File>
           </Files>
         </Group>
@@ -8529,6 +8642,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -8717,6 +8831,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -8792,6 +8907,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -8887,6 +9003,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -9481,6 +9598,19 @@
               <FileName>servo.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Layer\servo.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>_Logic</GroupName>
+        </Group>
+        <Group>
+          <GroupName>_Logic_H</GroupName>
+          <Files>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>9</FileType>
+              <FilePath>..\_Logic\README.md</FilePath>
             </File>
           </Files>
         </Group>
@@ -9804,6 +9934,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -10062,6 +10193,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -10182,6 +10314,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -10706,6 +10839,19 @@
               <FileName>servo.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Layer\servo.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>_Logic</GroupName>
+        </Group>
+        <Group>
+          <GroupName>_Logic_H</GroupName>
+          <Files>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>9</FileType>
+              <FilePath>..\_Logic\README.md</FilePath>
             </File>
           </Files>
         </Group>
@@ -11032,6 +11178,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -11360,6 +11507,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -11888,6 +12036,19 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>_Logic</GroupName>
+        </Group>
+        <Group>
+          <GroupName>_Logic_H</GroupName>
+          <Files>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>9</FileType>
+              <FilePath>..\_Logic\README.md</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -12210,6 +12371,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -12538,6 +12700,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
                     <v6Lang>0</v6Lang>
                     <v6LangP>0</v6LangP>
@@ -13062,6 +13225,19 @@
               <FileName>servo.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Layer\servo.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>_Logic</GroupName>
+        </Group>
+        <Group>
+          <GroupName>_Logic_H</GroupName>
+          <Files>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>9</FileType>
+              <FilePath>..\_Logic\README.md</FilePath>
             </File>
           </Files>
         </Group>
