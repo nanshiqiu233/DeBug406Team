@@ -31,7 +31,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include <stdint.h>
 #include "main.h"
-
+//#define _USE_SERIAL_DEBUG
 /* Exported types ------------------------------------------------------------*/
 typedef struct adcDataStruct__ 
 {

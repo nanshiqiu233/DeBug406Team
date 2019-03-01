@@ -28,7 +28,7 @@
 #include "buttom.h"
 #include "gyro.h"
 #include "laser.h"
-
+#include "line.h"
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Main Function select */
@@ -36,7 +36,7 @@
 
 /* Serial Settings */
 #define _USE_BLUETOOTH
-
+#define _TEST_PAN
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 #endif /* __MAIN_H */

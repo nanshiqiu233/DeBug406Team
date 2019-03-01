@@ -1384,14 +1384,26 @@
         </Group>
         <Group>
           <GroupName>_Logic</GroupName>
+          <Files>
+            <File>
+              <FileName>line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\line.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>_Logic_H</GroupName>
           <Files>
             <File>
-              <FileName>README.md</FileName>
-              <FileType>9</FileType>
-              <FilePath>..\_Logic\README.md</FilePath>
+              <FileName>LOGIC.md</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\LOGIC.md</FilePath>
+            </File>
+            <File>
+              <FileName>line.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\line.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2781,14 +2793,26 @@
         </Group>
         <Group>
           <GroupName>_Logic</GroupName>
+          <Files>
+            <File>
+              <FileName>line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\line.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>_Logic_H</GroupName>
           <Files>
             <File>
-              <FileName>README.md</FileName>
-              <FileType>9</FileType>
-              <FilePath>..\_Logic\README.md</FilePath>
+              <FileName>LOGIC.md</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\LOGIC.md</FilePath>
+            </File>
+            <File>
+              <FileName>line.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\line.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -3114,10 +3138,10 @@
             <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
+            <uC99>1</uC99>
             <uGnu>0</uGnu>
             <useXO>0</useXO>
-            <v6Lang>3</v6Lang>
+            <v6Lang>4</v6Lang>
             <v6LangP>3</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
@@ -3125,7 +3149,7 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls>--C99</MiscControls>
+              <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F40_41xxx,USE_STM324xG_EVAL</Define>
               <Undefine></Undefine>
               <IncludePath>../;../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include;../../../Libraries/STM32F4xx_StdPeriph_Driver/inc;../../../Utilities/STM32_EVAL/Common;../../../Utilities/STM32_EVAL/STM3240_41_G_EVAL;..\_Layer;..\_Logic</IncludePath>
@@ -4178,14 +4202,26 @@
         </Group>
         <Group>
           <GroupName>_Logic</GroupName>
+          <Files>
+            <File>
+              <FileName>line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\line.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>_Logic_H</GroupName>
           <Files>
             <File>
-              <FileName>README.md</FileName>
-              <FileType>9</FileType>
-              <FilePath>..\_Logic\README.md</FilePath>
+              <FileName>LOGIC.md</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\LOGIC.md</FilePath>
+            </File>
+            <File>
+              <FileName>line.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\line.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -5623,14 +5659,26 @@
         </Group>
         <Group>
           <GroupName>_Logic</GroupName>
+          <Files>
+            <File>
+              <FileName>line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\line.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>_Logic_H</GroupName>
           <Files>
             <File>
-              <FileName>README.md</FileName>
-              <FileType>9</FileType>
-              <FilePath>..\_Logic\README.md</FilePath>
+              <FileName>LOGIC.md</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\LOGIC.md</FilePath>
+            </File>
+            <File>
+              <FileName>line.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\line.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -7017,14 +7065,26 @@
         </Group>
         <Group>
           <GroupName>_Logic</GroupName>
+          <Files>
+            <File>
+              <FileName>line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\line.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>_Logic_H</GroupName>
           <Files>
             <File>
-              <FileName>README.md</FileName>
-              <FileType>9</FileType>
-              <FilePath>..\_Logic\README.md</FilePath>
+              <FileName>LOGIC.md</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\LOGIC.md</FilePath>
+            </File>
+            <File>
+              <FileName>line.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\line.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -8309,14 +8369,26 @@
         </Group>
         <Group>
           <GroupName>_Logic</GroupName>
+          <Files>
+            <File>
+              <FileName>line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\line.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>_Logic_H</GroupName>
           <Files>
             <File>
-              <FileName>README.md</FileName>
-              <FileType>9</FileType>
-              <FilePath>..\_Logic\README.md</FilePath>
+              <FileName>LOGIC.md</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\LOGIC.md</FilePath>
+            </File>
+            <File>
+              <FileName>line.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\line.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -9603,14 +9675,26 @@
         </Group>
         <Group>
           <GroupName>_Logic</GroupName>
+          <Files>
+            <File>
+              <FileName>line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\line.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>_Logic_H</GroupName>
           <Files>
             <File>
-              <FileName>README.md</FileName>
-              <FileType>9</FileType>
-              <FilePath>..\_Logic\README.md</FilePath>
+              <FileName>LOGIC.md</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\LOGIC.md</FilePath>
+            </File>
+            <File>
+              <FileName>line.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\line.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -10844,14 +10928,26 @@
         </Group>
         <Group>
           <GroupName>_Logic</GroupName>
+          <Files>
+            <File>
+              <FileName>line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\line.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>_Logic_H</GroupName>
           <Files>
             <File>
-              <FileName>README.md</FileName>
-              <FileType>9</FileType>
-              <FilePath>..\_Logic\README.md</FilePath>
+              <FileName>LOGIC.md</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\LOGIC.md</FilePath>
+            </File>
+            <File>
+              <FileName>line.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\line.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -12037,14 +12133,26 @@
         </Group>
         <Group>
           <GroupName>_Logic</GroupName>
+          <Files>
+            <File>
+              <FileName>line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\line.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>_Logic_H</GroupName>
           <Files>
             <File>
-              <FileName>README.md</FileName>
-              <FileType>9</FileType>
-              <FilePath>..\_Logic\README.md</FilePath>
+              <FileName>LOGIC.md</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\LOGIC.md</FilePath>
+            </File>
+            <File>
+              <FileName>line.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\line.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -13230,14 +13338,26 @@
         </Group>
         <Group>
           <GroupName>_Logic</GroupName>
+          <Files>
+            <File>
+              <FileName>line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\line.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>_Logic_H</GroupName>
           <Files>
             <File>
-              <FileName>README.md</FileName>
-              <FileType>9</FileType>
-              <FilePath>..\_Logic\README.md</FilePath>
+              <FileName>LOGIC.md</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\LOGIC.md</FilePath>
+            </File>
+            <File>
+              <FileName>line.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\line.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -13251,8 +13371,8 @@
   <RTE>
     <apis/>
     <components>
-      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.0.2" condition="ARMv6_7_8-M Device">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.2.0"/>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.1.2" condition="ARMv6_7_8-M Device">
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.4.0"/>
         <targetInfos>
           <targetInfo name="STM32F401xx"/>
           <targetInfo name="STM32F40_41xxx"/>
