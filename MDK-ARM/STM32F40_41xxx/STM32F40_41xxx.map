@@ -1416,7 +1416,7 @@ Image component sizes
         40         10          0          1          0        690   laser.o
        104         26          0          0          0        503   main.o
        224         20          0          0          0       3821   misc.o
-       804         78          0         20          0       3384   motor.o
+       804         78          0         20          0       3388   motor.o
        392         26          0          8         50       2803   serial.o
         36          8        392          0       1024        944   startup_stm32f40_41xxx.o
       1124         24          0          0          0      24894   stm32f4xx_adc.o
@@ -1433,7 +1433,7 @@ Image component sizes
        156         24          0          4          0      32147   systick.o
 
     ----------------------------------------------------------------------
-     14688        706        460        140       1160     757584   Object Totals
+     14688        706        460        140       1160     757588   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          2          0          2          3          6          0   (incl. Padding)
 
@@ -1485,8 +1485,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     15724        730        460        144       1160     753388   Grand Totals
-     15724        730        460        144       1160     753388   ELF Image Totals
+     15724        730        460        144       1160     753392   Grand Totals
+     15724        730        460        144       1160     753392   ELF Image Totals
      15724        730        460        144          0          0   ROM Totals
 
 ==============================================================================
