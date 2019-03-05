@@ -26,6 +26,7 @@
 //	/*Store PWM duty cycle versus speed()*/
 //	double _SpeedToDutyCycleL(void);
 	/*Use the core part of the grayscale sensor and laser tube algorithm. If you need to modify it, please refer to the README.MD file under the LOGIC file.*/
-	void _TrackingCoreAlgorithm(void);
-	void _GetADCError(void);
+	double _TrackingCoreAlgorithm(void);
+	double _GetADCError(void);
+	void _GoLine(void);
 	#endif

@@ -34,6 +34,7 @@
   * @param  Now speed 
   * @retval None
   */
+	float previous_error = 0;
 	double _FindRightSpeedLR(int NowSpeed)
 	{
 		NowSpeed=GetLRSpeed(1);
@@ -83,27 +84,34 @@
 	else 
 		return 0.99;
 	}
-  void _GetADCError(void)
+  double _GetADCError(void)
 	{
+		double Error;
 		const AdcData_t *adc_adrr;
 		adc_adrr = GetADCData();
-	}
-	void _TrackingCoreAlgorithm(void)
-{
-	float Kp = 10, Ki = 0.5, Kd = 0;                    
-	float error = 0, P = 0.0, I = 0., D = 0, PID_value = 0;
-	float previous_error = 0, previous_I = 0;
-	  for (int i = 0; i < 2; ++i)
+		for (int i = 0; i < 2; ++i)
   {
     for (int j = 0; j < 8; ++j)
     {
-     
+      
     }
   }
+		return Error;
+	}
+	double _TrackingCoreAlgorithm(void)
+{
+	float Kp = 10, Ki = 0.5, Kd = 0;                    
+	float error = 0, P = 0.0, I = 0., D = 0, PID_value = 0;
+	error=_GetADCError();
 	P = error;
   I = I + error;
   D = error - previous_error;
   PID_value = (Kp * P) + (Ki * I) - (Kd * D);
-  SetMotorDutyRatio(0.15+PID_value, 0.15+PID_value);
+  //SetMotorDutyRatio(0.15+PID_value, 0.15+PID_value);
   previous_error = error;
+	return PID_value;
+}
+void _GoLine(void)
+{
+	SetMotorDutyRatio(_TrackingCoreAlgorithm(), _TrackingCoreAlgorithm());
 }
