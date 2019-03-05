@@ -1,2 +1,17 @@
 stm32f40_41xxx\line.o: ..\_Logic\line.c
 stm32f40_41xxx\line.o: ..\_Logic\line.h
+stm32f40_41xxx\line.o: ..\_Layer\encoder.h
+stm32f40_41xxx\line.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+stm32f40_41xxx\line.o: ..\_Layer\buttom.h
+stm32f40_41xxx\line.o: ../main.h
+stm32f40_41xxx\line.o: ..\_Layer\systick.h
+stm32f40_41xxx\line.o: ..\_Layer\serial.h
+stm32f40_41xxx\line.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+stm32f40_41xxx\line.o: ../main.h
+stm32f40_41xxx\line.o: ..\_Layer\board.h
+stm32f40_41xxx\line.o: ..\_Layer\motor.h
+stm32f40_41xxx\line.o: ..\_Layer\servo.h
+stm32f40_41xxx\line.o: ..\_Layer\buttom.h
+stm32f40_41xxx\line.o: ..\_Layer\gyro.h
+stm32f40_41xxx\line.o: ..\_Layer\laser.h
+stm32f40_41xxx\line.o: ..\_Logic\line.h

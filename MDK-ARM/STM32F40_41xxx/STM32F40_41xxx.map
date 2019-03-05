@@ -95,6 +95,10 @@ Section Cross References
     laser.o(.text) refers to stm32f4xx_exti.o(.text) for EXTI_Init
     laser.o(.text) refers to misc.o(.text) for NVIC_Init
     laser.o(.text) refers to laser.o(.data) for _laserState
+    line.o(.text) refers to encoder.o(i.GetLRSpeed) for GetLRSpeed
+    line.o(.text) refers to dflti.o(.text) for __aeabi_i2d
+    line.o(.text) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    line.o(.text) refers to buttom.o(.text) for GetADCData
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
@@ -344,8 +348,12 @@ Section Cross References
     ddiv.o(.text) refers to depilogue.o(.text) for _double_round
     dflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     dflti.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
     dfixi.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     dfixi.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dfixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixui.o(.text) refers to llushr.o(.text) for __aeabi_llsr
     cdcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     cdrcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
@@ -383,6 +391,10 @@ Section Cross References
     encoder.o(i._Timer5Capture_Interrupt) refers to encoder.o(.data__ZZ24_Timer5Capture_InterruptE14_timerOverFlow) for _Timer5Capture_Interrupt::_timerOverFlow
     encoder.o(i._Timer5Capture_Interrupt) refers to encoder.o(.data) for _triggerCountRF
     encoder.o(i.GetLRSpeed) refers to stm32f4xx_tim.o(.text) for TIM_ClearITPendingBit
+    encoder.o(i.GetLRSpeed) refers to dfltui.o(.text) for __aeabi_ui2d
+    encoder.o(i.GetLRSpeed) refers to dmul.o(.text) for __aeabi_dmul
+    encoder.o(i.GetLRSpeed) refers to ddiv.o(.text) for __aeabi_ddiv
+    encoder.o(i.GetLRSpeed) refers to dfixui.o(.text) for __aeabi_d2uiz
     encoder.o(i.GetLRSpeed) refers to encoder.o(.data) for _updateTimesLR
     encoder.o(i._Timer2Capture_Interrupt) refers to stm32f4xx_tim.o(.text) for TIM_GetITStatus
     encoder.o(i._Timer2Capture_Interrupt) refers to encoder.o(.text) for _CaptureFrequency
@@ -576,14 +588,17 @@ Removing Unused input sections from the image.
     Removing laser.o(.revsh_text), (4 bytes).
     Removing laser.o(.rrx_text), (6 bytes).
     Removing laser.o(.text), (128 bytes).
+    Removing line.o(.text), (1172 bytes).
+    Removing dfltui.o(.text), (26 bytes).
+    Removing dfixui.o(.text), (50 bytes).
     Removing dadd.o(.text), (334 bytes).
     Removing dfixul.o(.text), (48 bytes).
     Removing motor.o(i.SetMotorState), (28 bytes).
     Removing motor.o(i.GetMotorSpeed), (20 bytes).
     Removing encoder.o(i.GetRFSpeed), (84 bytes).
-    Removing encoder.o(i.GetLRSpeed), (84 bytes).
+    Removing encoder.o(i.GetLRSpeed), (200 bytes).
 
-185 unused section(s) (total 27682 bytes) removed from the image.
+188 unused section(s) (total 29046 bytes) removed from the image.
 
 ==============================================================================
 
@@ -632,43 +647,45 @@ Image Symbol Table
     ../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c 0x00000000   Number         0  stm32f4xx_tim.o ABSOLUTE
     ../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c 0x00000000   Number         0  stm32f4xx_usart.o ABSOLUTE
     ../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_wwdg.c 0x00000000   Number         0  stm32f4xx_wwdg.o ABSOLUTE
-    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
-    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixui.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
     ../main.c                                0x00000000   Number         0  main.o ABSOLUTE
     ../stm32f4xx_it.c                        0x00000000   Number         0  stm32f4xx_it.o ABSOLUTE
@@ -1314,15 +1331,15 @@ Memory Map of the image
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x00000188   Data   RO         1287    RESET               startup_stm32f40_41xxx.o
-    0x08000188   0x08000188   0x00000000   Code   RO         1610  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x08000188   0x08000188   0x00000004   Code   RO         1885    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x0800018c   0x0800018c   0x00000004   Code   RO         1888    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000190   0x08000190   0x00000000   Code   RO         1890    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000190   0x08000190   0x00000000   Code   RO         1892    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000190   0x08000190   0x00000008   Code   RO         1893    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x08000198   0x08000198   0x00000000   Code   RO         1895    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x08000198   0x08000198   0x00000000   Code   RO         1897    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x08000198   0x08000198   0x00000004   Code   RO         1886    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000188   0x08000188   0x00000000   Code   RO         1619  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000188   0x08000188   0x00000004   Code   RO         1898    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x0800018c   0x0800018c   0x00000004   Code   RO         1901    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000190   0x08000190   0x00000000   Code   RO         1903    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000190   0x08000190   0x00000000   Code   RO         1905    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000190   0x08000190   0x00000008   Code   RO         1906    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000198   0x08000198   0x00000000   Code   RO         1908    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x08000198   0x08000198   0x00000000   Code   RO         1910    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x08000198   0x08000198   0x00000004   Code   RO         1899    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x0800019c   0x0800019c   0x00000210   Code   RO            4    .text               system_stm32f4xx.o
     0x080003ac   0x080003ac   0x0000007c   Code   RO          140    .text               stm32f4xx_it.o
     0x08000428   0x08000428   0x00000068   Code   RO          224    .text               main.o
@@ -1343,37 +1360,37 @@ Memory Map of the image
     0x08002d58   0x08002d58   0x00000254   Code   RO         1444    .text               encoder.o
     0x08002fac   0x08002fac   0x000002a4   Code   RO         1496    .text               buttom.o
     0x08003250   0x08003250   0x00000638   Code   RO         1523    .text               gyro.o
-    0x08003888   0x08003888   0x000000e4   Code   RO         1873    .text               mf_w.l(dmul.o)
-    0x0800396c   0x0800396c   0x000000de   Code   RO         1875    .text               mf_w.l(ddiv.o)
-    0x08003a4a   0x08003a4a   0x00000022   Code   RO         1877    .text               mf_w.l(dflti.o)
-    0x08003a6c   0x08003a6c   0x0000003e   Code   RO         1879    .text               mf_w.l(dfixi.o)
+    0x08003888   0x08003888   0x000000e4   Code   RO         1882    .text               mf_w.l(dmul.o)
+    0x0800396c   0x0800396c   0x000000de   Code   RO         1884    .text               mf_w.l(ddiv.o)
+    0x08003a4a   0x08003a4a   0x00000022   Code   RO         1886    .text               mf_w.l(dflti.o)
+    0x08003a6c   0x08003a6c   0x0000003e   Code   RO         1890    .text               mf_w.l(dfixi.o)
     0x08003aaa   0x08003aaa   0x00000002   PAD
-    0x08003aac   0x08003aac   0x00000030   Code   RO         1881    .text               mf_w.l(cdcmple.o)
-    0x08003adc   0x08003adc   0x00000030   Code   RO         1883    .text               mf_w.l(cdrcmple.o)
-    0x08003b0c   0x08003b0c   0x00000020   Code   RO         1904    .text               mc_w.l(llushr.o)
-    0x08003b2c   0x08003b2c   0x00000000   Code   RO         1906    .text               mc_w.l(iusefp.o)
-    0x08003b2c   0x08003b2c   0x000000ba   Code   RO         1907    .text               mf_w.l(depilogue.o)
+    0x08003aac   0x08003aac   0x00000030   Code   RO         1894    .text               mf_w.l(cdcmple.o)
+    0x08003adc   0x08003adc   0x00000030   Code   RO         1896    .text               mf_w.l(cdrcmple.o)
+    0x08003b0c   0x08003b0c   0x00000020   Code   RO         1917    .text               mc_w.l(llushr.o)
+    0x08003b2c   0x08003b2c   0x00000000   Code   RO         1919    .text               mc_w.l(iusefp.o)
+    0x08003b2c   0x08003b2c   0x000000ba   Code   RO         1920    .text               mf_w.l(depilogue.o)
     0x08003be6   0x08003be6   0x00000002   PAD
-    0x08003be8   0x08003be8   0x00000024   Code   RO         1913    .text               mc_w.l(init.o)
-    0x08003c0c   0x08003c0c   0x0000001e   Code   RO         1915    .text               mc_w.l(llshl.o)
+    0x08003be8   0x08003be8   0x00000024   Code   RO         1926    .text               mc_w.l(init.o)
+    0x08003c0c   0x08003c0c   0x0000001e   Code   RO         1928    .text               mc_w.l(llshl.o)
     0x08003c2a   0x08003c2a   0x00000002   PAD
     0x08003c2c   0x08003c2c   0x00000018   Code   RO         1383    i._DelayOneMs_Interrupt  systick.o
     0x08003c44   0x08003c44   0x00000028   Code   RO         1595    i._LaserEdgeTrigger_Interrupt  laser.o
     0x08003c6c   0x08003c6c   0x00000094   Code   RO         1482    i._Timer2Capture_Interrupt  encoder.o
     0x08003d00   0x08003d00   0x00000090   Code   RO         1470    i._Timer5Capture_Interrupt  encoder.o
     0x08003d90   0x08003d90   0x00000078   Code   RO         1348    i._UsartReceive_Interrupt  serial.o
-    0x08003e08   0x08003e08   0x00000010   Code   RO         1614    i.__0printf$bare    mc_w.l(printfb.o)
-    0x08003e18   0x08003e18   0x0000000e   Code   RO         1921    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08003e26   0x08003e26   0x00000002   Code   RO         1922    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08003e28   0x08003e28   0x0000000e   Code   RO         1923    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08003e08   0x08003e08   0x00000010   Code   RO         1623    i.__0printf$bare    mc_w.l(printfb.o)
+    0x08003e18   0x08003e18   0x0000000e   Code   RO         1934    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08003e26   0x08003e26   0x00000002   Code   RO         1935    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08003e28   0x08003e28   0x0000000e   Code   RO         1936    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x08003e36   0x08003e36   0x00000002   PAD
     0x08003e38   0x08003e38   0x00000048   Code   RO         1432    i._forwardTime_Interrupt  motor.o
-    0x08003e80   0x08003e80   0x00000022   Code   RO         1621    i._printf_core      mc_w.l(printfb.o)
+    0x08003e80   0x08003e80   0x00000022   Code   RO         1630    i._printf_core      mc_w.l(printfb.o)
     0x08003ea2   0x08003ea2   0x00000002   PAD
     0x08003ea4   0x08003ea4   0x00000050   Code   RO         1315    i._updateSysTick_Interrupt  board.o
     0x08003ef4   0x08003ef4   0x00000022   Data   RO         1498    .constdata          buttom.o
     0x08003f16   0x08003f16   0x00000002   PAD
-    0x08003f18   0x08003f18   0x00000020   Data   RO         1919    Region$$Table       anon$$obj.o
+    0x08003f18   0x08003f18   0x00000020   Data   RO         1932    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08003f38, Size: 0x00000518, Max: 0x00020000, ABSOLUTE)
@@ -1389,7 +1406,7 @@ Memory Map of the image
     0x20000060   0x08003f98   0x0000001e   Data   RW         1525    .data               gyro.o
     0x2000007e   0x08003fb6   0x00000001   Data   RW         1576    .data               laser.o
     0x2000007f   0x08003fb7   0x00000001   PAD
-    0x20000080   0x08003fb8   0x00000004   Data   RW         1899    .data               mc_w.l(stdout.o)
+    0x20000080   0x08003fb8   0x00000004   Data   RW         1912    .data               mc_w.l(stdout.o)
     0x20000084   0x08003fbc   0x00000004   Data   RW         1356    .data__ZZ23_UsartReceive_InterruptE3tag  serial.o
     0x20000088   0x08003fc0   0x00000004   Data   RW         1355    .data__ZZ23_UsartReceive_InterruptE6handle  serial.o
     0x2000008c   0x08003fc4   0x00000001   Data   RW         1489    .data__ZZ24_Timer2Capture_InterruptE14_timerOverFlow  encoder.o

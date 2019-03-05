@@ -230,7 +230,7 @@ uint32_t GetLRSpeed(uint8_t nTimesAverage)
   }
   
   TIM_ITConfig(TIM2, TIM_IT_Update | TIM_IT_CC1, DISABLE);
-  return ( totalSpeed / nTimesAverage );
+  return (1/(1.0*(totalSpeed / nTimesAverage)*160/500000));
 }
 
 /**
