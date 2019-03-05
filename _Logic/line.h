@@ -12,43 +12,17 @@
   */
 	#ifndef DEBUGROB_LOGIC_H
 	#define DEBUGROB_LOGIC_H
-	/*Hardware waiting for confirmation.*/
+	/*Hunting with laser tube and gray sensor return values*/
 	/*
 		This algorithm looks for two eigenvalues of the function fitted by the array
 		of grayscale sensors returned via the ADC, namely the small value median and 
 		the small value width.
 	******************************************************************************
-	                FOR EXAMPLE
-	 1     2     3    4    5     6     7     8
-	3610  3794  3714  659  274  3643  3799  3649
-	This data is the data value returned by the front row ADC.
-	IN THIS EXAMPLE
-	659 and 274 are small value, so we put 5 values in the small value median.
-	1     2     3      4    5    6     7     8
-	3610  3794  3714  659  274  3643  3799  3649
-	                  |      |
-	                  |      |
-	                  |<---->|
-	                      |
-             the small value width
 	*/
-	/*
-		this array save the number from grayscale sensors returned via the ADC
-	*/
-  
-	/*
-	This function will get array from buttom ADC.
-	*/
-	void _GetArray(void);
-	/*
-	This function will find the small values.
-	*/
-	int _FindSmallValues(int array[]);
-	/*
-	This function will find the small value width
-	*/
-	int _FindSmallWidth(int array[]);
-	
+	/*Find the closest number in the data and return its PWM duty cycle*/
+	int _FindRightSpeed(int NowSpeed);
+	/*Store PWM duty cycle versus speed()*/
+	int _SpeedToDutyCycle(void);
+	/*Use the core part of the grayscale sensor and laser tube algorithm. If you need to modify it, please refer to the README.MD file under the LOGIC file.*/
+	int _TrackingCoreAlgorithm(int NowSpeed,int PerfectSpeed);
 	#endif
-	
-	
