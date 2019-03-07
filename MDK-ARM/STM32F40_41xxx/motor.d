@@ -1,6 +1,8 @@
 stm32f40_41xxx\motor.o: ..\_Layer\motor.c
 stm32f40_41xxx\motor.o: ..\_Layer\motor.h
 stm32f40_41xxx\motor.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+stm32f40_41xxx\motor.o: ..\_Layer\encoder.h
+stm32f40_41xxx\motor.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 stm32f40_41xxx\motor.o: ../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 stm32f40_41xxx\motor.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\core_cm4.h
 stm32f40_41xxx\motor.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_version.h

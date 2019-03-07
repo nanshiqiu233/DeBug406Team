@@ -336,7 +336,7 @@ void SetWheelSpeed(float LTarGetSpeed, float RTarGetSpeed)
 		
 		if(((LTarGetSpeed - LRealSpeed)) > (float)0.5)
 		{
-			LPWM += (float)0.001;
+			LPWM += (float)0.01;
 		}
 		
 		if(((LTarGetSpeed - LRealSpeed)) > (float)0.4)

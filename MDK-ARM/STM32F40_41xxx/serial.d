@@ -7,8 +7,8 @@ stm32f40_41xxx\serial.o: ..\_Layer\systick.h
 stm32f40_41xxx\serial.o: ..\_Layer\serial.h
 stm32f40_41xxx\serial.o: ..\_Layer\board.h
 stm32f40_41xxx\serial.o: ..\_Layer\motor.h
-stm32f40_41xxx\serial.o: ..\_Layer\servo.h
 stm32f40_41xxx\serial.o: ..\_Layer\encoder.h
+stm32f40_41xxx\serial.o: ..\_Layer\servo.h
 stm32f40_41xxx\serial.o: ..\_Layer\buttom.h
 stm32f40_41xxx\serial.o: ../main.h
 stm32f40_41xxx\serial.o: ..\_Layer\gyro.h

@@ -1,6 +1,7 @@
 stm32f40_41xxx\encoder.o: ..\_Layer\encoder.c
 stm32f40_41xxx\encoder.o: ..\_Layer\encoder.h
 stm32f40_41xxx\encoder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+stm32f40_41xxx\encoder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 stm32f40_41xxx\encoder.o: ../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 stm32f40_41xxx\encoder.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\core_cm4.h
 stm32f40_41xxx\encoder.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_version.h

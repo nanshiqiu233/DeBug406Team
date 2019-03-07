@@ -117,5 +117,6 @@
 void _GoLine(void)
 {
 	//printf("%f,%f\r\n",_LastSpeed,_LastSpeedL);
-	SetMotorDutyRatio(0.02+_TrackingCoreAlgorithm(), 0.02-_TrackingCoreAlgorithm());
+	//SetMotorDutyRatio(0.02+_TrackingCoreAlgorithm(), 0.02-_TrackingCoreAlgorithm());
+	SetWheelSpeed((float)0.02+_TrackingCoreAlgorithm(),(float)0.02-_TrackingCoreAlgorithm());
 }

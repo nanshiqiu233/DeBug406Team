@@ -34,9 +34,9 @@ int main(void)
   /* Infinite loop *******************************************************/
   while (TRUE)
   {
+		UpdateMotorState(MOTOR_FRONT);
 		_GoLine();
 		//SetMotorDutyRatio(0.02,0.02);
-    UpdateMotorState(MOTOR_FRONT);
 		//UpdateButtom();
 		SysTickDelay(20);
   }
