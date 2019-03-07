@@ -53,6 +53,11 @@
 /* Includes ------------------------------------------------------------------*/
 #include <stdint.h>
 
+/* test only */
+#include "encoder.h"
+/*           */
+
+
 /* Exported types ------------------------------------------------------------*/
 typedef enum motorMode__
 {
@@ -76,9 +81,12 @@ void MotorPWM_Init(void);
 
 int SetMotorDutyRatio(double leftDutyRatio, double rightDutyRatio);
 int SetMotorPulse(int32_t leftPulse, int32_t rightPulse);
-void inline SetMotorState(MotorMode_t motorMode);
 
+/* state machine relative funtion, only use below funtion in state machine mode*/
+void inline SetMotorState(MotorMode_t motorMode);
 MotorMode_t UpgradeMotorState(void);
+/* ************************************************************************** */
+
 MotorMode_t UpdateMotorState(MotorMode_t motorMode);
 
 int32_t inline GetMotorSpeed(int8_t leftOrRight);
@@ -86,5 +94,7 @@ int32_t inline GetMotorSpeed(int8_t leftOrRight);
 /* Test functions ------------------------------------------------------------*/
 void SetMotorForwardTime(uint32_t sec);
 inline void _forwardTime_Interrupt(void);
+
+void SetWheelSpeed(float LTarGetSpeed, float RTarGetSpeed);
 
 #endif /* DEBUGROB_MOTOR_H */
