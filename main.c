@@ -35,7 +35,7 @@ int main(void)
   while (TRUE)
   {
 		_GoLine();
-    UpgradeMotorState();
+    UpdateMotorState(MOTOR_FRONT);
 		//UpdateButtom();
 		SysTickDelay(1000);
   }
