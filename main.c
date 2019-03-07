@@ -35,9 +35,10 @@ int main(void)
   while (TRUE)
   {
 		_GoLine();
+		//SetMotorDutyRatio(0.02,0.02);
     UpdateMotorState(MOTOR_FRONT);
 		//UpdateButtom();
-		SysTickDelay(1000);
+		SysTickDelay(20);
   }
 }
 
