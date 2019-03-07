@@ -87,15 +87,13 @@
   double _GetADCError(void)
 	{
 		double Error;
-		const AdcData_t *adc_adrr;
-		adc_adrr = GetADCData();
-		for (int i = 0; i < 2; ++i)
-  {
-    for (int j = 0; j < 8; ++j)
-    {
-      
-    }
-  }
+		double _TURE=933.0;
+		uint16_t *ADCdata;
+		ADCdata = (uint16_t *)GetADCData();
+		uint16_t temp1,temp2;
+		temp1=*(ADCdata+3);
+		temp2=*(ADCdata+4);
+		Error=temp1+temp2-_TURE;
 		return Error;
 	}
 	double _TrackingCoreAlgorithm(void)

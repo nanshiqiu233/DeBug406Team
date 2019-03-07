@@ -28,14 +28,15 @@ int main(void)
   SysTickDelay(1000);
   printf(" Hello World!");
   
- SetMotorDutyRatio(0.5, 0.5);
- SetMotorForwardTime(10000);
+ //SetMotorDutyRatio(0.5, 0.5);
+ //SetMotorForwardTime(1000);
 
   /* Infinite loop *******************************************************/
   while (TRUE)
   {
+		_GoLine();
     UpgradeMotorState();
-		UpdateButtom();
+		//UpdateButtom();
 		SysTickDelay(1000);
   }
 }
