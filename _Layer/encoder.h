@@ -23,14 +23,14 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <stdint.h>
-
+#include <stdio.h>
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 void Encoder_Init(void);
-uint32_t inline GetRFSpeed(uint8_t nTimesAverage);
-uint32_t inline GetLRSpeed(uint8_t nTimesAverage);
+double inline GetRFSpeed(uint8_t nTimesAverage);
+double inline GetLRSpeed(uint8_t nTimesAverage);
 uint32_t GetRFTriggerTimes(void);
 uint32_t GetLRTriggerTimes(void);
 int WaittingTrigger(uint16_t pluseCount);
@@ -40,5 +40,6 @@ int WaittingTriggerWithFunc(uint16_t pluseCount, void (* func)(void));
 /*static*/ inline void _Timer5Capture_Interrupt(void);
 /* Reference Only -> (F12) TIM2_IRQHandler(); */
 /*static*/ inline void _Timer2Capture_Interrupt(void);
-
+//void _OutputRotationalSpeedLR(void);
+//void _OutputRotationalSpeedRF(void);
 #endif /* DEBUGROB_ENCODER_H */

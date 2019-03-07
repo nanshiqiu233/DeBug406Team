@@ -3,7 +3,6 @@
 /* Private include -----------------------------------------------------------*/
 #include "stm32f4xx.h"
 #include "motor.h"
-
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
@@ -144,7 +143,7 @@ void Encoder_Init(void)
   * @param  None
   * @retval None
   */
-uint32_t GetRFSpeed(uint8_t nTimesAverage)
+double GetRFSpeed(uint8_t nTimesAverage)
 {
   uint32_t totalSpeed = 0;
   _updateTimesRF = 0;
@@ -159,7 +158,7 @@ uint32_t GetRFSpeed(uint8_t nTimesAverage)
   }
   
   TIM_ITConfig(TIM5, TIM_IT_Update | TIM_IT_CC1, DISABLE);
-  return ( totalSpeed / nTimesAverage );
+  return (1/(1.0*(totalSpeed / nTimesAverage)*160/500000));
 }
 
 /**
@@ -215,11 +214,11 @@ void _Timer5Capture_Interrupt(void)
   * @param  None
   * @retval None
   */
-uint32_t GetLRSpeed(uint8_t nTimesAverage)
+double GetLRSpeed(uint8_t nTimesAverage)
 {
   uint32_t totalSpeed = 0;
   _updateTimesLR = 0;
-  
+	  
   TIM_ClearITPendingBit(TIM2, TIM_IT_CC1 | TIM_IT_Update);
   TIM_ITConfig(TIM2, TIM_IT_Update | TIM_IT_CC1, ENABLE);
   
@@ -230,6 +229,8 @@ uint32_t GetLRSpeed(uint8_t nTimesAverage)
   }
   
   TIM_ITConfig(TIM2, TIM_IT_Update | TIM_IT_CC1, DISABLE);
+	
+	
   return (1/(1.0*(totalSpeed / nTimesAverage)*160/500000));
 }
 
@@ -348,3 +349,4 @@ void _CaptureFrequency(TIM_TypeDef* TIMx, uint32_t captureNum, uint8_t timerOver
     _updateTimesLR++;
   }
 }
+
