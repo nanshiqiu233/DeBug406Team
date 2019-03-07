@@ -86,14 +86,17 @@
 	}
   double _GetADCError(void)
 	{
-		double Error;
-		double _TURE=933.0;
-		uint16_t *ADCdata;
-		ADCdata = (uint16_t *)GetADCData();
-		uint16_t temp1,temp2;
-		temp1=*(ADCdata+3);
-		temp2=*(ADCdata+4);
-		Error=temp1+temp2-_TURE;
+		double Error,Bias;
+		double _TURE=0.000082755733553;
+		const AdcData_t * adcData;
+		uint16_t temp1=0,temp2=0;
+		adcData = UpdateButtom();
+		for(int i=0;i<=3;i++)
+		temp1=adcData->array[0][i];
+		for(int i=4;i<=4;i++)
+		temp2=adcData->array[0][i];
+		Bias=(sqrt(temp1*1.0)-sqrt(temp2*1.0))/(temp1+temp2);
+		Error=_TURE-Bias;
 		return Error;
 	}
 	double _TrackingCoreAlgorithm(void)

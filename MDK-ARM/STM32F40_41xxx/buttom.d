@@ -14,6 +14,7 @@ stm32f40_41xxx\buttom.o: ..\_Layer\buttom.h
 stm32f40_41xxx\buttom.o: ..\_Layer\gyro.h
 stm32f40_41xxx\buttom.o: ..\_Layer\laser.h
 stm32f40_41xxx\buttom.o: ..\_Logic\line.h
+stm32f40_41xxx\buttom.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 stm32f40_41xxx\buttom.o: ../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 stm32f40_41xxx\buttom.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\core_cm4.h
 stm32f40_41xxx\buttom.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_version.h

@@ -1,5 +1,6 @@
 #include "encoder.h"
 #include "buttom.h"
+#include "math.h"
 /**
   ******************************************************************************
   * @file    Project/STM32F4xx_StdPeriph_Templates/line.h 
