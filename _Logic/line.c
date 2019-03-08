@@ -101,7 +101,7 @@
 	}
 	double _TrackingCoreAlgorithm(void)
 {
-	float Kp = 10, Ki = 0, Kd = 4.5;                    
+	float Kp = 10, Ki = 0.8, Kd = 4.4;                    
 	float error = 0, P = 0.0, I = 0., D = 0, PID_value = 0;
 	error=_GetADCError();
 	//printf("%f\r\n",error);
@@ -117,6 +117,6 @@
 void _GoLine(void)
 {
 	//printf("%f,%f\r\n",_LastSpeed,_LastSpeedL);
-	//SetMotorDutyRatio(0.02+_TrackingCoreAlgorithm(), 0.02-_TrackingCoreAlgorithm());
-	SetWheelSpeed((float)0.02+_TrackingCoreAlgorithm(),(float)0.02-_TrackingCoreAlgorithm());
+	SetMotorDutyRatio(0.12+_TrackingCoreAlgorithm(), 0.12-_TrackingCoreAlgorithm());
+	//SetWheelSpeed((float)0.02+_TrackingCoreAlgorithm(),(float)0.02-_TrackingCoreAlgorithm());
 }

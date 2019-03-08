@@ -3,7 +3,7 @@
 <title>Static Call Graph - [STM32F40_41xxx\STM32F40_41xxx.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image STM32F40_41xxx\STM32F40_41xxx.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Mar 07 19:22:23 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Mar 08 14:52:27 2019
 <BR><P>
 <H3>Maximum Stack Usage =        256 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -434,7 +434,7 @@ Global Symbols
 
 <P><STRONG><a name="[12a]"></a>TIM_CCPreloadControl</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[ba]"></a>TIM_ITConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_tim.o(.text))
+<P><STRONG><a name="[ba]"></a>TIM_ITConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_tim.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WaittingTriggerWithFunc
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WaittingTrigger
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetRFSpeed
@@ -1313,7 +1313,8 @@ Global Symbols
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmple
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetMotorPulse
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetWheelSpeed
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GoLine
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetWheelSpeed
 </UL>
 
 <P><STRONG><a name="[b0]"></a>UpgradeMotorState</STRONG> (Thumb, 98 bytes, Stack size 8 bytes, motor.o(.text), UNUSED)
@@ -1326,16 +1327,12 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateMotorState
 </UL>
 
-<P><STRONG><a name="[b2]"></a>SetWheelSpeed</STRONG> (Thumb, 1236 bytes, Stack size 40 bytes, motor.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = SetWheelSpeed &rArr; GetRFSpeed &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
-</UL>
-<BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
+<P><STRONG><a name="[b2]"></a>SetWheelSpeed</STRONG> (Thumb, 1236 bytes, Stack size 40 bytes, motor.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetRFSpeed
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetLRSpeed
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetMotorDutyRatio
-</UL>
-<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GoLine
 </UL>
 
 <P><STRONG><a name="[b7]"></a>Encoder_Init</STRONG> (Thumb, 248 bytes, Stack size 40 bytes, encoder.o(.text), UNUSED)
@@ -1557,7 +1554,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_TrackingCoreAlgorithm
 </UL>
 
-<P><STRONG><a name="[dd]"></a>_TrackingCoreAlgorithm</STRONG> (Thumb, 524 bytes, Stack size 48 bytes, line.o(.text))
+<P><STRONG><a name="[dd]"></a>_TrackingCoreAlgorithm</STRONG> (Thumb, 532 bytes, Stack size 48 bytes, line.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = _TrackingCoreAlgorithm &rArr; _GetADCError &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
@@ -1567,11 +1564,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GoLine
 </UL>
 
-<P><STRONG><a name="[76]"></a>_GoLine</STRONG> (Thumb, 104 bytes, Stack size 32 bytes, line.o(.text))
+<P><STRONG><a name="[76]"></a>_GoLine</STRONG> (Thumb, 96 bytes, Stack size 32 bytes, line.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = _GoLine &rArr; _TrackingCoreAlgorithm &rArr; _GetADCError &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetWheelSpeed
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetMotorDutyRatio
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_TrackingCoreAlgorithm
@@ -1681,8 +1677,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
 </UL>
-<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GoLine
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetWheelSpeed
+<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetWheelSpeed
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_TrackingCoreAlgorithm
 </UL>
 
@@ -1754,10 +1749,8 @@ Global Symbols
 
 <P><STRONG><a name="[1c5]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
-<P><STRONG><a name="[b3]"></a>GetLRSpeed</STRONG> (Thumb, 162 bytes, Stack size 48 bytes, encoder.o(i.GetLRSpeed))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = GetLRSpeed &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
-</UL>
-<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearITPendingBit
+<P><STRONG><a name="[b3]"></a>GetLRSpeed</STRONG> (Thumb, 162 bytes, Stack size 48 bytes, encoder.o(i.GetLRSpeed), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearITPendingBit
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITConfig
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
@@ -1767,10 +1760,8 @@ Global Symbols
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_FindRightSpeedLR
 </UL>
 
-<P><STRONG><a name="[b5]"></a>GetRFSpeed</STRONG> (Thumb, 158 bytes, Stack size 48 bytes, encoder.o(i.GetRFSpeed))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = GetRFSpeed &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
-</UL>
-<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearITPendingBit
+<P><STRONG><a name="[b5]"></a>GetRFSpeed</STRONG> (Thumb, 158 bytes, Stack size 48 bytes, encoder.o(i.GetRFSpeed), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearITPendingBit
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITConfig
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
