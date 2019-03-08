@@ -92,16 +92,17 @@
 		uint16_t temp1=0,temp2=0;
 		adcData = UpdateButtom();
 		for(int i=0;i<=3;i++)
-		temp1=adcData->array[0][i];
-		for(int i=4;i<=4;i++)
-		temp2=adcData->array[0][i];
+		temp1+=adcData->array[0][i];
+		for(int i=4;i<=7;i++)
+		temp2+=adcData->array[0][i];
 		Bias=(sqrt(temp1*1.0)-sqrt(temp2*1.0))/(temp1+temp2);
+		//printf("%f\r\n",Bias);
 		Error=_TURE-Bias;
 		return Error;
 	}
 	double _TrackingCoreAlgorithm(void)
 {
-	float Kp = 10, Ki = 0.8, Kd = 4.4;                    
+	float Kp = 28.763, Ki = 0, Kd = 8.3;                    
 	float error = 0, P = 0.0, I = 0., D = 0, PID_value = 0;
 	error=_GetADCError();
 	//printf("%f\r\n",error);
@@ -117,6 +118,6 @@
 void _GoLine(void)
 {
 	//printf("%f,%f\r\n",_LastSpeed,_LastSpeedL);
-	SetMotorDutyRatio(0.12+_TrackingCoreAlgorithm(), 0.12-_TrackingCoreAlgorithm());
-	//SetWheelSpeed((float)0.02+_TrackingCoreAlgorithm(),(float)0.02-_TrackingCoreAlgorithm());
+	SetMotorDutyRatio(0.15+_TrackingCoreAlgorithm(), 0.15-_TrackingCoreAlgorithm());
+	//SetWheelSpeed((float)0.55+_TrackingCoreAlgorithm(),(float)0.55-_TrackingCoreAlgorithm());
 }

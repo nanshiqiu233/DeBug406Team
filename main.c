@@ -24,13 +24,15 @@ int main(void)
   MotorPWM_Init();
   Adc_Init();
   Gyro_Init();
-  
+  Encoder_Init();
   SysTickDelay(1000);
   printf(" Hello World!");
   
  //SetMotorDutyRatio(0.5, 0.5);
  //SetMotorForwardTime(1000);
-
+	//UpdateMotorState(MOTOR_FRONT);
+	//SetWheelSpeed(0.5,0.5);
+	//SysTickDelay(50);
   /* Infinite loop *******************************************************/
   while (TRUE)
   {

@@ -324,8 +324,8 @@ void SetWheelSpeed(float LTarGetSpeed, float RTarGetSpeed)
 	static float LPWM = 0.00;
 	static float RPWM = 0.00;
 	
-	LTarGetSpeed *= (float)0.04;
-	RTarGetSpeed *= (float)0.04;
+	LTarGetSpeed *= (float)4;
+	RTarGetSpeed *= (float)4;
 		
 	LRealSpeed = GetLRSpeed(1);
 	RRealSpeed = GetRFSpeed(1);
