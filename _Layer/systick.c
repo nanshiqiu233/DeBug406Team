@@ -9,9 +9,13 @@
 /* Private variables ---------------------------------------------------------*/
 static volatile uint32_t _timingDelay;
 
+
+/* Public variables ---------------------------------------------------------*/
+uint8_t _UpdateTick20ms = 0;
+
 /* Private function prototypes -----------------------------------------------*/
 /*static*/ inline void _DelayOneMs_Interrupt(void);
-
+void _StateMachineTick_Interrupt(void);
 /* Private functions ---------------------------------------------------------*/
 
 /**
@@ -50,3 +54,18 @@ void _DelayOneMs_Interrupt(void)
     _timingDelay--;
   }
 }
+
+
+void _StateMachineTick_Interrupt(void)
+{
+	static uint16_t counter = 0;
+	
+	counter ++;
+	
+	if(counter > 20)
+	{
+		counter = 0;
+		_UpdateTick20ms = 1;
+	}
+}
+

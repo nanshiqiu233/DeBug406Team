@@ -34,6 +34,7 @@
 /* Exported functions (F12)-------------------------------------------------- */
 void SysTick_Init(void);
 void SysTickDelay(uint32_t nTime);
+void _StateMachineTick_Interrupt(void);
 
 /* Reference Only -> (F12) SysTick_Handler(); */
 /*static*/ inline void _DelayOneMs_Interrupt(void);
