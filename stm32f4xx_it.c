@@ -143,6 +143,7 @@ void SysTick_Handler(void)
   _updateSysTick_Interrupt();
   _DelayOneMs_Interrupt();
   _forwardTime_Interrupt();
+	_StateMachineTick_Interrupt();
 }
 
 /******************************************************************************/
@@ -192,15 +193,20 @@ void TIM5_IRQHandler(void)
   _Timer5Capture_Interrupt();
 }
 
+
+
 /**
-  * @brief  This function handles EXIT0 interrupt request.
+  * @brief  This function handles EXTI15-10 interrupt request.
   * @param  None
   * @retval None
   */
-void EXTI0_IRQHandler(void)
+void EXTI15_10IRQHandler(void)
 {
-  _LaserEdgeTrigger_Interrupt();
-}	
+	_LaserEdgeTrigger_Interrupt();
+}
+
+
+
 
 /**
   * @brief  

@@ -5,6 +5,10 @@
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
+
+/* test only */
+extern uint8_t _UpdateTick20ms;
+
 /* Private functions ---------------------------------------------------------*/
 #ifndef _TEST_TAG_
 
@@ -25,23 +29,21 @@ int main(void)
   Adc_Init();
   Gyro_Init();
   Encoder_Init();
-  SysTickDelay(1000);
+	Laser_Init();
+  SysTickDelay(500);
   printf(" Hello World!");
-  
- //SetMotorDutyRatio(0.5, 0.5);
- //SetMotorForwardTime(1000);
-	//UpdateMotorState(MOTOR_FRONT);
-	//SetWheelSpeed(0.5,0.5);
-	//SysTickDelay(50);
+	
+	SetMotorDutyRatio(0.0,0.0);
+	UpdateMotorState(MOTOR_FRONT);
+	
+	SysTickDelay(3000);
+	SetMotorDutyRatio(0.05,0.05);
+
   /* Infinite loop *******************************************************/
   while (TRUE)
   {
-		UpdateMotorState(MOTOR_FRONT);
-		_GoLine();
-		//SetMotorDutyRatio(0.02,0.02);
-		//UpdateButtom();
-		SysTickDelay(20);
-  }
+			_GoLine();
+	}
 }
 
 #else
@@ -61,6 +63,10 @@ void DMA_USART_Test(void);
 int /*Test*/ main(void)
 {
   /* Local variables */
+	
+	//test only
+	uint16_t motor_counter = 0;
+	//test only
   
   /* Initialize Step *****************************************************/
   SysTick_Init();
@@ -70,16 +76,38 @@ int /*Test*/ main(void)
   MotorPWM_Init();
   Adc_Init();
   Gyro_Init();
-  //Laser_Init();
+  Laser_Init();
   
-  SysTickDelay(1000);
+  SysTickDelay(500);
   printf(" Hello World!\r\n");
+	
+	UpdateMotorState(MOTOR_FRONT);
+	SetMotorDutyRatio(0.0,0.0);
+	UpdateMotorState(MOTOR_STOP);
+	
+	SysTickDelay(3000);
+	SetMotorDutyRatio(0.05,0.05);
   
   /* Infinite loop */
-  while (TRUE)
+  while (1)
   {
-    Motor_EncoderFeedback_Test();
-    SysTickDelay(1000);
+		SysTickDelay(20);
+		if(motor_counter > 100)
+		{
+			SetWheelSpeed(0.80,0.80);
+		}
+		else
+		{
+			SetWheelSpeed(0.50,0.50);
+		}
+		
+		if(motor_counter > 200)
+		{
+			motor_counter = 0;
+		}
+		
+		printf("RF Speed:%f\r\n" , GetRFSpeed(1));
+		motor_counter ++;
   }
 }
 
@@ -185,14 +213,7 @@ void Gyro_Test(void)
   */
 void Laser_Test(void)
 {
-  if(GetLaserState() == COVERED)
-  {
-    printf("Was covered.\r\n");
-  }
-  else
-  {
-    printf("Was not covered.\r\n");    
-  }
+	
 }
 
 /**

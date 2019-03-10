@@ -336,22 +336,22 @@ void SetWheelSpeed(float LTarGetSpeed, float RTarGetSpeed)
 		
 		if(((LTarGetSpeed - LRealSpeed)) > (float)0.5)
 		{
-			LPWM += (float)0.01;
+			LPWM += (float)0.035;
 		}
 		
 		if(((LTarGetSpeed - LRealSpeed)) > (float)0.4)
 		{
-			LPWM += (float)0.005;
+			LPWM += (float)0.015;
 		}
 
 		if(((LTarGetSpeed - LRealSpeed)) > (float)0.3)
 		{
-			LPWM += (float)0.003;
+			LPWM += (float)0.01;
 		}
 
 		if(((LTarGetSpeed - LRealSpeed)) > (float)0.2)
 		{
-			LPWM += (float)0.002;
+			LPWM += (float)0.005;
 		}
 
 		if(((LTarGetSpeed - LRealSpeed)) > (float)0.1)
@@ -373,22 +373,22 @@ void SetWheelSpeed(float LTarGetSpeed, float RTarGetSpeed)
 		
 		if((LRealSpeed - LTarGetSpeed) > (float)0.5)
 		{
-			LPWM -= (float)0.01;
+			LPWM -= (float)0.035;
 		}
 
 		if((LRealSpeed - LTarGetSpeed) > (float)0.4)
 		{
-			LPWM -= (float)0.005;
+			LPWM -= (float)0.015;
 		}
 
 		if((LRealSpeed - LTarGetSpeed) > (float)0.3)
 		{
-			LPWM -= (float)0.003;
+			LPWM -= (float)0.01;
 		}
 
 		if((LRealSpeed - LTarGetSpeed) > (float)0.2)
 		{
-			LPWM -= (float)0.002;
+			LPWM -= (float)0.005;
 		}
 
 		if((LRealSpeed - LTarGetSpeed) > (float)0.1)
@@ -415,22 +415,22 @@ void SetWheelSpeed(float LTarGetSpeed, float RTarGetSpeed)
 		
 		if(((RTarGetSpeed - RRealSpeed)) > (float)0.5)
 		{
-			RPWM += (float)0.01;
+			RPWM += (float)0.035;
 		}
 		
 		if(((RTarGetSpeed - RRealSpeed)) > (float)0.4)
 		{
-			RPWM += (float)0.005;
+			RPWM += (float)0.015;
 		}
 
 		if(((RTarGetSpeed - RRealSpeed)) > (float)0.3)
 		{
-			RPWM += (float)0.003;
+			RPWM += (float)0.01;
 		}
 
 		if(((RTarGetSpeed - RRealSpeed)) > (float)0.2)
 		{
-			RPWM += (float)0.002;
+			RPWM += (float)0.005;
 		}
 
 		if(((RTarGetSpeed - RRealSpeed)) > (float)0.1)
@@ -451,22 +451,22 @@ void SetWheelSpeed(float LTarGetSpeed, float RTarGetSpeed)
 		
 		if((RRealSpeed - RTarGetSpeed) > (float)0.5)
 		{
-			RPWM -= (float)0.01;
+			RPWM -= (float)0.035;
 		}
 
 		if((RRealSpeed - RTarGetSpeed) > (float)0.4)
 		{
-			RPWM -= (float)0.005;
+			RPWM -= (float)0.015;
 		}
 
 		if((RRealSpeed - RTarGetSpeed) > (float)0.3)
 		{
-			RPWM -= (float)0.003;
+			RPWM -= (float)0.01;
 		}
 
 		if((RRealSpeed - RTarGetSpeed) > (float)0.2)
 		{
-			RPWM -= (float)0.002;
+			RPWM -= (float)0.005;
 		}
 
 		if((RRealSpeed - RTarGetSpeed) > (float)0.1)
