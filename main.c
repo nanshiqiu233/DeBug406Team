@@ -42,7 +42,11 @@ int main(void)
   /* Infinite loop *******************************************************/
   while (TRUE)
   {
+		if(_UpdateTick20ms == 1)
+		{
 			_GoLine();
+			_UpdateTick20ms = 0;
+		}
 	}
 }
 
