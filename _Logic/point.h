@@ -1,6 +1,6 @@
 #include "laser.h"
 #include "buttom.h"
-#include "math.h"
+#include "gyro.h"
 /**
   ******************************************************************************
   * @file    Project/STM32F4xx_StdPeriph_Templates/line.h 
@@ -13,3 +13,6 @@
 	* hunting and how the related algorithms work.
   ******************************************************************************
   */
+	#ifdef DEBUGROB_LOGIC_H
+	
+	#endif

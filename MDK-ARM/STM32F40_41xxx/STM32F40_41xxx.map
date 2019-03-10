@@ -24,7 +24,7 @@ Section Cross References
     main.o(.text) refers to encoder.o(.text) for Encoder_Init
     main.o(.text) refers to laser.o(.text) for Laser_Init
     main.o(.text) refers to printfb.o(i.__0printf$bare) for __2printf
-    main.o(.text) refers to line.o(.text) for _GoLineLowSpeed
+    main.o(.text) refers to line.o(.text) for _GoLine
     main.o(.text) refers to systick.o(.data) for _UpdateTick20ms
     stm32f4xx_dma2d.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_AHB1PeriphResetCmd
     stm32f4xx_pwr.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphResetCmd

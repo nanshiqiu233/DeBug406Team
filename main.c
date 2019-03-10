@@ -44,7 +44,7 @@ int main(void)
   {
 		if(_UpdateTick20ms == 1)
 		{
-			_GoLineLowSpeed();
+			_GoLine();
 			_UpdateTick20ms = 0;
 		}
 	}
