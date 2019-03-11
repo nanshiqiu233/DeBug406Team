@@ -200,7 +200,7 @@ void TIM5_IRQHandler(void)
   * @param  None
   * @retval None
   */
-void EXTI15_10IRQHandler(void)
+void EXTI15_10_IRQHandler(void)
 {
 	_LaserEdgeTrigger_Interrupt();
 }

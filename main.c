@@ -37,12 +37,16 @@ int main(void)
 	UpdateMotorState(MOTOR_FRONT);
 	
 	SysTickDelay(3000);
-	SetMotorDutyRatio(0.05,0.05);
 
   /* Infinite loop *******************************************************/
   while (TRUE)
   {
-			_GoLine();
+		if(IsLLaserChange() == Changed)
+		{
+			printf("Laser State is %d\r\n" ,(uint16_t)(GetLeftLaserState()));
+			ClearLLaserChangePendingBit();
+		}
+//			_GoLine();
 	}
 }
 
