@@ -10,6 +10,10 @@
 static LaserState_t _LLaserState = HIGH;
 static LaserState_t _RLaserState = HIGH;
 
+static LaserChangeState_t LLaserChangeState = UnChange;
+static LaserChangeState_t RLaserChangeState = UnChange;
+
+
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
@@ -34,7 +38,7 @@ void Laser_Init(void)
         - Input Mode
         - No-Pull
   */  
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13 | GPIO_Pin_15;
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
   GPIO_Init(GPIOG, &GPIO_InitStructure);
@@ -48,7 +52,7 @@ void Laser_Init(void)
         - Enable
   */  
 	SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOG, EXTI_PinSource13);
-	SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOG, EXTI_PinSource15);
+	SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOG, EXTI_PinSource11);
 	
   EXTI_InitStructure.EXTI_Line = EXTI_Line13;
   EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
@@ -75,7 +79,7 @@ void Laser_Init(void)
 }
 
 /**
-  * @brief  EXTI_IRQn's interrupt function (F12) EXTI0_IRQHandler().
+  * @brief  EXTI_IRQn's interrupt function (F12) EXTI15_10_IRQHandler().
   * @param  None
   * @retval None
   */
@@ -83,7 +87,9 @@ void _LaserEdgeTrigger_Interrupt(void)
 {
 	if(EXTI_GetITStatus(EXTI_Line13) == SET)
 	{
-		if(GPIO_ReadInputDataBit(GPIOF,GPIO_Pin_13) == SET)
+		LLaserChangeState = Changed;
+		
+		if(GPIO_ReadInputDataBit(GPIOG,GPIO_Pin_13) == SET)
 		{
 			_LLaserState = HIGH;
 		}
@@ -97,7 +103,9 @@ void _LaserEdgeTrigger_Interrupt(void)
 
 	if(EXTI_GetITStatus(EXTI_Line11) == SET)
 	{
-		if(GPIO_ReadInputDataBit(GPIOF,GPIO_Pin_11) == SET)
+		RLaserChangeState = Changed;
+		
+		if(GPIO_ReadInputDataBit(GPIOG,GPIO_Pin_11) == SET)
 		{
 			_RLaserState = HIGH;
 		}
@@ -113,7 +121,7 @@ void _LaserEdgeTrigger_Interrupt(void)
 /**
   * @brief  Get Left Laser's state.
   * @param  None
-  * @retval None
+  * @retval Laser State. Can be High or Low.
   */
 LaserState_t GetLeftLaserState(void)
 {
@@ -124,9 +132,51 @@ LaserState_t GetLeftLaserState(void)
 /**
   * @brief  Get Right Laser's state.
   * @param  None
-  * @retval None
+  * @retval Laser State. Can be High or Low.
   */
 LaserState_t GetRightLaserState(void)
 {
   return _RLaserState;
 }
+
+/**
+  * @brief  See if the Left Laser State Changed.
+  * @param  None
+  * @retval Laser Change State. Can be Changed or Unchange.
+  */
+LaserChangeState_t IsLLaserChange(void)
+{
+	return LLaserChangeState;
+}
+
+/**
+  * @brief  See if the Right Laser State Changed.
+  * @param  None
+  * @retval Laser Change State. Can be Changed or Unchange.
+  */
+LaserChangeState_t IsRLaserChange(void)
+{
+	return RLaserChangeState;
+}
+
+/**
+  * @brief  Clear the Pending Bit of LLaser Change State to Unchange.
+  * @param  None
+  * @retval None
+  */
+void ClearLLaserChangePendingBit(void)
+{
+	LLaserChangeState = UnChange;
+}
+
+
+/**
+  * @brief  Clear the Pending Bit of RLaser Change State to Unchange..
+  * @param  None
+  * @retval None
+  */
+void ClearRLaserChangePendingBit(void)
+{
+	RLaserChangeState = UnChange;
+}
+

@@ -18,6 +18,9 @@
 		# 引脚设置       左边激光管        PG13 	输入模式 无拉电阻
 										 右边激光管		     PG11		输入模式 无拉电阻
 		
+		# 特别说明       由于焊接的原因 引脚 PG14 PG12分别被与PG13 PG11
+								     焊接到了一起 因此以后不要动PG12 PG14
+		
   *
   ******************************************************************************
   */
@@ -37,11 +40,29 @@ typedef enum laserState__
   HIGH= 1
 	
 } LaserState_t;
+
+typedef enum 
+{
+	
+  UnChange = 0,
+  Changed = 1
+	
+} LaserChangeState_t;
+
+
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions (F12)-------------------------------------------------- */
 void Laser_Init(void);
-LaserState_t GetLaserState(void);
+
+LaserState_t GetLeftLaserState(void);
+LaserState_t GetRightLaserState(void);
+
+LaserChangeState_t IsLLaserChange(void);
+LaserChangeState_t IsRLaserChange(void);
+
+void ClearLLaserChangePendingBit(void);
+void ClearRLaserChangePendingBit(void);
 
 /* Reference Only -> (F12) EXTI0_IRQHandler(); */
 /*static*/ inline void _LaserEdgeTrigger_Interrupt(void);
