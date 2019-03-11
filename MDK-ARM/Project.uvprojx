@@ -1391,6 +1391,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\line.c</FilePath>
             </File>
+            <File>
+              <FileName>point.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\point.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1405,6 +1410,11 @@
               <FileName>line.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\line.h</FilePath>
+            </File>
+            <File>
+              <FileName>point.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\point.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2801,6 +2811,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\line.c</FilePath>
             </File>
+            <File>
+              <FileName>point.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\point.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2815,6 +2830,11 @@
               <FileName>line.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\line.h</FilePath>
+            </File>
+            <File>
+              <FileName>point.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\point.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -4211,6 +4231,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\line.c</FilePath>
             </File>
+            <File>
+              <FileName>point.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\point.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -4225,6 +4250,11 @@
               <FileName>line.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\line.h</FilePath>
+            </File>
+            <File>
+              <FileName>point.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\point.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -5669,6 +5699,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\line.c</FilePath>
             </File>
+            <File>
+              <FileName>point.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\point.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -5683,6 +5718,11 @@
               <FileName>line.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\line.h</FilePath>
+            </File>
+            <File>
+              <FileName>point.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\point.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -7076,6 +7116,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\line.c</FilePath>
             </File>
+            <File>
+              <FileName>point.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\point.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -7090,6 +7135,11 @@
               <FileName>line.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\line.h</FilePath>
+            </File>
+            <File>
+              <FileName>point.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\point.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -8381,6 +8431,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\line.c</FilePath>
             </File>
+            <File>
+              <FileName>point.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\point.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -8395,6 +8450,11 @@
               <FileName>line.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\line.h</FilePath>
+            </File>
+            <File>
+              <FileName>point.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\point.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -9688,6 +9748,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\line.c</FilePath>
             </File>
+            <File>
+              <FileName>point.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\point.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -9702,6 +9767,11 @@
               <FileName>line.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\line.h</FilePath>
+            </File>
+            <File>
+              <FileName>point.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\point.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -10942,6 +11012,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\line.c</FilePath>
             </File>
+            <File>
+              <FileName>point.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\point.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -10956,6 +11031,11 @@
               <FileName>line.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\line.h</FilePath>
+            </File>
+            <File>
+              <FileName>point.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\point.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -12148,6 +12228,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\line.c</FilePath>
             </File>
+            <File>
+              <FileName>point.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\point.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -12162,6 +12247,11 @@
               <FileName>line.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\line.h</FilePath>
+            </File>
+            <File>
+              <FileName>point.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\point.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -13354,6 +13444,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\line.c</FilePath>
             </File>
+            <File>
+              <FileName>point.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\point.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -13368,6 +13463,11 @@
               <FileName>line.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\line.h</FilePath>
+            </File>
+            <File>
+              <FileName>point.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\point.h</FilePath>
             </File>
           </Files>
         </Group>

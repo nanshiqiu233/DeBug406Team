@@ -51,6 +51,7 @@
 "stm32f40_41xxx\servo.o"
 "stm32f40_41xxx\laser.o"
 "stm32f40_41xxx\line.o"
+"stm32f40_41xxx\point.o"
 --library_type=microlib --scatter "STM32F40_41xxx\STM32F40_41xxx.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

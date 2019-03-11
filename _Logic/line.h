@@ -30,4 +30,5 @@
 	double _TrackingCoreAlgorithm(void);
 	double _GetADCError(void);
 	void _GoLine(void);
+	void _GoLineLowSpeed(void);
 	#endif

@@ -24,7 +24,7 @@
 #define ADC_1_5     15
 #define ADC_1_6     16
 #define ADC_1_7     17
-
+//#define _USE_SERIAL_DEBUG
 /* Private variables ---------------------------------------------------------*/
 const static uint8_t _ADC_MAP[][8] = {
   {0, 1, 2, 3, 4, 5, 6, 7 },

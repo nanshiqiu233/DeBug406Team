@@ -41,12 +41,11 @@ int main(void)
   /* Infinite loop *******************************************************/
   while (TRUE)
   {
-		if(IsLLaserChange() == Changed)
+		if(_UpdateTick20ms == 1)
 		{
-			printf("Laser State is %d\r\n" ,(uint16_t)(GetLeftLaserState()));
-			ClearLLaserChangePendingBit();
+			_GoLine();
+			_UpdateTick20ms = 0;
 		}
-//			_GoLine();
 	}
 }
 
