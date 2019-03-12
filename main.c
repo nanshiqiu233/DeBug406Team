@@ -1,6 +1,6 @@
 /** See a brief introduction (right-hand button) */
 #include "main.h"
-
+//#define _TEST_TAG_
 /* Private macro -------------------------------------------------------------*/
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -45,6 +45,7 @@ int main(void)
 		if(_UpdateTick20ms == 1)
 		{
 			_GoLine();
+			_FindPoint();
 			_UpdateTick20ms = 0;
 		}
 	}
@@ -83,7 +84,7 @@ int /*Test*/ main(void)
   Laser_Init();
   
   SysTickDelay(500);
-  printf(" Hello World!\r\n");
+  //printf(" Hello World!\r\n");
 	
 	UpdateMotorState(MOTOR_FRONT);
 	SetMotorDutyRatio(0.0,0.0);
@@ -91,27 +92,36 @@ int /*Test*/ main(void)
 	
 	SysTickDelay(3000);
 	SetMotorDutyRatio(0.05,0.05);
-  
+  //char *s[]={"1","2"};
   /* Infinite loop */
   while (1)
   {
-		SysTickDelay(20);
-		if(motor_counter > 100)
+//		SysTickDelay(20);
+//		if(motor_counter > 100)
+//		{
+//			SetWheelSpeed(0.80,0.80);
+//		}
+//		else
+//		{
+//			SetWheelSpeed(0.50,0.50);
+//		}
+//		
+//		if(motor_counter > 200)
+//		{
+//			motor_counter = 0;
+//		}
+//		
+//		printf("RF Speed:%f\r\n" , GetRFSpeed(1));
+//		motor_counter ++;
+		if(GetRightLaserState()==HIGH)
 		{
-			SetWheelSpeed(0.80,0.80);
+			printf(" 1");
 		}
-		else
+		else if(GetRightLaserState()==LOW)
 		{
-			SetWheelSpeed(0.50,0.50);
+			printf(" 0");
 		}
-		
-		if(motor_counter > 200)
-		{
-			motor_counter = 0;
-		}
-		
-		printf("RF Speed:%f\r\n" , GetRFSpeed(1));
-		motor_counter ++;
+		SysTickDelay(1000);
   }
 }
 
