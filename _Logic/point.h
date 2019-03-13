@@ -15,4 +15,6 @@
   */
 	#ifdef DEBUGROB_LOGIC_H
 	void _FindPoint(void);
+	void _ArrivePlatform(void);
+	uint32_t _CalculationADC(void);
 	#endif
