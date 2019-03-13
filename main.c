@@ -43,9 +43,9 @@ int main(void)
   {
 		if(_UpdateTick20ms == 1)
 		{
-//			_GoLine();
-//			_FindPoint();
-			_GoBridgePID();
+			_GoLine();
+			_FindPoint();
+//			_GoBridge();
 			_UpdateTick20ms = 0;
 		}
 	}

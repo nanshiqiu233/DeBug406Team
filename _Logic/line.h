@@ -28,9 +28,9 @@
 //	double _SpeedToDutyCycleL(void);
 	/*Use the core part of the grayscale sensor and laser tube algorithm. If you need to modify it, please refer to the README.MD file under the LOGIC file.*/
 	double _TrackingCoreAlgorithm(void);
-	double _GoBridgeADC(void);
-	double _GoBridgePID(void);
-	double _GoBridge(void);
+//	double _GoBridgeADC(void);
+//	double _GoBridgePID(void);
+//	void _GoBridge(void);
 	double _GetADCError(void);
 	void _GoLine(void);
 	void _GoLineLowSpeed(void);
