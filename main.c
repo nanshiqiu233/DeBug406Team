@@ -8,10 +8,9 @@
 
 /* test only */
 extern uint8_t _UpdateTick20ms;
-
+//#define _TEST_TAG_
 /* Private functions ---------------------------------------------------------*/
 #ifndef _TEST_TAG_
-
 /**
   * @brief  Main program
   * @param  None
@@ -44,8 +43,9 @@ int main(void)
   {
 		if(_UpdateTick20ms == 1)
 		{
-			_GoLine();
-			_FindPoint();
+//			_GoLine();
+//			_FindPoint();
+			_GoBridgePID();
 			_UpdateTick20ms = 0;
 		}
 	}
@@ -113,14 +113,7 @@ int /*Test*/ main(void)
 //		
 //		printf("RF Speed:%f\r\n" , GetRFSpeed(1));
 //		motor_counter ++;
-		if(GetRightLaserState()==HIGH)
-		{
-			printf(" 1");
-		}
-		else if(GetRightLaserState()==LOW)
-		{
-			printf(" 0");
-		}
+		UpdateButtom();
 		SysTickDelay(1000);
   }
 }

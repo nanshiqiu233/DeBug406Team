@@ -10,9 +10,10 @@ void _FindPoint()
 	}
 	if(temp<=20114&&(IsLLaserChange() == Changed||IsRLaserChange() == Changed))
 	{
-		UpdateMotorState(MOTOR_FRONT);
-		SetWheelSpeed(0.5,0.5);
-		SysTickDelay(100);
+		UpdateMotorState(MOTOR_STOP);
+//		UpdateMotorState(MOTOR_FRONT);
+//		SetWheelSpeed(0.5,0.5);
+//		SysTickDelay(100);
 	}
 	/*test only*/
 	//adcData->array[0][i];
