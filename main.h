@@ -29,6 +29,7 @@
 #include "gyro.h"
 #include "laser.h"
 #include "line.h"
+#include "point.h"
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Main Function select */

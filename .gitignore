@@ -1,11 +1,9 @@
 *.Admin
-/STM32F40_41xxx/
+
 *.crf
 *.d
 *.o
 *.dep
-*.axf
-*.htm
 *.hex
 *.lnp
 *.map

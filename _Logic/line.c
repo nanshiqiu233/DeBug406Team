@@ -43,8 +43,6 @@ double _TrackingCoreAlgorithmLowSpeed(void)
   I = I + error;
   D = error - previous_error;
   PID_value = (Kp * P) + (Ki * I) + (Kd * D);
-  //printf("%f\r\n",PID_value);
-  //SetMotorDutyRatio(0.15+PID_value, 0.15+PID_value);
   previous_error = error;
   return PID_value;
 }
