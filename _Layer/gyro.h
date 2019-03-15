@@ -2,11 +2,11 @@
   ******************************************************************************
   * @file    Project/STM32F4xx_StdPeriph_Templates/gyro.h 
   * @author  Debug406 Team
-  * @date    13-March-2018
+  * @date    13-March-2019
   * @brief   Header for main.c module
   ******************************************************************************
   * @attention
-    ## GYRO is communicated by IIC
+    ## GYRO is communicated by USART2s
     ## IIC   SCL -> PB8 -- Clock output only
              SDA -> PB9 -- Data is IO mode
     ## USART TX  -> PD5
@@ -34,37 +34,12 @@
   ******************************************************************************
   */
 
-/* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef DEBUGROB_GYRO_H
 #define DEBUGROB_GYRO_H
 
-/* Includes ------------------------------------------------------------------*/
-#include <stdint.h>
-
-/* Exported types ------------------------------------------------------------*/
-/* Exported constants --------------------------------------------------------*/
-/* Exported macro ------------------------------------------------------------*/
-/** IIC Software Simulation definition ***********************************/
-#define _USE_SOFTIIC
-
-/* Exported functions --------------------------------------------------------*/
+/* Exported functions ------------------------------------------------------- */
 void Gyro_Init(void);
-uint8_t IICreadBytes(uint8_t dev, uint8_t reg, uint8_t length, uint8_t *data);
-uint8_t IICwriteBytes(uint8_t dev, uint8_t reg, uint8_t length, uint8_t *data);
 
-/* DebugRob Use */
-void UpdateAngleValue(void);
-double GetRollAngle(void);
-double GetPitchAngle(void);
-double GetYawAngle(void);
+void Gyro_Usart_Rx_Interrupt(void);
 
-/* Test for gyro */
-float* GetInfoFromGyro(void);
-
-#ifdef _USE_SOFTIIC
-  
-#else
-
-#endif //!_USE_SOFTIIC
-
-#endif /* DEBUGROB_GYRO_H */
+#endif

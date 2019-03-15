@@ -1,5 +1,6 @@
 /** See a brief introduction (right-hand button) */
 #include "main.h"
+#include "stm32f4xx_usart.h"
 //#define _TEST_TAG_
 /* Private macro -------------------------------------------------------------*/
 /* Private typedef -----------------------------------------------------------*/
@@ -8,6 +9,7 @@
 
 /* test only */
 extern uint8_t _UpdateTick20ms;
+extern uint8_t _Usart2_RxBuffer[11];
 
 /* Private functions ---------------------------------------------------------*/
 #ifndef _TEST_TAG_
@@ -36,7 +38,7 @@ int main(void)
 	SetMotorDutyRatio(0.0,0.0);
 	UpdateMotorState(MOTOR_FRONT);
 	
-	//UpdateMotorState(MOTOR_STOP);
+	UpdateMotorState(MOTOR_STOP);
 	
 	SysTickDelay(3000);
 
@@ -49,6 +51,10 @@ int main(void)
 			_FindPoint();
 			_UpdateTick20ms = 0;
 		}
+		
+		SysTickDelay(1000);
+		printf("%X\r\n",_Usart2_RxBuffer[0]);
+		USART_SendData(USART2,0xaa);
 	}
 }
 

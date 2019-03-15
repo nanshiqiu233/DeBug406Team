@@ -217,10 +217,17 @@ void DMA2_Stream7_IRQHandler(void)
 {
   if(DMA_GetITStatus(DMA2_Stream7, DMA_IT_TCIF7))
   {
-    DMA_ClearFlag(DMA2_Stream7, DMA_IT_TCIF7); //?
+    DMA_ClearFlag(DMA2_Stream7, DMA_IT_TCIF7); 
     USART_DMACmd(USART1, USART_DMAReq_Tx, DISABLE);
   }
 }	
+
+
+void DMA1_Stream5_IRQHandler(void)
+{
+	Gyro_Usart_Rx_Interrupt();
+}
+
 
 /**
   * @}

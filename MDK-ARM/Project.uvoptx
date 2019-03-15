@@ -1095,7 +1095,7 @@
         <bEvRecOn>1</bEvRecOn>
         <bSchkAxf>0</bSchkAxf>
         <bTchkAxf>0</bTchkAxf>
-        <nTsel>4</nTsel>
+        <nTsel>3</nTsel>
         <sDll></sDll>
         <sDllPa></sDllPa>
         <sDlgDll></sDlgDll>
@@ -1109,6 +1109,10 @@
         <pMon>Segger\JL2CM3.dll</pMon>
       </DebugOpt>
       <TargetDriverDllRegistry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>DLGUARM</Key>
+        </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
           <Key>PWSTATINFO</Key>
@@ -1151,7 +1155,7 @@
           <Type>0</Type>
           <LineNumber>160</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134235268</Address>
+          <Address>134235500</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -1177,6 +1181,22 @@
           <Filename>D:\develop\debug406\DEBUG406_灏忚溅2019\DEBUG406AUTOCAR2019-MCU\Project\DeBug406Team\stm32f4xx_it.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression>\\STM32F40_41xxx\../stm32f4xx_it.c\204</Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>105</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134232364</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\develop\debug406\DEBUG406_灏忚溅2019\DEBUG406AUTOCAR2019-MCU\Project\DeBug406Team\_Layer\gyro.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\STM32F40_41xxx\../_Layer/gyro.c\105</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
