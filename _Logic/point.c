@@ -19,15 +19,15 @@ void _FindPoint()
 	{
 		temp+=adcData->array[0][i];
 	}
-	if(temp<=20114&&(IsLLaserChange() == Changed||IsRLaserChange() == Changed))
+	if(temp<=16000&&(IsLLaserChange() == Changed||IsRLaserChange() == Changed))
 	{
 		//UpdateMotorState(MOTOR_STOP);
 		UpdateMotorState(MOTOR_FRONT);
-		SetMotorDutyRatio(0.14,0.14);
+		SetMotorDutyRatio(0.14,0.13);
 		ClearLLaserChangePendingBit();
 		ClearRLaserChangePendingBit();
 		//printf("1");
-		SysTickDelay(50);
+		//SysTickDelay(50);
 	}
 	/*test only*/
 	//adcData->array[0][i];
@@ -48,10 +48,10 @@ void _ArrivePlatform(void)
 	}
 	if(IsLLaserChange() == Changed&&IsRLaserChange() == Changed)
 		{
-			SysTickDelay(100);
-	if(temp<=22000)
+			SysTickDelay(125);
+	if(temp<=20000)
 	{
-		SysTickDelay(50);
+		//SysTickDelay(30);
 		UpdateMotorState(MOTOR_STOP);
 	}
 		}
