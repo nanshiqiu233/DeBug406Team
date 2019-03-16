@@ -46,7 +46,7 @@ int main(void)
 //			_ArrivePlatform();
 //			UpdateButtom();
 			_FindPoint();
-			_GoLine();
+			_GoLineLowSpeed();
 			//_FindPoint();
 //			_GoBridge();
 			_UpdateTick20ms = 0;

@@ -17,4 +17,5 @@
 	void _FindPoint(void);
 	void _ArrivePlatform(void);
 	uint32_t _CalculationADC(void);
+	uint32_t _UpdateButtomValue(void);
 	#endif
