@@ -105,3 +105,48 @@ void Gyro_Usart_Rx_Interrupt(void)
 {
 	DMA_ClearFlag(DMA1_Stream5,DMA_FLAG_TCIF5);
 }
+
+
+float Gyro_GetRollAngle(void)
+{
+	uint32_t temp = 0;
+	float output = 0;
+	
+	temp = _Usart2_RxBuffer[3];
+	temp <<= 8;
+	temp |= _Usart2_RxBuffer[2];
+	
+	output = (float)temp / (float)32768 * (float)180;
+	
+	return output;
+}
+
+float Gyro_GetPitchAngle(void)
+{
+	uint32_t temp = 0;
+	float output = 0;
+	
+	temp = _Usart2_RxBuffer[5];
+	temp <<= 8;
+	temp |= _Usart2_RxBuffer[4];
+	
+	output = (float)temp / (float)32768 * (float)180;
+	
+	return output;
+}
+
+float Gyro_GetYawAngle(void)
+{
+	uint32_t temp = 0;
+	float output = 0;
+	
+	temp = _Usart2_RxBuffer[7];
+	temp <<= 8;
+	temp |= _Usart2_RxBuffer[6];
+	
+	output = (float)temp / (float)32768 * (float)180;
+	
+	return output;
+}
+
+

@@ -42,4 +42,8 @@ void Gyro_Init(void);
 
 void Gyro_Usart_Rx_Interrupt(void);
 
+float Gyro_GetRollAngle(void);
+float Gyro_GetPitchAngle(void);
+float Gyro_GetYawAngle(void);
+
 #endif

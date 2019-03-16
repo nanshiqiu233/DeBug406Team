@@ -1,6 +1,7 @@
 /** See a brief introduction (right-hand button) */
 #include "main.h"
 #include "stm32f4xx_usart.h"
+#include "gyro.h"
 //#define _TEST_TAG_
 /* Private macro -------------------------------------------------------------*/
 /* Private typedef -----------------------------------------------------------*/
@@ -29,7 +30,7 @@ int main(void)
   Serial_Init();
   MotorPWM_Init();
   Adc_Init();
-  Gyro_Init();
+  //Gyro_Init();
   Encoder_Init();
 	Laser_Init();
   SysTickDelay(500);
@@ -51,11 +52,11 @@ int main(void)
 			_FindPoint();
 			_UpdateTick20ms = 0;
 		}
-		
-		SysTickDelay(1000);
-		printf("%X\r\n",_Usart2_RxBuffer[0]);
-		USART_SendData(USART2,0xaa);
 	}
+//		SysTickDelay(498);
+//		printf("Roll %f  " , Gyro_GetRollAngle());
+//		printf("Pitch %f  " , Gyro_GetPitchAngle());
+//		printf("Yaw %f\r\n" , Gyro_GetYawAngle());
 }
 
 #else
