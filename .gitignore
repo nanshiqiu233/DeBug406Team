@@ -1,0 +1,12 @@
+
+*.Admin
+*.crf
+*.o
+*.d
+*.dep
+*.axf
+*.htm
+*.hex
+*.lnp
+*.sct
+*.map
