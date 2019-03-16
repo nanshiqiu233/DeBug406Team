@@ -29,13 +29,28 @@ int main(void)
   Gyro_Init();
   Encoder_Init();
 	Laser_Init();
-  SysTickDelay(500);
+	
+  SysTickDelay(250);
+	IWDG_ReloadCounter();
+	SysTickDelay(250);
+	IWDG_ReloadCounter();
+	
   printf(" Hello World!");
 	
 	SetMotorDutyRatio(0.0,0.0);
 	UpdateMotorState(MOTOR_FRONT);
 	
-	SysTickDelay(3000);
+	SysTickDelay(400);
+	IWDG_ReloadCounter();
+	SysTickDelay(400);
+	IWDG_ReloadCounter();
+	SysTickDelay(400);
+	IWDG_ReloadCounter();
+	SysTickDelay(400);
+	IWDG_ReloadCounter();
+	SysTickDelay(400);
+	IWDG_ReloadCounter();
+	
 	SetMotorDutyRatio(0.05,0.05);
 
   /* Infinite loop *******************************************************/
@@ -43,14 +58,16 @@ int main(void)
   {
 		if(_UpdateTick20ms == 1)
 		{
+			IWDG_ReloadCounter();
 //			_ArrivePlatform();
 //			UpdateButtom();
 			_FindPoint();
-			_GoLineLowSpeed();
+			_GoLine();
 			//_FindPoint();
 //			_GoBridge();
 			_UpdateTick20ms = 0;
 		}
+		
 	}
 }
 

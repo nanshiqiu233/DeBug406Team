@@ -35,6 +35,12 @@ void _FindPoint()
 	{
 		temp+=adcData->array[0][i];
 	}
+	if(IsLLaserChange() == Changed||IsRLaserChange() == Changed)
+	{
+		
+		if(_LastTimeButtomValue-temp<=8000)
+			SetMotorDutyRatio(0.04,0.04);
+	}
 	//printf("temp=%d\r\n",temp);
 	//printf("last=%d\r\n",_LastTimeButtomValue);
 	if(_LastTimeButtomValue-temp>=8000&&(IsLLaserChange() == Changed||IsRLaserChange() == Changed))
@@ -75,7 +81,7 @@ void _ArrivePlatform(void)
 		}
 	else 
 	{
-			ClearLLaserChangePendingBit();
+		ClearLLaserChangePendingBit();
 		ClearRLaserChangePendingBit();
 	}
 }

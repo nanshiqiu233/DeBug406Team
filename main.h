@@ -20,6 +20,7 @@
 #include <stdint.h>
 #include "systick.h"
 #include "serial.h"
+#include "stm32f4xx_iwdg.h"
 #include "board.h"
 //hardware 
 #include "motor.h"
