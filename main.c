@@ -30,11 +30,13 @@ int main(void)
   Serial_Init();
   MotorPWM_Init();
   Adc_Init();
-  //Gyro_Init();
+  Gyro_Init();
   Encoder_Init();
 	Laser_Init();
+	
   SysTickDelay(500);
-  printf(" Hello World!");
+	
+  printf(" Hello World!\r\n");
 	
 	SetMotorDutyRatio(0.0,0.0);
 	UpdateMotorState(MOTOR_FRONT);
@@ -46,17 +48,21 @@ int main(void)
   /* Infinite loop *******************************************************/
   while (TRUE)
   {
+		
+		
 		if(_UpdateTick20ms == 1)
 		{
 			_GoLine();
-			_FindPoint();
+			//_FindPoint();
 			_UpdateTick20ms = 0;
 		}
+		
+		SysTickDelay(100);
+		printf("Roll %f  " , Gyro_GetRollAngle());
+		printf("Pitch %f  " , Gyro_GetPitchAngle());
+		printf("Yaw %f\r\n" , Gyro_GetYawAngle());
+		
 	}
-//		SysTickDelay(498);
-//		printf("Roll %f  " , Gyro_GetRollAngle());
-//		printf("Pitch %f  " , Gyro_GetPitchAngle());
-//		printf("Yaw %f\r\n" , Gyro_GetYawAngle());
 }
 
 #else

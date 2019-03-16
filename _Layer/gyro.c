@@ -6,6 +6,7 @@
 #include "stdint.h"
 #include "stdio.h"
 #include "stdlib.h"
+#include "string.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_usart.h"
 #include "stm32f4xx_dma.h"
@@ -22,6 +23,11 @@ void Gyro_Init(void)
 	USART_InitTypeDef USART_USART2_Init;
 	NVIC_InitTypeDef USART2_DMA_NVIC_Init;
 	DMA_InitTypeDef USART2_Receive_DMA_Init;
+	
+	const uint8_t AutoCalibration[] = {0xff,0xaa,0x63,0x00,0x00};
+	const uint8_t SaveConfig[] = {0xff,0xaa,0x00,0x00,0x00};
+	
+	uint8_t counter = 0;
 	
 	//时钟开启
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD,ENABLE);
@@ -98,16 +104,80 @@ void Gyro_Init(void)
 	//使能DMA
 	DMA_Cmd(DMA1_Stream5,ENABLE);
 	
+	//陀螺仪自动校准
+	for(counter = 0;counter < sizeof(AutoCalibration);counter ++)
+	{
+		USART_SendData(USART2,(uint16_t)AutoCalibration[counter]);
+	}
+	
+	SysTickDelay(150);
+	
+	//保存参数
+	for(counter = 0;counter < sizeof(SaveConfig);counter ++)
+	{
+		USART_SendData(USART2,(uint16_t)SaveConfig[counter]);
+	}
+	
 }
 
 
+/*
+	函数名称：Gyro_Usart_Rx_Interrupt()
+	函数作用：陀螺仪串口DMA接收中断
+	函数输入：无
+	函数输出：无
+	函数参考：DMA1_Stream5_IRQHandler() (F12)
+*/
 void Gyro_Usart_Rx_Interrupt(void)
 {
+	uint8_t counter = 0;
+	uint8_t sum = 0;
+	
+	//DMA_Cmd(DMA1_Stream5,DISABLE);
+	
+	//计算校验和	
+	sum += _Usart2_RxBuffer[0];
+	sum += _Usart2_RxBuffer[1];
+	sum += _Usart2_RxBuffer[2];
+	sum += _Usart2_RxBuffer[3];
+	sum += _Usart2_RxBuffer[4];
+	sum += _Usart2_RxBuffer[5];
+	sum += _Usart2_RxBuffer[6];
+	sum += _Usart2_RxBuffer[7];
+	sum += _Usart2_RxBuffer[8];
+	sum += _Usart2_RxBuffer[9];
+
+	
+	//校验和判断
+	if(sum != _Usart2_RxBuffer[10])
+	{
+		//校验和不一致执行此处代码
+		
+		printf(" Fatal Error Gyro Data Integrity Check Fail.\r\n");
+		printf("Restarting System.\r\n");
+		
+		//重启系统
+		NVIC_SystemReset();
+	}
+			
 	DMA_ClearFlag(DMA1_Stream5,DMA_FLAG_TCIF5);
+	//DMA_Cmd(DMA1_Stream5,ENABLE);
 }
 
 
-float Gyro_GetRollAngle(void)
+
+/*
+	函数名称：Gyro_GetPitchAngle()
+	函数作用：获取陀螺仪的俯仰角
+	函数输入：无
+	函数输出：float类型俯仰角数据
+	函数说明：陀螺仪文档貌似有点问题 Pitch角实际测下来是Roll角
+	函数说明：这里已经对该情况进行了修正
+
+	数据格式：车在校准平面上的角度为0 从车屁股看向车头方向 俯冲为从0增加到360
+																		                     爬升为从360减少到0
+*/
+float Gyro_GetPitchAngle(void)
 {
 	uint32_t temp = 0;
 	float output = 0;
@@ -121,7 +191,19 @@ float Gyro_GetRollAngle(void)
 	return output;
 }
 
-float Gyro_GetPitchAngle(void)
+
+/*
+	函数名称：Gyro_GetRollAngle()
+	函数作用：获取陀螺仪的滚转角
+	函数输入：无
+	函数输出：float类型滚转角数据
+	函数说明：陀螺仪文档貌似有点问题 Pitch角实际测下来是Roll角
+	函数说明：这里已经对该情况进行了修正
+
+	数据格式：车在校准平面上的角度为0 从车屁股看向车头方向 左倾为从0增加到360
+																												 右倾为从360减少到0
+*/
+float Gyro_GetRollAngle(void)
 {
 	uint32_t temp = 0;
 	float output = 0;
@@ -135,6 +217,19 @@ float Gyro_GetPitchAngle(void)
 	return output;
 }
 
+
+
+/*
+	函数名称：Gyro_GetYawAngle()
+	函数作用：获取陀螺仪的偏航角
+	函数输入：无
+	函数输出：float类型偏航角数据
+	函数说明：陀螺仪采用了六轴算法而不是九轴算法
+	函数说明：意味着陀螺仪没法用地磁校准偏航轴
+	函数说明：意思就是Yaw数据每次上电就是0 然后左加右减
+	数据格式：车在校准平面上的角度为0 从车屁股看向车头方向 左转为从0增加到360
+																												 右转为从360减少到0
+*/
 float Gyro_GetYawAngle(void)
 {
 	uint32_t temp = 0;

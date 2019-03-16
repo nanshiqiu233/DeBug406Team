@@ -222,7 +222,11 @@ void DMA2_Stream7_IRQHandler(void)
   }
 }	
 
-
+/**
+  * @brief  This function handles DMA1Stream5 interrupt request.
+  * @param  None
+  * @retval None
+  */
 void DMA1_Stream5_IRQHandler(void)
 {
 	Gyro_Usart_Rx_Interrupt();
