@@ -40,6 +40,7 @@
 #include "board.h"
 #include "encoder.h"
 #include "laser.h"
+#include "gyro.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
