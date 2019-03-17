@@ -1,7 +1,5 @@
-#include "laser.h"
-#include "buttom.h"
 #include "gyro.h"
-#include "UpHillOrDownHill.h"
+#include "main.h"
 /**
   ******************************************************************************
   * @file    Project/STM32F4xx_StdPeriph_Templates/line.h 
@@ -14,9 +12,19 @@
 	* hunting and how the related algorithms work.
   ******************************************************************************
   */
-	#ifdef DEBUGROB_LOGIC_H
-	void _FindPoint(void);
-	void _ArrivePlatform(void);
-	uint32_t _CalculationADC(void);
-	uint32_t _UpdateButtomValue(void);
-	#endif
+	#ifndef DEBUGROB_UpDown_H
+	#define DEBUGROB_UpDown_H
+typedef enum 
+{
+	
+  UP = 1,
+  DOWN	= -1,
+	FlatGround = 0
+	
+} UpHillOrDownHill;
+UpHillOrDownHill _UpHillOrDownHillFeedBack(void);
+void _UpHillOrDownHillCheck(void);
+void _GetPrimaryRollAngle(void);
+void _ResetUpDown(void);
+#endif
+

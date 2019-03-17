@@ -189,9 +189,9 @@ void _ADCSwitcher(int adc)
   */
 uint16_t GetAdcValueInChannal(uint8_t channal)
 {
-	ADC_RegularChannelConfig(ADC1, channal, 1, ADC_SampleTime_28Cycles);
+	ADC_RegularChannelConfig(ADC1, channal, 1, ADC_SampleTime_56Cycles);
 	ADC_SoftwareStartConv(ADC1);
-  while (!ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC)){}
+	while (!ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC)){}
   return ADC_GetConversionValue(ADC1);
 }
 

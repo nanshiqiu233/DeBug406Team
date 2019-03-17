@@ -1,12 +1,12 @@
 #include "line.h"
 
-float previous_error = 0;
+static float previous_error = 0;
 
 double _GetADCError(void)
 {
   double Error,Bias;
   double _TURE=0.000082755733553;
-  const AdcData_t * adcData;
+  const AdcData_t* adcData;
   uint16_t temp1=0,temp2=0;
   adcData = UpdateButtom();
   for(int i=0; i<=3; i++)
@@ -20,7 +20,7 @@ double _GetADCError(void)
 }
 double _TrackingCoreAlgorithm(void)
 {
-  float Kp = 61.763, Ki = 0, Kd = 9.6;
+  float Kp = 85.763, Ki = 0, Kd =11.6;
   float error = 0, P = 0.0, I = 0., D = 0, PID_value = 0;
   error=_GetADCError();
   //printf("%f\r\n",error);
@@ -35,7 +35,7 @@ double _TrackingCoreAlgorithm(void)
 }
 double _TrackingCoreAlgorithmLowSpeed(void)
 {
-  float Kp = 71.763, Ki = 0, Kd = 9.6;
+  float Kp = 71.763, Ki = 0, Kd = 11.6;
   float error = 0, P = 0.0, I = 0., D = 0, PID_value = 0;
   error=_GetADCError();
   //printf("%f\r\n",error);

@@ -31,6 +31,7 @@
 #include "laser.h"
 #include "line.h"
 #include "point.h"
+#include "UpHillOrDownHill.h"
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Main Function select */

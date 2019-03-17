@@ -1396,6 +1396,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\point.c</FilePath>
             </File>
+            <File>
+              <FileName>UpHillOrDownHill.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UpHillOrDownHill.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1415,6 +1420,11 @@
               <FileName>point.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\point.h</FilePath>
+            </File>
+            <File>
+              <FileName>UpHillOrDownHill.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UpHillOrDownHill.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2816,6 +2826,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\point.c</FilePath>
             </File>
+            <File>
+              <FileName>UpHillOrDownHill.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UpHillOrDownHill.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2835,6 +2850,11 @@
               <FileName>point.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\point.h</FilePath>
+            </File>
+            <File>
+              <FileName>UpHillOrDownHill.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UpHillOrDownHill.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -3175,7 +3195,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F40_41xxx</Define>
               <Undefine></Undefine>
-              <IncludePath>../;../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include;../../../Libraries/STM32F4xx_StdPeriph_Driver/inc;../../../Utilities/STM32_EVAL/Common;../../../Utilities/STM32_EVAL/STM3240_41_G_EVAL;..\_Layer;..\_Logic</IncludePath>
+              <IncludePath>../;../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include;../../../Libraries/STM32F4xx_StdPeriph_Driver/inc;../../../Utilities/STM32_EVAL/Common;../../../Utilities/STM32_EVAL/STM3240_41_G_EVAL;..\_Layer;..\_Logic;..\MDK-ARM</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -4236,6 +4256,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\point.c</FilePath>
             </File>
+            <File>
+              <FileName>UpHillOrDownHill.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UpHillOrDownHill.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -4255,6 +4280,11 @@
               <FileName>point.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\point.h</FilePath>
+            </File>
+            <File>
+              <FileName>UpHillOrDownHill.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UpHillOrDownHill.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -5704,6 +5734,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\point.c</FilePath>
             </File>
+            <File>
+              <FileName>UpHillOrDownHill.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UpHillOrDownHill.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -5723,6 +5758,11 @@
               <FileName>point.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\point.h</FilePath>
+            </File>
+            <File>
+              <FileName>UpHillOrDownHill.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UpHillOrDownHill.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -7121,6 +7161,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\point.c</FilePath>
             </File>
+            <File>
+              <FileName>UpHillOrDownHill.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UpHillOrDownHill.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -7140,6 +7185,11 @@
               <FileName>point.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\point.h</FilePath>
+            </File>
+            <File>
+              <FileName>UpHillOrDownHill.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UpHillOrDownHill.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -8436,6 +8486,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\point.c</FilePath>
             </File>
+            <File>
+              <FileName>UpHillOrDownHill.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UpHillOrDownHill.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -8455,6 +8510,11 @@
               <FileName>point.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\point.h</FilePath>
+            </File>
+            <File>
+              <FileName>UpHillOrDownHill.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UpHillOrDownHill.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -9753,6 +9813,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\point.c</FilePath>
             </File>
+            <File>
+              <FileName>UpHillOrDownHill.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UpHillOrDownHill.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -9772,6 +9837,11 @@
               <FileName>point.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\point.h</FilePath>
+            </File>
+            <File>
+              <FileName>UpHillOrDownHill.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UpHillOrDownHill.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -11017,6 +11087,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\point.c</FilePath>
             </File>
+            <File>
+              <FileName>UpHillOrDownHill.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UpHillOrDownHill.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -11036,6 +11111,11 @@
               <FileName>point.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\point.h</FilePath>
+            </File>
+            <File>
+              <FileName>UpHillOrDownHill.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UpHillOrDownHill.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -12233,6 +12313,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\point.c</FilePath>
             </File>
+            <File>
+              <FileName>UpHillOrDownHill.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UpHillOrDownHill.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -12252,6 +12337,11 @@
               <FileName>point.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\point.h</FilePath>
+            </File>
+            <File>
+              <FileName>UpHillOrDownHill.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UpHillOrDownHill.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -13449,6 +13539,11 @@
               <FileType>1</FileType>
               <FilePath>..\_Logic\point.c</FilePath>
             </File>
+            <File>
+              <FileName>UpHillOrDownHill.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UpHillOrDownHill.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -13468,6 +13563,11 @@
               <FileName>point.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Logic\point.h</FilePath>
+            </File>
+            <File>
+              <FileName>UpHillOrDownHill.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UpHillOrDownHill.h</FilePath>
             </File>
           </Files>
         </Group>

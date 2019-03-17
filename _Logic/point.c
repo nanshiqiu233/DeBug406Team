@@ -39,15 +39,17 @@ void _FindPoint()
 	{
 		
 		if(_LastTimeButtomValue-temp<=8000)
-			SetMotorDutyRatio(0.04,0.04);
+			
+		_GoLineLowSpeed();
 	}
 	//printf("temp=%d\r\n",temp);
 	//printf("last=%d\r\n",_LastTimeButtomValue);
-	if(_LastTimeButtomValue-temp>=8000&&(IsLLaserChange() == Changed||IsRLaserChange() == Changed))
+	if(_LastTimeButtomValue-temp>=5000&&(IsLLaserChange() == Changed||IsRLaserChange() == Changed))
 	{
 		//UpdateMotorState(MOTOR_STOP);
-		UpdateMotorState(MOTOR_FRONT);
-		SetMotorDutyRatio(0.07,0.07);
+//		UpdateMotorState(MOTOR_FRONT);
+//		SetMotorDutyRatio(0.07,0.07);
+		_GoLineLowSpeed();
 		ClearLLaserChangePendingBit();
 		ClearRLaserChangePendingBit();
 		//printf("1");
@@ -70,18 +72,22 @@ void _ArrivePlatform(void)
 	{
 		temp+=adcData->array[0][i];
 	}
-	if(IsLLaserChange() == Changed&&IsRLaserChange() == Changed)
-		{
-			SysTickDelay(125);
-	if(temp<=20000)
-	{
-		//SysTickDelay(30);
-		UpdateMotorState(MOTOR_STOP);
-	}
-		}
+			//printf("1");
+		if(IsLLaserChange() == Changed&&IsRLaserChange() == Changed)
+			{
+				SysTickDelay(125);
+			if(temp<=23000)
+			{
+				//SysTickDelay(30);
+				UpdateMotorState(MOTOR_STOP);
+				_ResetUpDown();
+			}
+			}
 	else 
 	{
 		ClearLLaserChangePendingBit();
 		ClearRLaserChangePendingBit();
 	}
+		
+		///
 }
