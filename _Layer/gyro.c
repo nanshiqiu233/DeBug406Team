@@ -130,7 +130,6 @@ void Gyro_Init(void)
 */
 void Gyro_Usart_Rx_Interrupt(void)
 {
-	uint8_t counter = 0;
 	uint8_t sum = 0;
 	
 	//DMA_Cmd(DMA1_Stream5,DISABLE);
