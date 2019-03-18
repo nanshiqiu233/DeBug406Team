@@ -10,8 +10,6 @@
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_usart.h"
 #include "stm32f4xx_dma.h"
-#include "UpHillOrDownHill.h"
-//#include "UpHillOrDownHill.h"
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
@@ -160,7 +158,7 @@ void Gyro_Usart_Rx_Interrupt(void)
 		//重启系统
 		NVIC_SystemReset();
 	}
-	_UpHillOrDownHillCheck();
+			
 	DMA_ClearFlag(DMA1_Stream5,DMA_FLAG_TCIF5);
 	//DMA_Cmd(DMA1_Stream5,ENABLE);
 }
@@ -174,6 +172,7 @@ void Gyro_Usart_Rx_Interrupt(void)
 	函数输出：float类型俯仰角数据
 	函数说明：陀螺仪文档貌似有点问题 Pitch角实际测下来是Roll角
 	函数说明：这里已经对该情况进行了修正
+	函数说明：PS 实际上是我们的陀螺仪安装问题 Pitch和Roll反过来了
 
 	数据格式：车在校准平面上的角度为0 从车屁股看向车头方向 俯冲为从0增加到360
 																		                     爬升为从360减少到0
@@ -200,6 +199,7 @@ float Gyro_GetPitchAngle(void)
 	函数输出：float类型滚转角数据
 	函数说明：陀螺仪文档貌似有点问题 Pitch角实际测下来是Roll角
 	函数说明：这里已经对该情况进行了修正
+  函数说明：PS 实际上是我们的陀螺仪安装问题 Pitch和Roll反过来了
 
 	数据格式：车在校准平面上的角度为0 从车屁股看向车头方向 左倾为从0增加到360
 																												 右倾为从360减少到0

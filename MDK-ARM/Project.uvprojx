@@ -1401,6 +1401,11 @@
               <FileType>1</FileType>
               <FilePath>.\UpHillOrDownHill.c</FilePath>
             </File>
+            <File>
+              <FileName>motor_turn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\motor_turn.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1425,6 +1430,11 @@
               <FileName>UpHillOrDownHill.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\UpHillOrDownHill.h</FilePath>
+            </File>
+            <File>
+              <FileName>motor_turn.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\motor_turn.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2831,6 +2841,11 @@
               <FileType>1</FileType>
               <FilePath>.\UpHillOrDownHill.c</FilePath>
             </File>
+            <File>
+              <FileName>motor_turn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\motor_turn.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2855,6 +2870,11 @@
               <FileName>UpHillOrDownHill.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\UpHillOrDownHill.h</FilePath>
+            </File>
+            <File>
+              <FileName>motor_turn.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\motor_turn.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -4261,6 +4281,11 @@
               <FileType>1</FileType>
               <FilePath>.\UpHillOrDownHill.c</FilePath>
             </File>
+            <File>
+              <FileName>motor_turn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\motor_turn.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -4285,6 +4310,11 @@
               <FileName>UpHillOrDownHill.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\UpHillOrDownHill.h</FilePath>
+            </File>
+            <File>
+              <FileName>motor_turn.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\motor_turn.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -5739,6 +5769,11 @@
               <FileType>1</FileType>
               <FilePath>.\UpHillOrDownHill.c</FilePath>
             </File>
+            <File>
+              <FileName>motor_turn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\motor_turn.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -5763,6 +5798,11 @@
               <FileName>UpHillOrDownHill.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\UpHillOrDownHill.h</FilePath>
+            </File>
+            <File>
+              <FileName>motor_turn.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\motor_turn.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -7166,6 +7206,11 @@
               <FileType>1</FileType>
               <FilePath>.\UpHillOrDownHill.c</FilePath>
             </File>
+            <File>
+              <FileName>motor_turn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\motor_turn.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -7190,6 +7235,11 @@
               <FileName>UpHillOrDownHill.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\UpHillOrDownHill.h</FilePath>
+            </File>
+            <File>
+              <FileName>motor_turn.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\motor_turn.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -8491,6 +8541,11 @@
               <FileType>1</FileType>
               <FilePath>.\UpHillOrDownHill.c</FilePath>
             </File>
+            <File>
+              <FileName>motor_turn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\motor_turn.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -8515,6 +8570,11 @@
               <FileName>UpHillOrDownHill.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\UpHillOrDownHill.h</FilePath>
+            </File>
+            <File>
+              <FileName>motor_turn.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\motor_turn.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -9818,6 +9878,11 @@
               <FileType>1</FileType>
               <FilePath>.\UpHillOrDownHill.c</FilePath>
             </File>
+            <File>
+              <FileName>motor_turn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\motor_turn.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -9842,6 +9907,11 @@
               <FileName>UpHillOrDownHill.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\UpHillOrDownHill.h</FilePath>
+            </File>
+            <File>
+              <FileName>motor_turn.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\motor_turn.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -11092,6 +11162,11 @@
               <FileType>1</FileType>
               <FilePath>.\UpHillOrDownHill.c</FilePath>
             </File>
+            <File>
+              <FileName>motor_turn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\motor_turn.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -11116,6 +11191,11 @@
               <FileName>UpHillOrDownHill.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\UpHillOrDownHill.h</FilePath>
+            </File>
+            <File>
+              <FileName>motor_turn.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\motor_turn.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -12318,6 +12398,11 @@
               <FileType>1</FileType>
               <FilePath>.\UpHillOrDownHill.c</FilePath>
             </File>
+            <File>
+              <FileName>motor_turn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\motor_turn.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -12342,6 +12427,11 @@
               <FileName>UpHillOrDownHill.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\UpHillOrDownHill.h</FilePath>
+            </File>
+            <File>
+              <FileName>motor_turn.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\motor_turn.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -13544,6 +13634,11 @@
               <FileType>1</FileType>
               <FilePath>.\UpHillOrDownHill.c</FilePath>
             </File>
+            <File>
+              <FileName>motor_turn.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_Logic\motor_turn.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -13568,6 +13663,11 @@
               <FileName>UpHillOrDownHill.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\UpHillOrDownHill.h</FilePath>
+            </File>
+            <File>
+              <FileName>motor_turn.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\_Logic\motor_turn.h</FilePath>
             </File>
           </Files>
         </Group>
