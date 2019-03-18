@@ -31,16 +31,10 @@ int main(void)
 	Laser_Init();
 	_GetPrimaryRollAngle();
   SysTickDelay(500);
-
-	
   printf(" Hello World!");
-	
 	SetMotorDutyRatio(0.0,0.0);
 	UpdateMotorState(MOTOR_FRONT);
-	
 	SysTickDelay(2000);
-
-	
 	SetMotorDutyRatio(0.05,0.05);
 
   /* Infinite loop *******************************************************/
@@ -48,20 +42,23 @@ int main(void)
   {
 		if(_UpdateTick20ms == 1)
 		{
-			_GoLine();
-			if(_UpHillOrDownHillFeedBack()==UP)
-		{
-			_ArrivePlatform();
-			printf("1");
-		}
-//			UpdateButtom();
-		else
-			{
-			_FindPoint();
-		}
-			//_GoLine();
-			//_FindPoint();
-//			_GoBridge();
+			if(_UpHillOrDownHillFeedBack()!=DOWN)
+				{
+					_GoLine();
+					if(_UpHillOrDownHillFeedBack()==UP)
+						{
+							_ArrivePlatform();
+			//printf("1");
+						}
+					else if(_UpHillOrDownHillFeedBack()==FlatGround)
+						{
+							_FindPoint();
+						}
+				}
+				else
+				{
+					_GoLineLowSpeed();
+				}
 //			printf("1\r\n");
 //			printf("roll=%f\r\n",Gyro_GetRollAngle());
 //			printf("pitch=%f\r\n",Gyro_GetPitchAngle());
