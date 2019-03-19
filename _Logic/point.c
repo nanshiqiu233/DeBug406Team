@@ -75,12 +75,14 @@ void _ArrivePlatform(void)
 			//printf("1");
 		if(IsLLaserChange() == Changed&&IsRLaserChange() == Changed)
 			{
-				SysTickDelay(125);
+				for(int i;i<=10000;i++);
 			if(temp<=23000)
 			{
 				//SysTickDelay(30);
 				UpdateMotorState(MOTOR_STOP);
 				_ResetUpDown();
+				ClearLLaserChangePendingBit();
+				ClearRLaserChangePendingBit();
 			}
 			}
 	else 

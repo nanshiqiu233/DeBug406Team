@@ -43,50 +43,51 @@ int main(void)
   {
 		if(_UpdateTick20ms == 1)
 		{
-			printf("%d",flag);
+			//printf("%d",flag);
 			if(flag==0)
 				{
 			if(_UpHillOrDownHillFeedBack()!=DOWN)
 				{
 					_GoLine();
-					printf("goline\r\n");
+					//printf("goline\r\n");
 					if(_UpHillOrDownHillFeedBack()==UP)
 						{
 							flag=1;
 							_ArrivePlatform();
-							printf("arrive\r\n");
+							//printf("arrive\r\n");
 							
 						}
 					else if(_UpHillOrDownHillFeedBack()==FlatGround)
 						{
 							_FindPoint();
-							printf("findpoint\r\n");
+							//printf("findpoint\r\n");
 						}
 				}
 				else
 				{
 					_GoLineLowSpeed();
-					printf("lowspeed\r\n");
+					//printf("lowspeed\r\n");
 				}
 			}
 				else
 				{
 					_GoLine();
 					_ArrivePlatform();
-					printf("1");
+					//printf("1");
 					if(UpgradeMotorState() == MOTOR_STOP)
 					{
 						flag=0;
 						Motor_TurnRightBlockingMode(180);
+						for(int i=1;i<=100;i++);
 						UpdateMotorState(MOTOR_FRONT);
-						printf("2");
+						//printf("2");
 						
 					}
 				}
-			printf("flag=%d\r\n",flag);
-			printf("roll=%f\r\n",Gyro_GetRollAngle());
-			printf("pitch=%f\r\n",Gyro_GetPitchAngle());
-			printf("yaw=%f\r\n",Gyro_GetYawAngle());
+//			printf("flag=%d\r\n",flag);
+//			printf("roll=%f\r\n",Gyro_GetRollAngle());
+//			printf("pitch=%f\r\n",Gyro_GetPitchAngle());
+//			printf("yaw=%f\r\n",Gyro_GetYawAngle());
 //_UpHillOrDownHillFeedBack();
 			_UpdateTick20ms = 0;
 		}

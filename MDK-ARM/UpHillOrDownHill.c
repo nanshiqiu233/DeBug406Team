@@ -26,16 +26,16 @@ void _UpHillOrDownHillCheck(void)
 		_UpOrDown=FlatGround;
 	}
 	#else
-		if((Gyro_GetPitchAngle()-PrimaryRollAngle>300)&&(Gyro_GetPitchAngle()-PrimaryRollAngle<357))
+		if((Gyro_GetPitchAngle()-PrimaryRollAngle>300)&&(Gyro_GetPitchAngle()-PrimaryRollAngle<355))
 	{
 		_UpOrDown=UP;
 	}
 
-	else if((Gyro_GetPitchAngle()-PrimaryRollAngle>2)&&(Gyro_GetPitchAngle()-PrimaryRollAngle<100))
+	else if((Gyro_GetPitchAngle()-PrimaryRollAngle>12)&&(Gyro_GetPitchAngle()-PrimaryRollAngle<100))
 	{
 		_UpOrDown=DOWN;
 	}
-	else if(((Gyro_GetPitchAngle()-PrimaryRollAngle>-1)&&(Gyro_GetPitchAngle()-PrimaryRollAngle<1))||((Gyro_GetPitchAngle()-PrimaryRollAngle>358)&&(Gyro_GetPitchAngle()-PrimaryRollAngle<360)))
+	else
 	{
 		_UpOrDown=FlatGround;
 	}
