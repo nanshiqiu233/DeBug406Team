@@ -45,8 +45,24 @@ static AdcData_t _adc = { 0 };
 /* Private function prototypes -----------------------------------------------*/
 void _Switcher(int c, int b, int a);
 void _ADCSwitcher(int adc);
+static void ADC_Delay(void);
 
 /* Private functions ---------------------------------------------------------*/
+
+/**
+  * @brief  Soft Delay To Wait ADC Convert Complete. This Funtion Will delay
+  * @brief  Up To 3.8us At 168MHz CPU Core Speed.
+  * @param  None
+  * @retval None
+  */
+static void ADC_Delay(void)
+{
+	uint8_t temp = 120;
+	while(temp > 1)
+	{
+		temp --;
+	}
+}
 
 /**
   * @brief  Init ADC Transmition 
@@ -107,6 +123,7 @@ void Adc_Init(void)
   
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
   GPIO_Init(GPIOC, &GPIO_InitStructure);
+	
 
   /* ADC Reset **********************************************************/
 	RCC_APB2PeriphResetCmd(RCC_APB2Periph_ADC1, ENABLE);
@@ -144,7 +161,7 @@ void Adc_Init(void)
   ADC_InitStructure.ADC_NbrOfConversion = 1;
   ADC_Init(ADC1, &ADC_InitStructure);
 	
-	//ADC_Cmd(ADC1, ENABLE);
+	ADC_Cmd(ADC1, ENABLE);
   GPIO_ResetBits(GPIOF, GPIO_Pin_8);
 }
 
@@ -190,8 +207,10 @@ void _ADCSwitcher(int adc)
 uint16_t GetAdcValueInChannal(uint8_t channal)
 {
 	ADC_RegularChannelConfig(ADC1, channal, 1, ADC_SampleTime_56Cycles);
+	
 	ADC_SoftwareStartConv(ADC1);
-	while (!ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC)){}
+	ADC_Delay();
+	
   return ADC_GetConversionValue(ADC1);
 }
 
