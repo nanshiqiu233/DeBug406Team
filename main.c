@@ -45,19 +45,22 @@ int main(void)
 			if(_UpHillOrDownHillFeedBack()!=DOWN)
 				{
 					_GoLine();
+					printf("goline");
 					if(_UpHillOrDownHillFeedBack()==UP)
 						{
 							_ArrivePlatform();
-			//printf("1");
+							printf("arrive");
 						}
 					else if(_UpHillOrDownHillFeedBack()==FlatGround)
 						{
 							_FindPoint();
+							printf("findpoint");
 						}
 				}
 				else
 				{
 					_GoLineLowSpeed();
+					printf("lowspeed");
 				}
 //			printf("1\r\n");
 //			printf("roll=%f\r\n",Gyro_GetRollAngle());
