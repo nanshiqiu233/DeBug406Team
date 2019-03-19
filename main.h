@@ -32,6 +32,7 @@
 #include "line.h"
 #include "point.h"
 #include "UpHillOrDownHill.h"
+#include "motor_turn.h"
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Main Function select */

@@ -43,6 +43,7 @@ int main(void)
   {
 		if(_UpdateTick20ms == 1)
 		{
+			printf("%d",flag);
 			if(flag==0)
 				{
 			if(_UpHillOrDownHillFeedBack()!=DOWN)
@@ -52,8 +53,9 @@ int main(void)
 					if(_UpHillOrDownHillFeedBack()==UP)
 						{
 							flag=1;
-							//_ArrivePlatform();
+							_ArrivePlatform();
 							printf("arrive\r\n");
+							
 						}
 					else if(_UpHillOrDownHillFeedBack()==FlatGround)
 						{
@@ -69,16 +71,22 @@ int main(void)
 			}
 				else
 				{
+					_GoLine();
 					_ArrivePlatform();
-					if(UpgradeMotorState()==MOTOR_STOP)
+					printf("1");
+					if(UpgradeMotorState() == MOTOR_STOP)
 					{
 						flag=0;
+						Motor_TurnRightBlockingMode(180);
+						UpdateMotorState(MOTOR_FRONT);
+						printf("2");
+						
 					}
 				}
-//			printf("flag=%d\r\n",flag);
-//			printf("roll=%f\r\n",Gyro_GetRollAngle());
-//			printf("pitch=%f\r\n",Gyro_GetPitchAngle());
-//			printf("yaw=%f\r\n",Gyro_GetYawAngle());
+			printf("flag=%d\r\n",flag);
+			printf("roll=%f\r\n",Gyro_GetRollAngle());
+			printf("pitch=%f\r\n",Gyro_GetPitchAngle());
+			printf("yaw=%f\r\n",Gyro_GetYawAngle());
 //_UpHillOrDownHillFeedBack();
 			_UpdateTick20ms = 0;
 		}
