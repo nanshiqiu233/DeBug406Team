@@ -79,10 +79,16 @@ int main(void)
 							//printf("1");
 							if(UpgradeMotorState() == MOTOR_STOP)
 								{
-									FlagUp=0;
+									
+									if(_UpHillOrDownHillFeedBack()==DOWN)
+									{
+										FlagUp=0;
+									}
+									
 									Motor_TurnRightBlockingMode(180);
 									SysTickDelay(200);
 									UpdateMotorState(MOTOR_FRONT);
+									_GoLineLowSpeed();
 									//printf("2");
 						
 								}
