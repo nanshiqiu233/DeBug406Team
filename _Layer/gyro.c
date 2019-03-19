@@ -10,6 +10,8 @@
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_usart.h"
 #include "stm32f4xx_dma.h"
+#include "UpHillOrDownHill.h"
+
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
@@ -158,7 +160,7 @@ void Gyro_Usart_Rx_Interrupt(void)
 		//重启系统
 		NVIC_SystemReset();
 	}
-			
+	_UpHillOrDownHillCheck();		
 	DMA_ClearFlag(DMA1_Stream5,DMA_FLAG_TCIF5);
 	//DMA_Cmd(DMA1_Stream5,ENABLE);
 }

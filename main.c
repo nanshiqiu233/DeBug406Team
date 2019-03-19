@@ -21,7 +21,8 @@ int main(void)
   /* Local variables *****************************************************/
   
   /* Initialize Step *****************************************************/
-  SysTick_Init();
+  int flag=0;
+	SysTick_Init();
   STMMiniBoard_Init();
   Serial_Init();
   MotorPWM_Init();
@@ -42,30 +43,43 @@ int main(void)
   {
 		if(_UpdateTick20ms == 1)
 		{
+			if(flag==0)
+				{
 			if(_UpHillOrDownHillFeedBack()!=DOWN)
 				{
 					_GoLine();
-					printf("goline");
+					printf("goline\r\n");
 					if(_UpHillOrDownHillFeedBack()==UP)
 						{
-							_ArrivePlatform();
-							printf("arrive");
+							flag=1;
+							//_ArrivePlatform();
+							printf("arrive\r\n");
 						}
 					else if(_UpHillOrDownHillFeedBack()==FlatGround)
 						{
 							_FindPoint();
-							printf("findpoint");
+							printf("findpoint\r\n");
 						}
 				}
 				else
 				{
 					_GoLineLowSpeed();
-					printf("lowspeed");
+					printf("lowspeed\r\n");
 				}
-//			printf("1\r\n");
+			}
+				else
+				{
+					_ArrivePlatform();
+					if(UpgradeMotorState()==MOTOR_STOP)
+					{
+						flag=0;
+					}
+				}
+//			printf("flag=%d\r\n",flag);
 //			printf("roll=%f\r\n",Gyro_GetRollAngle());
 //			printf("pitch=%f\r\n",Gyro_GetPitchAngle());
 //			printf("yaw=%f\r\n",Gyro_GetYawAngle());
+//_UpHillOrDownHillFeedBack();
 			_UpdateTick20ms = 0;
 		}
 		

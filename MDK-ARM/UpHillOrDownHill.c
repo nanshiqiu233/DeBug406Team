@@ -34,7 +34,7 @@ void _UpHillOrDownHillCheck(void)
 	{
 		_UpOrDown=DOWN;
 	}
-	else if((Gyro_GetPitchAngle()-PrimaryRollAngle>-1)&&(Gyro_GetPitchAngle()-PrimaryRollAngle<1))
+	else if(((Gyro_GetPitchAngle()-PrimaryRollAngle>-1)&&(Gyro_GetPitchAngle()-PrimaryRollAngle<1))||((Gyro_GetPitchAngle()-PrimaryRollAngle>358)&&(Gyro_GetPitchAngle()-PrimaryRollAngle<360)))
 	{
 		_UpOrDown=FlatGround;
 	}

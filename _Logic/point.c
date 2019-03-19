@@ -35,13 +35,13 @@ void _FindPoint()
 	{
 		temp+=adcData->array[0][i];
 	}
-	if(IsLLaserChange() == Changed||IsRLaserChange() == Changed)
-	{
-		
-		if(_LastTimeButtomValue-temp<=8000)
-			
-		_GoLineLowSpeed();
-	}
+//	if(IsLLaserChange() == Changed||IsRLaserChange() == Changed)
+//	{
+//		
+//		if(_LastTimeButtomValue-temp<=8000)
+//			
+//		_GoLineLowSpeed();
+//	}
 	//printf("temp=%d\r\n",temp);
 	//printf("last=%d\r\n",_LastTimeButtomValue);
 	if(_LastTimeButtomValue-temp>=5000&&(IsLLaserChange() == Changed||IsRLaserChange() == Changed))
@@ -53,7 +53,7 @@ void _FindPoint()
 		ClearLLaserChangePendingBit();
 		ClearRLaserChangePendingBit();
 		//printf("1");
-		SysTickDelay(75);
+		//SysTickDelay(75);
 	}
 	/*test only*/
 	//adcData->array[0][i];
