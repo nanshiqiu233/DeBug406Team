@@ -5,7 +5,7 @@ static float PrimaryRollAngle=0;
 
 UpHillOrDownHill _UpHillOrDownHillFeedBack()
 {
-	printf("1=%f\r\n",1.0*Gyro_GetPitchAngle());
+	//printf("1=%f\r\n",1.0*Gyro_GetPitchAngle());
 	return _UpOrDown;
 }
 void _UpHillOrDownHillCheck(void)

@@ -21,7 +21,8 @@ int main(void)
   /* Local variables *****************************************************/
   
   /* Initialize Step *****************************************************/
-  int flag=0;
+  int FlagUp=0;
+	int FlagDown=0;
 	SysTick_Init();
   STMMiniBoard_Init();
   Serial_Init();
@@ -43,52 +44,63 @@ int main(void)
   {
 		if(_UpdateTick20ms == 1)
 		{
-			//printf("%d",flag);
-			if(flag==0)
+			if(FlagDown==0)
 				{
-			if(_UpHillOrDownHillFeedBack()!=DOWN)
-				{
-					_GoLine();
-					//printf("goline\r\n");
-					if(_UpHillOrDownHillFeedBack()==UP)
+					if(FlagUp==0)
 						{
-							flag=1;
-							_ArrivePlatform();
-							//printf("arrive\r\n");
+							if(_UpHillOrDownHillFeedBack()!=DOWN)
+								{
+									_GoLine();
+									//printf("goline\r\n");
+									if(_UpHillOrDownHillFeedBack()==UP)
+										{
+											FlagUp=1;
+											//_ArrivePlatform();
+											//printf("arrive\r\n");
 							
+										}
+									else if(_UpHillOrDownHillFeedBack()==FlatGround)
+										{
+											_FindPoint();
+											//printf("findpoint\r\n");
+										}
+								}
+						else
+								{
+									FlagDown=1;
+									//_GoLineLowSpeed();
+									//printf("lowspeed\r\n");
+								}
 						}
-					else if(_UpHillOrDownHillFeedBack()==FlatGround)
+					else
 						{
-							_FindPoint();
-							//printf("findpoint\r\n");
-						}
-				}
-				else
-				{
-					_GoLineLowSpeed();
-					//printf("lowspeed\r\n");
-				}
-			}
-				else
-				{
-					_GoLine();
-					_ArrivePlatform();
-					//printf("1");
-					if(UpgradeMotorState() == MOTOR_STOP)
-					{
-						flag=0;
-						Motor_TurnRightBlockingMode(180);
-						for(int i=1;i<=100;i++);
-						UpdateMotorState(MOTOR_FRONT);
-						//printf("2");
+							_GoLine();
+							_ArrivePlatform();
+							//printf("1");
+							if(UpgradeMotorState() == MOTOR_STOP)
+								{
+									FlagUp=0;
+									Motor_TurnRightBlockingMode(180);
+									SysTickDelay(200);
+									UpdateMotorState(MOTOR_FRONT);
+									//printf("2");
 						
+								}
+						}
+				
+					
+				}
+			else
+				{
+					printf("1");
+					_GoLineLowSpeed();
+					if(_UpHillOrDownHillFeedBack()==FlatGround)
+					{
+						FlagDown=0;
 					}
 				}
-//			printf("flag=%d\r\n",flag);
-//			printf("roll=%f\r\n",Gyro_GetRollAngle());
-//			printf("pitch=%f\r\n",Gyro_GetPitchAngle());
-//			printf("yaw=%f\r\n",Gyro_GetYawAngle());
-//_UpHillOrDownHillFeedBack();
+			ClearLLaserChangePendingBit();
+			ClearRLaserChangePendingBit();
 			_UpdateTick20ms = 0;
 		}
 		
