@@ -101,7 +101,7 @@ int main(void)
 				{
 					printf("1");
 					_GoLineLowSpeed();
-					if(_UpHillOrDownHillFeedBack()==DOWN)
+					if(_UpHillOrDownHillFeedBack()==FlatGround)
 					{
 						FlagDown=0;
 					}
