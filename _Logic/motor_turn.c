@@ -27,7 +27,7 @@ void Motor_TurnLeftBlockingMode(float Angle)
       SetMotorDutyRatio(0.0,0.0);
       UpdateMotorState(MOTOR_STOP);
 
-      SysTickDelay(100);
+      SysTickDelay(200);
 
       while(fabs((double)(Angle - Gyro_GetYawAngle())) > 2.0)
         {
@@ -118,7 +118,7 @@ void Motor_TurnRightBlockingMode(float Angle)
 		
 		UpdateMotorState(MOTOR_STOP);
     SetMotorDutyRatio(0,0);	
-		SysTickDelay(100);
+		SysTickDelay(200);
 
 		while(fabs((double)(TurnAngle - Gyro_GetYawAngle())) > 2.0)
 		{
