@@ -83,6 +83,7 @@ int main(void)
 									if(_UpHillOrDownHillFeedBack()==DOWN)
 									{
 										FlagUp=0;
+										printf("1");
 									}
 									
 									Motor_TurnRightBlockingMode(180);
