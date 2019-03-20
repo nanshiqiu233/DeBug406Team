@@ -23,6 +23,7 @@
 #include "stm32f4xx_iwdg.h"
 #include "board.h"
 //hardware 
+#include "cpu_test.h"
 #include "motor.h"
 #include "servo.h"
 #include "encoder.h"

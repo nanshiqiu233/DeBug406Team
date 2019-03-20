@@ -33,6 +33,13 @@ int main(void)
   Gyro_Init();
   Encoder_Init();
 	Laser_Init();
+	
+	// if you want yo measure CPU usage, please uncomment below code.
+//	#define CPU_USAGE_TEST
+	#ifdef CPU_USAGE_TEST
+	CPU_UsageTestInit();
+	#endif
+	
 	_GetPrimaryRollAngle();
   SysTickDelay(500);
   printf(" Hello World!");
@@ -44,8 +51,15 @@ int main(void)
   /* Infinite loop *******************************************************/
   while (TRUE)
   {
+		
+		
 		if(_UpdateTick20ms == 1)
 		{
+			
+			#ifdef CPU_USAGE_TEST
+			GPIO_SetBits(GPIOD,GPIO_Pin_14);
+			#endif
+
 			
 			if(FlagDown==0)
 				{
@@ -123,7 +137,14 @@ int main(void)
 			ClearLLaserChangePendingBit();
 			ClearRLaserChangePendingBit();
 			_UpdateTick20ms = 0;
+				
+			#ifdef CPU_USAGE_TEST
+			GPIO_ResetBits(GPIOD,GPIO_Pin_14);
+			#endif	
+			
 		}
+		
+	
 		
 	}
 }
