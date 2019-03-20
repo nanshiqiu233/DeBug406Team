@@ -35,7 +35,7 @@ void _FindPoint()
 	{
 		temp+=adcData->array[0][i];
 	}
-	if(_LastTimeButtomValue-temp>=2500&&(IsLLaserChange() == Changed||IsRLaserChange() == Changed))
+	if(_LastTimeButtomValue-temp>=3000&&(IsLLaserChange() == Changed||IsRLaserChange() == Changed))
 	{
 
 		SetMotorDutyRatio(0.06,0.06);
@@ -57,11 +57,12 @@ void _ArrivePlatform(void)
 			//printf("1");
 		if(IsLLaserChange() == Changed&&IsRLaserChange() == Changed)
 			{
-				for(int i;i<=10000;i++);
+				for(int i;i<=7500;i++);
 			if(temp<=22000)
 			{
 				//SysTickDelay(30);
 				UpdateMotorState(MOTOR_STOP);
+				//_FlagBack=1;
 				_ResetUpDown();
 				ClearLLaserChangePendingBit();
 				ClearRLaserChangePendingBit();

@@ -28,7 +28,7 @@
 void Motor_TurnLeftBlockingMode(float Angle);
 void Motor_TurnRightBlockingMode(float Angle);
 void Motor_TurnToAbsoluteYawAngle(float Angle);
-
+void Motor_TurnRightTemp(float Angle);
 
 
 #endif

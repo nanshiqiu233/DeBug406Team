@@ -31,7 +31,7 @@ double _TrackingCoreAlgorithm(void)
 }
 double _TrackingCoreAlgorithmLowSpeed(void)
 {
-  float Kp = 81.763, Ki = 0, Kd = 9.37;
+  float Kp = 74.763, Ki = 0, Kd = 9.6;
   float error = 0, P = 0.0, I = 0., D = 0, PID_value = 0;
   error=_GetADCError();  
   P = error;
@@ -47,6 +47,6 @@ void _GoLine(void)
 }
 void _GoLineLowSpeed(void)
 {
-	SetMotorDutyRatio(0.05+_TrackingCoreAlgorithmLowSpeed(), 0.05-_TrackingCoreAlgorithmLowSpeed());
+	SetMotorDutyRatio(0.04+_TrackingCoreAlgorithmLowSpeed(), 0.04-_TrackingCoreAlgorithmLowSpeed());
 }
 

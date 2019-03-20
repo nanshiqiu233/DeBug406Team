@@ -5,7 +5,8 @@ static float PrimaryRollAngle=0;
 
 UpHillOrDownHill _UpHillOrDownHillFeedBack()
 {
-	//printf("1=%f\r\n",1.0*Gyro_GetPitchAngle());
+	//printf("1=%f\r\n",1.0*(Gyro_GetPitchAngle()-PrimaryRollAngle));
+	//printf("%d",_UpOrDown);
 	return _UpOrDown;
 }
 void _UpHillOrDownHillCheck(void)
@@ -31,7 +32,7 @@ void _UpHillOrDownHillCheck(void)
 		_UpOrDown=UP;
 	}
 
-	else if((Gyro_GetPitchAngle()-PrimaryRollAngle>12)&&(Gyro_GetPitchAngle()-PrimaryRollAngle<100))
+	else if((Gyro_GetPitchAngle()-PrimaryRollAngle>7)&&(Gyro_GetPitchAngle()-PrimaryRollAngle<100))
 	{
 		_UpOrDown=DOWN;
 	}
@@ -47,5 +48,5 @@ void _GetPrimaryRollAngle(void)
 }
 void _ResetUpDown(void)
 {
-	_UpOrDown=FlatGround;
+	_UpOrDown=DOWN;
 }

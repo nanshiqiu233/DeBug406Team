@@ -1,6 +1,7 @@
 /** See a brief introduction (right-hand button) */
 #include "main.h"
 //#define _TEST_TAG_
+//#define _TEST_TAG_
 /* Private macro -------------------------------------------------------------*/
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -23,6 +24,7 @@ int main(void)
   /* Initialize Step *****************************************************/
   int FlagUp=0;
 	int FlagDown=0;
+	int _FlagBack=0;
 	SysTick_Init();
   STMMiniBoard_Init();
   Serial_Init();
@@ -44,6 +46,7 @@ int main(void)
   {
 		if(_UpdateTick20ms == 1)
 		{
+			
 			if(FlagDown==0)
 				{
 					if(FlagUp==0)
@@ -68,30 +71,41 @@ int main(void)
 						else
 								{
 									FlagDown=1;
-									//_GoLineLowSpeed();
+									_GoLineLowSpeed();
 									//printf("lowspeed\r\n");
 								}
 						}
 					else
 						{
-							_GoLine();
-							_ArrivePlatform();
-							//printf("1");
 							if(UpgradeMotorState() == MOTOR_STOP)
 								{
-									
-									if(_UpHillOrDownHillFeedBack()==DOWN)
-									{
-										FlagUp=0;
-										printf("1");
-									}
-									
+									//printf("low\r\n");
 									Motor_TurnRightBlockingMode(180);
-									SysTickDelay(200);
+									//SysTickDelay(200);
 									UpdateMotorState(MOTOR_FRONT);
+									_FlagBack=1;
 									_GoLineLowSpeed();
 									//printf("2");
 						
+								}
+								else if(_FlagBack==1)
+								{
+									//printf("flagback\r\n");
+									_GoLineLowSpeed();
+									if(_UpHillOrDownHillFeedBack()== DOWN)
+								{
+										_FlagBack=0;
+										FlagUp=0;
+										//printf("down\r\n");
+								}
+								}
+								else
+								{
+								_GoLine();
+								//_ArrivePlatform();
+								if(_UpHillOrDownHillFeedBack()==FlatGround)
+								{UpdateMotorState(MOTOR_STOP);}
+								//printf("arrive\r\n");
 								}
 						}
 				
@@ -99,7 +113,7 @@ int main(void)
 				}
 			else
 				{
-					printf("1");
+					//printf("1\r\n");
 					_GoLineLowSpeed();
 					if(_UpHillOrDownHillFeedBack()==FlatGround)
 					{
@@ -178,6 +192,9 @@ int /*Test*/ main(void)
 //		motor_counter ++;
 		UpdateButtom();
 		SysTickDelay(1000);
+		//Motor_TurnRightTemp(180);
+		//printf("1");
+		//while(1);
   }
 }
 
@@ -261,20 +278,7 @@ void ADC_Test(void) // NEED TEST
   * @param  None
   * @retval None
   */
-void Gyro_Test(void)
-{
-  while(TRUE)
-  {
-    float* gyroValueArray = GetInfoFromGyro();
-    for(int i = 0; i < 12; i++)
-    {
-      if(i%3 == 0) printf("\r\n");
-      printf("%.3f ", gyroValueArray[i]);
-    }
-    printf("\r\n");
-    SysTickDelay(400);
-  }
-}
+
 
 /**
   * @brief  
