@@ -12,3 +12,4 @@
 *.map
 *.__i
 *.pan39
+MDK-ARM/startup_stm32f40_41xxx.lst
