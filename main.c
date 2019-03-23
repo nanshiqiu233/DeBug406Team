@@ -43,7 +43,6 @@ int main(void)
 	SetMotorDutyRatio(0.0,0.0);
 	UpdateMotorState(MOTOR_FRONT);
 	SysTickDelay(2000);
-	SetMotorDutyRatio(0.05,0.05);
 
   /* Infinite loop *******************************************************/
   while (TRUE)
@@ -56,8 +55,9 @@ int main(void)
 			#ifdef CPU_USAGE_TEST
 			GPIO_SetBits(GPIOD,GPIO_Pin_14);
 			#endif
-			//ThreeTOFour();
-			OneTOTwo();
+			ThreeTOFour();
+			//OneTOTwo();
+			//TwoTOThree();
 			ClearLLaserChangePendingBit();
 			ClearRLaserChangePendingBit();
 			_UpdateTick20ms = 0;

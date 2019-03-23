@@ -1,3 +1,5 @@
+#ifndef SKILL_H
+#define SKILL_H
 #include "cpu_test.h"
 #include "motor.h"
 #include "servo.h"
@@ -12,3 +14,10 @@
 void InitFlag(void);
 void ThreeTOFour(void);
 void OneTOTwo(void);
+void TwoTOThree(void);
+extern int FlagUp;
+extern int FlagDown;
+extern int _FlagBack;
+extern int FlagPoint;
+extern int TurnFlag;
+#endif

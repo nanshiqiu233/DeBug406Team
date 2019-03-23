@@ -25,7 +25,27 @@ uint32_t _UpdateButtomValue(void)
 		return _LastTimeButtomValue;
 	
 }
-void _FindPoint()
+void _FindPointStop(void)
+{
+		const AdcData_t * adcData;
+	adcData = UpdateButtom();
+	uint32_t temp=0;
+	_LastTimeButtomValue=_UpdateButtomValue();
+	for(int i=0; i<=7; i++)
+	{
+		temp+=adcData->array[0][i];
+	}
+	if(_LastTimeButtomValue-temp>=3000&&(IsLLaserChange() == Changed||IsRLaserChange() == Changed))
+	{
+		FlagPoint=1;
+		UpdateMotorState(MOTOR_STOP);
+		SysTickDelay(200);
+		ClearLLaserChangePendingBit();
+		ClearRLaserChangePendingBit();
+	}
+	
+}
+void _FindPointGo()
 {
 	const AdcData_t * adcData;
 	adcData = UpdateButtom();
@@ -37,7 +57,7 @@ void _FindPoint()
 	}
 	if(_LastTimeButtomValue-temp>=3000&&(IsLLaserChange() == Changed||IsRLaserChange() == Changed))
 	{
-
+		FlagPoint=2;
 		SetMotorDutyRatio(0.06,0.06);
 		SysTickDelay(200);
 		ClearLLaserChangePendingBit();

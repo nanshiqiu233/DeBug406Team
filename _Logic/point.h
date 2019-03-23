@@ -2,6 +2,7 @@
 #include "buttom.h"
 #include "gyro.h"
 #include "UpHillOrDownHill.h"
+#include "SKILL.h"
 /**
   ******************************************************************************
   * @file    Project/STM32F4xx_StdPeriph_Templates/line.h 
@@ -15,7 +16,8 @@
   ******************************************************************************
   */
 	#ifdef DEBUGROB_LOGIC_H
-	void _FindPoint(void);
+	void _FindPointGo(void);
+	void _FindPointStop(void);
 	void _ArrivePlatform(void);
 	uint32_t _CalculationADC(void);
 	uint32_t _UpdateButtomValue(void);

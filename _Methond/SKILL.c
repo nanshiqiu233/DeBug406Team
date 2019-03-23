@@ -1,16 +1,24 @@
 #include "SKILL.h"
+
 int FlagUp=0;
 int FlagDown=0;
 int _FlagBack=0;
+int FlagPoint=0;
+int TurnFlag=0;
 void InitFlag()
 {
     FlagUp=0;
     FlagDown=0;
     _FlagBack=0;
+		TurnFlag=0;
 }
 void ThreeTOFour(void)
 {
-
+				for(int i=1;i<=1000;i--)
+				{
+					_GoLineLowSpeed();
+				}
+	
 				if(FlagDown==0)
 				{
 					if(FlagUp==0)
@@ -28,7 +36,7 @@ void ThreeTOFour(void)
 										}
 									else if(_UpHillOrDownHillFeedBack()==FlatGround)
 										{
-											_FindPoint();
+											_FindPointGo();
 											//printf("findpoint\r\n");
 										}
 								}
@@ -91,7 +99,7 @@ void OneTOTwo(void)
 {
 	if(FlagUp==0)
 	{
-		_FindPoint();
+		_FindPointGo();
 		_GoLine();
 		if(_UpHillOrDownHillFeedBack()== UP)
 		{
@@ -102,12 +110,12 @@ void OneTOTwo(void)
 	}
 	else 
 	{
-		_FindPoint();
+		_FindPointGo();
 		_GoLine();
 		if(_UpHillOrDownHillFeedBack()==DOWN)
 		{
 			//printf("down1");
-			FlagDown=1;
+			
 		}
 	}
 	if(FlagUp==1&&FlagDown==1)
@@ -124,6 +132,86 @@ void OneTOTwo(void)
 		{
 		//printf("stop"); 
 		UpdateMotorState(MOTOR_STOP);
+		}
+	}
+}
+void TwoTOThree()
+{
+	if(_FlagBack==0)
+	{
+	Motor_TurnRightBlockingMode(180);
+	_FlagBack=1;
+	SetMotorDutyRatio(0.0,0.0);
+	//UpdateMotorState(MOTOR_FRONT);
+	SysTickDelay(2000);
+	UpdateMotorState(MOTOR_FRONT);
+	}
+	/*
+	需要加入举手和动头。
+	*/
+	if(FlagDown==0)
+		{
+			_GoLineLowSpeed();
+			if(_UpHillOrDownHillFeedBack()==DOWN)
+				{
+					FlagDown=1;
+				}
+		}
+	if(FlagDown==1)
+	{
+		if(FlagPoint==0)
+		{
+			if(_UpHillOrDownHillFeedBack()==FlatGround)
+				{
+					_GoLine();
+					_FindPointStop();
+				}
+		}
+		if(FlagPoint==1)
+		{
+			Motor_TurnRightBlockingMode(40);
+			
+			//UpdateMotorState(MOTOR_FRONT);
+			SetMotorDutyRatio(0.0,0.0);
+			UpdateMotorState(MOTOR_FRONT);
+			SysTickDelay(2000);
+			SetMotorDutyRatio(0.14,0.14);
+			SysTickDelay(200);
+			TurnFlag=1;
+		}
+		if(TurnFlag==1)
+		{
+			_GoLineLowSpeed();
+			if(_UpHillOrDownHillFeedBack()==FlatGround)
+			{
+				_FindPointStop();
+				if(UpgradeMotorState() == MOTOR_STOP)
+				{
+					Motor_TurnRightBlockingMode(140);
+					SetMotorDutyRatio(0.0,0.0);
+					UpdateMotorState(MOTOR_FRONT);
+					SysTickDelay(2000);
+					TurnFlag=2;
+				}
+			}
+
+		}
+		if(TurnFlag==2)
+		{
+			_GoLine();
+			_FindPointGo();
+			if(_UpHillOrDownHillFeedBack()==UP)
+			{
+				FlagUp=1;
+			}
+		}
+		
+	}
+	if(FlagDown==1&&FlagUp==1&&TurnFlag==2)
+	{
+		if(_UpHillOrDownHillFeedBack()==FlatGround)
+		{
+			UpdateMotorState(MOTOR_STOP);
 		}
 	}
 }
