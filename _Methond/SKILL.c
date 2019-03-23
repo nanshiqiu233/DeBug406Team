@@ -2,6 +2,12 @@
 int FlagUp=0;
 int FlagDown=0;
 int _FlagBack=0;
+void InitFlag()
+{
+    FlagUp=0;
+    FlagDown=0;
+    _FlagBack=0;
+}
 void ThreeTOFour(void)
 {
 
@@ -80,4 +86,44 @@ void ThreeTOFour(void)
 						FlagDown=0;
 					}
 				}
+}
+void OneTOTwo(void)
+{
+	if(FlagUp==0)
+	{
+		_FindPoint();
+		_GoLine();
+		if(_UpHillOrDownHillFeedBack()== UP)
+		{
+					//printf("up1\r\n");
+					FlagUp=1;
+				
+		}
+	}
+	else 
+	{
+		_FindPoint();
+		_GoLine();
+		if(_UpHillOrDownHillFeedBack()==DOWN)
+		{
+			//printf("down1");
+			FlagDown=1;
+		}
+	}
+	if(FlagUp==1&&FlagDown==1)
+	{
+		if(_UpHillOrDownHillFeedBack()== UP)
+		{
+			//printf("up2");
+			_FlagBack=1;
+		}
+	}
+	if(_FlagBack==1)
+	{
+		if(_UpHillOrDownHillFeedBack()== FlatGround)
+		{
+		//printf("stop"); 
+		UpdateMotorState(MOTOR_STOP);
+		}
+	}
 }

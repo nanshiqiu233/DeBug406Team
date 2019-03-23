@@ -9,6 +9,6 @@
 #include "point.h"
 #include "UpHillOrDownHill.h"
 #include "motor_turn.h"
-
+void InitFlag(void);
 void ThreeTOFour(void);
-
+void OneTOTwo(void);

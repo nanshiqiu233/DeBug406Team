@@ -56,7 +56,8 @@ int main(void)
 			#ifdef CPU_USAGE_TEST
 			GPIO_SetBits(GPIOD,GPIO_Pin_14);
 			#endif
-				ThreeTOFour();
+			//ThreeTOFour();
+			OneTOTwo();
 			ClearLLaserChangePendingBit();
 			ClearRLaserChangePendingBit();
 			_UpdateTick20ms = 0;
