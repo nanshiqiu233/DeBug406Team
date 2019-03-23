@@ -163,14 +163,14 @@ void Motor_TurnToAbsoluteYawAngle(float Angle)
   SetMotorDutyRatio(0,0);				
 	
 }
-void Motor_TurnRightTemp(float Angle)
-{
-	float BeginAnger=Gyro_GetYawAngle();
-	while(fabs(BeginAnger-Gyro_GetYawAngle())<Angle-0.005)
-	{
-		//printf("%f\r\n",fabs(BeginAnger-Gyro_GetYawAngle()));
-		UpdateMotorState(MOTOR_TURN_RIGHT);
-		SetMotorDutyRatio(0.1,0.1);
-	}
-	UpdateMotorState(MOTOR_STOP);
-}
+//void Motor_TurnRightTemp(float Angle)
+//{
+//	float BeginAnger=Gyro_GetYawAngle();
+//	while(fabs(BeginAnger-Gyro_GetYawAngle())<Angle-0.005)
+//	{
+//		//printf("%f\r\n",fabs(BeginAnger-Gyro_GetYawAngle()));
+//		UpdateMotorState(MOTOR_TURN_RIGHT);
+//		SetMotorDutyRatio(0.1,0.1);
+//	}
+//	UpdateMotorState(MOTOR_STOP);
+//}

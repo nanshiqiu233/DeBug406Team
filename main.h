@@ -34,6 +34,9 @@
 #include "point.h"
 #include "UpHillOrDownHill.h"
 #include "motor_turn.h"
+//SKILL
+#include "SKILL.h"
+
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Main Function select */
