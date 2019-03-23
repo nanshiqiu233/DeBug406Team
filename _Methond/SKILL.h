@@ -20,4 +20,5 @@ extern int FlagDown;
 extern int _FlagBack;
 extern int FlagPoint;
 extern int TurnFlag;
+extern int FlagStop;
 #endif
