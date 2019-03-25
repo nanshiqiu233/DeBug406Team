@@ -31,10 +31,7 @@
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 void Serial_Init(void);
-void SerialSend(char buffer[], int lenth);
 
-/* Reference Only -> (F12) USART1_IRQHandler(); */
-/*static*/ inline void _UsartReceive_Interrupt(void);
 
 #ifdef __GNUC__ /* printf() */
   /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf

@@ -16,7 +16,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-uint8_t _Usart2_RxBuffer[11] = {0x00};
+static volatile uint8_t _Usart2_RxBuffer[11] = {0x00};
 
 /* Private functions ---------------------------------------------------------	*/
 void Gyro_Init(void)
@@ -152,11 +152,7 @@ void Gyro_Usart_Rx_Interrupt(void)
 	//校验和判断
 	if(sum != _Usart2_RxBuffer[10])
 	{
-		//校验和不一致执行此处代码
-		
-		printf(" Fatal Error Gyro Data Integrity Check Fail.\r\n");
-		printf("Restarting System.\r\n");
-		
+		//校验和不一致执行此处代码		
 		//重启系统
 		NVIC_SystemReset();
 	}
