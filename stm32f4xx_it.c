@@ -154,26 +154,6 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief  This function handles USRAT interrupt request.
-  * @param  None
-  * @retval None
-  */
-void USART1_IRQHandler(void)
-{
-  _UsartReceive_Interrupt();
-}
-
-/**
-  * @brief  This function handles USRAT interrupt request.
-  * @param  None
-  * @retval None
-  */
-void USART3_IRQHandler(void)
-{
-  _UsartReceive_Interrupt();
-}
-
-/**
   * @brief  This function handles TIM2 interrupt request.
   * @param  None
   * @retval None
@@ -205,23 +185,6 @@ void EXTI15_10_IRQHandler(void)
 	_LaserEdgeTrigger_Interrupt();
 }
 
-
-
-
-/**
-  * @brief  
-  * @param  None
-  * @retval None
-  */
-void DMA2_Stream7_IRQHandler(void)
-{
-  if(DMA_GetITStatus(DMA2_Stream7, DMA_IT_TCIF7))
-  {
-    DMA_ClearFlag(DMA2_Stream7, DMA_IT_TCIF7); 
-    USART_DMACmd(USART1, USART_DMAReq_Tx, DISABLE);
-  }
-}	
-
 /**
   * @brief  This function handles DMA1Stream5 interrupt request.
   * @param  None
@@ -230,6 +193,27 @@ void DMA2_Stream7_IRQHandler(void)
 void DMA1_Stream5_IRQHandler(void)
 {
 	Gyro_Usart_Rx_Interrupt();
+}
+
+
+/**
+  * @brief  This function handles DMA2Stream5 interrupt request.
+  * @param  None
+  * @retval None
+  */
+void DMA2_Stream5_IRQHandler(void)
+{
+	DMA_ClearFlag(DMA2_Stream5,DMA_FLAG_TCIF5);
+}
+
+/**
+  * @brief  This function handles DMA1Stream1 interrupt request.
+  * @param  None
+  * @retval None
+  */
+void DMA1_Stream1_IRQHandler(void)
+{
+	DMA_ClearFlag(DMA1_Stream1,DMA_FLAG_TCIF5);
 }
 
 
