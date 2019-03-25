@@ -46,25 +46,23 @@ void Motor_TurnLeftBlockingMode(float Angle)
 
     }
 		
-		printf("Yaw Angle:%f\r\n",Gyro_GetYawAngle());
 
   while(fabs((double)(Angle - Gyro_GetYawAngle())) > 2.0)
     {
       if(Angle - Gyro_GetYawAngle() > (float)2.0)
         {
-          UpdateMotorState(MOTOR_TURN_RIGHT);
-          SetMotorDutyRatio(0.06,0.06);
-					
-					printf("Error:%f\r\n",Angle - Gyro_GetYawAngle());
-        }
-      else if(Gyro_GetYawAngle() - Angle > 2)
-        {
+					//19.3.25
           UpdateMotorState(MOTOR_TURN_LEFT);
           SetMotorDutyRatio(0.06,0.06);
 					
-					printf("Error:%f\r\n",Angle - Gyro_GetYawAngle());
         }
-    }
+      else if(Gyro_GetYawAngle() - Angle > 2)
+        {
+          UpdateMotorState(MOTOR_TURN_RIGHT);
+          SetMotorDutyRatio(0.06,0.06);
+					
+        }
+		}
 
   SetMotorDutyRatio(0.0,0.0);
   UpdateMotorState(MOTOR_STOP);
