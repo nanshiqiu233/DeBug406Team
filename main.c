@@ -54,11 +54,13 @@ int main(void)
 			#ifdef CPU_USAGE_TEST
 			GPIO_SetBits(GPIOD,GPIO_Pin_14);
 			#endif
-			
+			_resetlaser();
 			//OneTOTwo();
-			//TwoTOThree();
-			ThreeTOFour();
-			
+			TwoTOThree();
+			//ThreeTOFour();
+			//printf("%d\r\n",_IsBalanceFeedBack());
+			//Motor_TurnRightBlockingMode(150);
+			//while(1)
 			ClearLLaserChangePendingBit();
 			ClearRLaserChangePendingBit();
 			_UpdateTick20ms = 0;

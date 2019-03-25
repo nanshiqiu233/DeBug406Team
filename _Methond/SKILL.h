@@ -15,10 +15,12 @@ void InitFlag(void);
 void ThreeTOFour(void);
 void OneTOTwo(void);
 void TwoTOThree(void);
+void _resetlaser(void);
 extern int FlagUp;
 extern int FlagDown;
 extern int _FlagBack;
 extern int FlagPoint;
 extern int TurnFlag;
 extern int FlagStop;
+extern int FlagBalance;
 #endif

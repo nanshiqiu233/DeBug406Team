@@ -1,11 +1,20 @@
 #include "SKILL.h"
-#define TEST1
+#define TEST2
 int FlagUp=0;
 int FlagDown=0;
 int _FlagBack=0;
 int FlagPoint=0;
 int TurnFlag=0;
 int FlagStop=0;
+int FlagBalance=0;
+void _resetlaser(void)
+{
+	if(_UpHillOrDownHillFeedBack()!=FlatGround||_IsBalanceFeedBack()!=BALANCE)
+	{
+		ClearLLaserChangePendingBit();
+		ClearRLaserChangePendingBit();
+	}
+}
 void InitFlag()
 {
     FlagUp=0;
@@ -98,6 +107,7 @@ void ThreeTOFour(void)
 }
 void OneTOTwo(void)
 {
+
 	if(FlagUp==0)
 	{
 		_FindPointGo();
@@ -106,7 +116,7 @@ void OneTOTwo(void)
 		{
 					//printf("up1\r\n");
 					FlagUp=1;
-				
+
 		}
 	}
 	else 
@@ -116,7 +126,7 @@ void OneTOTwo(void)
 		if(_UpHillOrDownHillFeedBack()==DOWN)
 		{
 			//printf("down1");
-			
+			FlagDown=1;
 		}
 	}
 	if(FlagUp==1&&FlagDown==1)
@@ -219,32 +229,61 @@ void TwoTOThree(void)
 	}
 	#endif
 	#ifdef TEST2
-	if(UpgradeMotorState() == MOTOR_STOP)
+	
+	if(UpgradeMotorState() == MOTOR_STOP&&FlagStop!=2)
 	{
 		UpdateMotorState(MOTOR_FRONT);
-		SetMotorDutyRatio(0.04,0.04);
-		SysTickDelay(100);
 		FlagStop++;
+		SetMotorDutyRatio(0.04,0.04);
+		SysTickDelay(750);
+		//FlagStop++;
 	}
 	if(FlagStop==1)
 	{
-		if(_UpHillOrDownHillFeedBack()==FlatGround)
-		{
-			_FindPointStop();
-			if(UpgradeMotorState() == MOTOR_STOP)
+		_GoLine();
+		if(FlagDown==0)
 			{
-				Motor_TurnRightBlockingMode(140);
+		if(_IsBalanceFeedBack()==UNBALANCE)
+		{
+			FlagBalance=1;
+		}
+		if(FlagBalance==1)
+			{
+		if(_UpHillOrDownHillFeedBack()==DOWN&&_IsBalanceFeedBack()==BALANCE)
+		{
+			FlagDown=1;
+			SysTickDelay(1000);
+		}
 			}
 		}
-	}
-	if(FlagStop==2)
+		else if(FlagDown==1)
+		{
+			//printf("flagdown\r\n");
+			if(_UpHillOrDownHillFeedBack()==FlatGround&&_IsBalanceFeedBack()==BALANCE)
+			{
+				_GoLine();
+				//printf("and\r\n");
+				_resetlaser();
+				_FindPointStop();
+				_resetlaser();
+				if(UpgradeMotorState() == MOTOR_STOP)
+				{
+					Motor_TurnRightBlockingMode(150);
+					//Motor_TurnToAbsoluteYawAngle(0);
+					FlagDown=0;
+				}
+			}
+		}
+			}
+	else if(FlagStop==2)
 	{
 		_GoLine();
 		_FindPointGo();
 		if(_UpHillOrDownHillFeedBack()==UP)
 		{
 			FlagUp=1;	
-			if(FlagUp==1)
+		}
+		if(FlagUp==1)
 			{
 				if(_UpHillOrDownHillFeedBack()==FlatGround)
 			  {
@@ -252,11 +291,13 @@ void TwoTOThree(void)
 				}
 			}
 	}
+	else if(FlagStop==0)
+	{
 	if(_FlagBack==0)
 	{
 		Motor_TurnRightBlockingMode(180);
-		_FlagBack=1;
 		UpdateMotorState(MOTOR_FRONT);
+		_FlagBack=1;
 	}
 	else if(_FlagBack==1)
 	{
@@ -274,9 +315,10 @@ void TwoTOThree(void)
 				_FindPointStop();
 				if(UpgradeMotorState() == MOTOR_STOP)
 				{
-					Motor_TurnRightBlockingMode(50);
-					SetMotorDutyRatio(0.04,0.04);
-					SysTickDelay(100);
+					Motor_TurnRightBlockingMode(35);
+					FlagDown=0;
+					//SetMotorDutyRatio(0.04,0.04);
+					//SysTickDelay(100);
 				}
 			}
 			else if(_UpHillOrDownHillFeedBack()==DOWN)
@@ -284,6 +326,7 @@ void TwoTOThree(void)
 				_GoLineLowSpeed();
 			}
 		}
-}
-#endif
 	}
+#endif
+}
+

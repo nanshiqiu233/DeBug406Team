@@ -20,9 +20,10 @@ uint32_t _UpdateButtomValue(void)
 		return _CalculationADC();
 	}
 	else
-	
+	{
 		_times++;
 		return _LastTimeButtomValue;
+	}
 	
 }
 void _FindPointStop(void)
@@ -35,11 +36,16 @@ void _FindPointStop(void)
 	{
 		temp+=adcData->array[0][i];
 	}
-	if(_LastTimeButtomValue-temp>=3000&&(IsLLaserChange() == Changed||IsRLaserChange() == Changed))
+	if(_LastTimeButtomValue-temp>=4650&&(GetLeftLaserState()==Changed||GetRightLaserState()==Changed))
 	{
 		FlagPoint=1;
 		UpdateMotorState(MOTOR_STOP);
 		SysTickDelay(200);
+		ClearLLaserChangePendingBit();
+		ClearRLaserChangePendingBit();
+	}
+		else
+	{
 		ClearLLaserChangePendingBit();
 		ClearRLaserChangePendingBit();
 	}
@@ -55,11 +61,16 @@ void _FindPointGo()
 	{
 		temp+=adcData->array[0][i];
 	}
-	if(_LastTimeButtomValue-temp>=3000&&(IsLLaserChange() == Changed||IsRLaserChange() == Changed))
+	if(_LastTimeButtomValue-temp>=3500&&(IsLLaserChange() == Changed||IsRLaserChange() == Changed))
 	{
 		FlagPoint=2;
 		SetMotorDutyRatio(0.06,0.06);
 		SysTickDelay(200);
+		ClearLLaserChangePendingBit();
+		ClearRLaserChangePendingBit();
+	}
+	else
+	{
 		ClearLLaserChangePendingBit();
 		ClearRLaserChangePendingBit();
 	}

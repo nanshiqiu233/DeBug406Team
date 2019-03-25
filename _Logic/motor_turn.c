@@ -116,12 +116,12 @@ void Motor_TurnRightBlockingMode(float Angle)
       if(TurnAngle - Gyro_GetYawAngle() > (float)2.0)
         {
           UpdateMotorState(MOTOR_TURN_LEFT);
-          SetMotorDutyRatio(0.05,0.05);
+          SetMotorDutyRatio(0.06,0.06);
         }
       else if(Gyro_GetYawAngle() - TurnAngle > (float)2.0)
         {
           UpdateMotorState(MOTOR_TURN_RIGHT);
-          SetMotorDutyRatio(0.05,0.05);
+          SetMotorDutyRatio(0.06,0.06);
         }
     }
 

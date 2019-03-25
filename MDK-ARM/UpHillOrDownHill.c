@@ -1,14 +1,21 @@
 #include "UpHillOrDownHill.h"
 //#define NegativeNumber
 static UpHillOrDownHill _UpOrDown=FlatGround;
+static IsBalance _Isbalance=BALANCE;
 static float PrimaryRollAngle=0;
-
 UpHillOrDownHill _UpHillOrDownHillFeedBack()
 {
 	//printf("1=%f\r\n",1.0*(Gyro_GetPitchAngle()-PrimaryRollAngle));
 	//printf("%d",_UpOrDown);
 	return _UpOrDown;
 }
+IsBalance _IsBalanceFeedBack(void)
+{
+	//printf("1=%f\r\n",1.0*(Gyro_GetPitchAngle()-PrimaryRollAngle));
+	//printf("%d",_UpOrDown);
+	return _Isbalance;
+}
+
 void _UpHillOrDownHillCheck(void)
 {
 	#ifdef NegativeNumber
@@ -27,7 +34,7 @@ void _UpHillOrDownHillCheck(void)
 		_UpOrDown=FlatGround;
 	}
 	#else
-		if((Gyro_GetPitchAngle()-PrimaryRollAngle>300)&&(Gyro_GetPitchAngle()-PrimaryRollAngle<355))
+		if((Gyro_GetPitchAngle()-PrimaryRollAngle>300)&&(Gyro_GetPitchAngle()-PrimaryRollAngle<356))
 	{
 		_UpOrDown=UP;
 	}
@@ -39,6 +46,14 @@ void _UpHillOrDownHillCheck(void)
 	else
 	{
 		_UpOrDown=FlatGround;
+	}
+	if(Gyro_GetRollAngle()<342||Gyro_GetRollAngle()>355)
+	{
+		_Isbalance=UNBALANCE;
+	}
+	else
+	{
+		_Isbalance=BALANCE;
 	}
 	#endif
 }

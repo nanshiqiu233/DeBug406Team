@@ -19,7 +19,7 @@ double _GetADCError(void)
 }
 double _TrackingCoreAlgorithm(void)
 {
-  float Kp = 61.763, Ki = 0, Kd =12.1;
+  float Kp = 76.763, Ki = 0, Kd =12.6;
   float error = 0, P = 0.0, I = 0., D = 0, PID_value = 0;
   error=_GetADCError();
   P = error;

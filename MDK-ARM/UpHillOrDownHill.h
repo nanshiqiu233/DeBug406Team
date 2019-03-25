@@ -16,15 +16,21 @@
 	#define DEBUGROB_UpDown_H
 typedef enum 
 {
-	
   UP = 1,
   DOWN	= -1,
 	FlatGround = 0
 	
 } UpHillOrDownHill;
+typedef enum 
+{
+		BALANCE=1,
+		UNBALANCE=0
+} IsBalance;
 UpHillOrDownHill _UpHillOrDownHillFeedBack(void);
+IsBalance _IsBalanceFeedBack(void);
 void _UpHillOrDownHillCheck(void);
 void _GetPrimaryRollAngle(void);
+void _IsBalance(void);
 void _ResetUpDown(void);
 #endif
 
