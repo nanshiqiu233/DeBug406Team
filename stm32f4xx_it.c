@@ -203,6 +203,7 @@ void DMA1_Stream5_IRQHandler(void)
   */
 void DMA2_Stream5_IRQHandler(void)
 {
+	Command_Usart_Rx_Interupt();
 	DMA_ClearFlag(DMA2_Stream5,DMA_FLAG_TCIF5);
 }
 
@@ -213,6 +214,7 @@ void DMA2_Stream5_IRQHandler(void)
   */
 void DMA1_Stream1_IRQHandler(void)
 {
+	Command_Usart_Rx_Interupt();
 	DMA_ClearFlag(DMA1_Stream1,DMA_FLAG_TCIF5);
 }
 
