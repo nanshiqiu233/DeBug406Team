@@ -274,7 +274,7 @@ void Command_Usart_Rx_Interupt(void)
 */
 uint8_t Is_Command_Invalid(void)
 {
-	return _Invalid_Data;D
+	return _Invalid_Data;
 }
 
 
