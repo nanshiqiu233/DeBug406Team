@@ -24,6 +24,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include <stdio.h>
 #include <stdint.h>
+#include "string.h"
 #include "main.h"
 
 /* Exported types ------------------------------------------------------------*/
@@ -31,7 +32,12 @@
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 void Serial_Init(void);
+void Command_Usart_Rx_Interupt(void);
 
+uint8_t Is_Command_Invalid(void);
+uint8_t Is_Command_Updated(void);
+void Clear_InvalidCommand_PendingBit(void);
+void Clear_CommandUpdate_PendingBit(void);
 
 #ifdef __GNUC__ /* printf() */
   /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf

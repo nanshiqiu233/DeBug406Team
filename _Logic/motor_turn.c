@@ -41,7 +41,7 @@ void Motor_TurnLeftBlockingMode(float Angle)
 			}
 			SysTickDelay(70);
 			
-			while(fabs(TurnAngle - Gyro_GetYawAngle()) > 10)
+			while(fabs(TurnAngle - Gyro_GetYawAngle()) > 15)
 			{
 			}
 			UpdateMotorState(MOTOR_STOP);
@@ -53,7 +53,7 @@ void Motor_TurnLeftBlockingMode(float Angle)
 			UpdateMotorState(MOTOR_TURN_LEFT);
 			SetMotorDutyRatio(0.1,0.1);
 			
-			while(fabs(TurnAngle - Gyro_GetYawAngle()) > 10)
+			while(fabs(TurnAngle - Gyro_GetYawAngle()) > 15)
 			{
 			}
 			UpdateMotorState(MOTOR_STOP);
@@ -66,7 +66,7 @@ void Motor_TurnLeftBlockingMode(float Angle)
 	
 	//微调
 	
-	while(fabs(TurnAngle - Gyro_GetYawAngle()) > 2)
+	while(fabs(TurnAngle - Gyro_GetYawAngle()) > 3)
 	{
 		if(TurnAngle > Gyro_GetYawAngle())
 		{
@@ -108,7 +108,7 @@ void Motor_TurnRightBlockingMode(float Angle)
         }
       SysTickDelay(100);
 
-      while(fabs(Gyro_GetYawAngle() - TurnAngle) > 10)
+      while(fabs(Gyro_GetYawAngle() - TurnAngle) > 15)
         {
         }
     }
@@ -117,7 +117,7 @@ void Motor_TurnRightBlockingMode(float Angle)
       TurnAngle = CurrentAngle - Angle;
       UpdateMotorState(MOTOR_TURN_RIGHT);
       SetMotorDutyRatio(0.1,0.1);
-      while(fabs(Gyro_GetYawAngle() - TurnAngle) > 10)
+      while(fabs(Gyro_GetYawAngle() - TurnAngle) > 15)
         {
         }
     }
@@ -127,14 +127,14 @@ void Motor_TurnRightBlockingMode(float Angle)
   SetMotorDutyRatio(0,0);
   SysTickDelay(200);
 
-  while(fabs((double)(TurnAngle - Gyro_GetYawAngle())) > 2.0)
+  while(fabs((double)(TurnAngle - Gyro_GetYawAngle())) > 3.0)
     {
-      if(TurnAngle - Gyro_GetYawAngle() > (float)2.0)
+      if(TurnAngle - Gyro_GetYawAngle() > (float)3.0)
         {
           UpdateMotorState(MOTOR_TURN_LEFT);
           SetMotorDutyRatio(0.06,0.06);
         }
-      else if(Gyro_GetYawAngle() - TurnAngle > (float)2.0)
+      else if(Gyro_GetYawAngle() - TurnAngle > (float)3.0)
         {
           UpdateMotorState(MOTOR_TURN_RIGHT);
           SetMotorDutyRatio(0.06,0.06);

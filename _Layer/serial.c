@@ -7,11 +7,26 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-volatile uint8_t _Command_RxBuffer[10] = {0x00};
+static volatile uint8_t _Command_RxBuffer[5] = {0x00};
+static volatile uint8_t _Invalid_Data = 0x00;
+static volatile uint8_t _Command_Updated = 0x00;
+
+/* Exported variables ---------------------------------------------------------*/
+volatile uint8_t _Command[5] = {0x00};
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
+/*
+	函数名称：Serial_Init()
+	函数作用：初始化命令串口相关函数
+	函数输入：无
+	函数输出：无
+
+	函数说明：此函数会初始化串口1与串口3DMA接收 串口1与上位机连接 串口3与蓝牙连接
+	函数说明：串口1 3的发送还是基于阻塞发送的 原因因为本系统下位机不需要反馈很多的
+	函数说明：数据给上位机
+*/
 void Serial_Init(void)
 {
 	GPIO_InitTypeDef GPIO_USART1_Init;
@@ -81,7 +96,7 @@ void Serial_Init(void)
 	USART1_Receive_DMA_Init.DMA_PeripheralBaseAddr = (uint32_t)(&(USART1->DR));
 	USART1_Receive_DMA_Init.DMA_Memory0BaseAddr    = (uint32_t)_Command_RxBuffer;
 	USART1_Receive_DMA_Init.DMA_DIR                = DMA_DIR_PeripheralToMemory;
-	USART1_Receive_DMA_Init.DMA_BufferSize         = 10;
+	USART1_Receive_DMA_Init.DMA_BufferSize         = 5;
 	USART1_Receive_DMA_Init.DMA_PeripheralInc      = DMA_PeripheralInc_Disable;
 	USART1_Receive_DMA_Init.DMA_MemoryInc          = DMA_MemoryInc_Enable;
 	USART1_Receive_DMA_Init.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;
@@ -162,7 +177,7 @@ void Serial_Init(void)
 	USART3_Receive_DMA_Init.DMA_PeripheralBaseAddr = (uint32_t)(&(USART3->DR));
 	USART3_Receive_DMA_Init.DMA_Memory0BaseAddr    = (uint32_t)_Command_RxBuffer;
 	USART3_Receive_DMA_Init.DMA_DIR                = DMA_DIR_PeripheralToMemory;
-	USART3_Receive_DMA_Init.DMA_BufferSize         = 10;
+	USART3_Receive_DMA_Init.DMA_BufferSize         = 5;
 	USART3_Receive_DMA_Init.DMA_PeripheralInc      = DMA_PeripheralInc_Disable;
 	USART3_Receive_DMA_Init.DMA_MemoryInc          = DMA_MemoryInc_Enable;
 	USART3_Receive_DMA_Init.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;
@@ -222,4 +237,81 @@ PUTCHAR_PROTOTYPE
   return ch;
 }
 
+
+/*
+	函数名称：Command_Usart_Rx_Interupt()
+  函数作用：命令串口的串口中断函数 负责关键指示位跟新与数据完整性检查
+	函数输入：无
+	函数输出：无
+*/
+void Command_Usart_Rx_Interupt(void)
+{
+	uint8_t sum = 0;
+	
+	sum = _Command_RxBuffer[0] + _Command_RxBuffer[1] + _Command_RxBuffer[2] + _Command_RxBuffer[3];
+	
+	//校验和检查失败
+	if(sum != _Command_RxBuffer[4])
+	{
+		_Invalid_Data = 1;
+		
+		//置位校验和失败位然后直接返回
+		return;
+	}
+	
+	//拷贝数据到真实的命令缓冲区
+	memcpy((uint8_t*)_Command,(const uint8_t*)_Command_RxBuffer,sizeof(_Command_RxBuffer));
+	_Command_Updated = 1;
+}
+
+/*
+	函数名称：Is_Command_Invalid()
+  函数作用：返回当前指令接收是否出现校验和错误
+	函数输入：无
+	函数输出：命令是否错误 错误输出1 没错输出0
+	
+	函数说明：返回值一旦置位就不会自动清零 除非使用手动清零函数 否则保持1
+*/
+uint8_t Is_Command_Invalid(void)
+{
+	return _Invalid_Data;D
+}
+
+
+/*
+	函数名称：Is_Command_Updated()
+  函数作用：返回当前指令是否刷新
+	函数输入：无
+	函数输出：命令是否刷新 刷新输出1 没刷输出0
+
+	函数说明：返回值一旦置位就不会自动清零 除非使用手动清零函数 否则保持1
+*/
+uint8_t Is_Command_Updated(void)
+{
+	return _Command_Updated;
+}
+
+
+/*
+	函数名称：Clear_InvalidCommand_PendingBit()
+	函数作用：清除命令错误标记位
+	函数输入：无
+	函数输出：无
+*/
+void Clear_InvalidCommand_PendingBit(void)
+{
+	_Invalid_Data = 0;
+}
+
+
+/*
+	函数名称：Clear_CommandUpdate_PendingBit()
+	函数作用：清除命令更新标志位
+	函数输入：无
+	函数输出：无
+*/
+void Clear_CommandUpdate_PendingBit(void)
+{
+	_Command_Updated = 0;
+}
 
