@@ -57,7 +57,7 @@ static void ADC_Delay(void);
   */
 static void ADC_Delay(void)
 {
-	uint8_t temp = 120;
+	uint8_t temp = 130;
 	while(temp > 1)
 	{
 		temp --;

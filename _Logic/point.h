@@ -21,4 +21,6 @@
 	void _ArrivePlatform(void);
 	uint32_t _CalculationADC(void);
 	uint32_t _UpdateButtomValue(void);
+	uint32_t _FindMax(uint32_t L[]);
+	extern int PointFlag;
 	#endif

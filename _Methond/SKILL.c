@@ -24,11 +24,6 @@ void InitFlag()
 }
 void ThreeTOFour(void)
 {
-				for(int i=1;i<=1000;i--)
-				{
-					_GoLineLowSpeed();
-				}
-	
 				if(FlagDown==0)
 				{
 					if(FlagUp==0)
@@ -148,94 +143,12 @@ void OneTOTwo(void)
 }
 void TwoTOThree(void)
 {
-	#ifdef TEST1
-	if(_FlagBack==0)
-	{
-		Motor_TurnRightBlockingMode(180);
-		_FlagBack=1;
-		UpdateMotorState(MOTOR_FRONT);
-	}
-	/*
-	需要加入举手和动头。
-	*/
-	else if(_FlagBack==1)
-		{
-			if(FlagDown==0)
-				{
-					_GoLineLowSpeed();
-					if(_UpHillOrDownHillFeedBack()==DOWN)
-						{
-							FlagDown=1;
-						}
-				}
-				else if(FlagDown==1)
-				{
-					if(FlagPoint==0)
-						{
-							if(_UpHillOrDownHillFeedBack()==FlatGround)
-								{
-									_GoLine();
-									_FindPointStop();
-								}
-							else if(_UpHillOrDownHillFeedBack()==DOWN)
-								{
-									_GoLineLowSpeed();
-								}
-						}
-					else if(FlagPoint==1)
-						{
-							Motor_TurnRightBlockingMode(50);
-							UpdateMotorState(MOTOR_FRONT);
-							SetMotorDutyRatio(0.04,0.04);
-							SysTickDelay(100);
-							TurnFlag=1;
-							FlagPoint=3;
-						}
-			if(TurnFlag==1)
-				{
-					_GoLineLowSpeed();
-					if(_UpHillOrDownHillFeedBack()==FlatGround)
-						{
-							_FindPointStop();
-							FlagPoint=3;
-							if(UpgradeMotorState() == MOTOR_STOP)
-								{
-									Motor_TurnRightBlockingMode(140);
-									UpdateMotorState(MOTOR_FRONT);
-									TurnFlag=2;
-								}
-						}
-
-				}
-			if(TurnFlag==2)
-				{
-					_GoLine();
-					_FindPointGo();
-					if(_UpHillOrDownHillFeedBack()==UP)
-						{
-							FlagUp=1;	
-							if(FlagUp==1)
-								{
-									if(_UpHillOrDownHillFeedBack()==FlatGround)
-										{
-											UpdateMotorState(MOTOR_STOP);
-										}
-								}
-						}
-				}
-		
-				}
-
-	}
-	#endif
-	#ifdef TEST2
-	
 	if(UpgradeMotorState() == MOTOR_STOP&&FlagStop!=2)
 	{
 		UpdateMotorState(MOTOR_FRONT);
 		FlagStop++;
 		SetMotorDutyRatio(0.04,0.04);
-		SysTickDelay(750);
+		SysTickDelay(500);
 		//FlagStop++;
 	}
 	if(FlagStop==1)
@@ -252,23 +165,23 @@ void TwoTOThree(void)
 		if(_UpHillOrDownHillFeedBack()==DOWN&&_IsBalanceFeedBack()==BALANCE)
 		{
 			FlagDown=1;
-			SysTickDelay(1000);
+			//SysTickDelay(1000);
 		}
 			}
 		}
 		else if(FlagDown==1)
 		{
-			//printf("flagdown\r\n");
+			_GoLine();
+			printf("flagdown\r\n");
 			if(_UpHillOrDownHillFeedBack()==FlatGround&&_IsBalanceFeedBack()==BALANCE)
 			{
 				_GoLine();
-				//printf("and\r\n");
-				_resetlaser();
+				printf("and\r\n");
 				_FindPointStop();
-				_resetlaser();
 				if(UpgradeMotorState() == MOTOR_STOP)
 				{
-					Motor_TurnRightBlockingMode(150);
+					SysTickDelay(100);
+					Motor_TurnRightBlockingMode(151);
 					//Motor_TurnToAbsoluteYawAngle(0);
 					FlagDown=0;
 				}
@@ -327,6 +240,105 @@ void TwoTOThree(void)
 			}
 		}
 	}
-#endif
 }
 
+void TwoTOFour()
+{
+	if(UpgradeMotorState() == MOTOR_STOP&&FlagStop!=2)
+	{
+		UpdateMotorState(MOTOR_FRONT);
+		FlagStop++;
+		SetMotorDutyRatio(0.04,0.04);
+		SysTickDelay(500);
+		//FlagStop++;
+	}
+	if(FlagStop==1)
+	{
+		_GoLine();
+		if(FlagDown==0)
+			{
+		if(_IsBalanceFeedBack()==UNBALANCE)
+		{
+			FlagBalance=1;
+		}
+		if(FlagBalance==1)
+			{
+		if(_UpHillOrDownHillFeedBack()==DOWN&&_IsBalanceFeedBack()==BALANCE)
+		{
+			FlagDown=1;
+			//SysTickDelay(1000);
+		}
+			}
+		}
+		else if(FlagDown==1)
+		{
+			_GoLine();
+			//printf("flagdown\r\n");
+			if(_UpHillOrDownHillFeedBack()==FlatGround&&_IsBalanceFeedBack()==BALANCE)
+			{
+				_GoLine();
+				//printf("and\r\n");
+				_FindPointStop();
+				if(UpgradeMotorState() == MOTOR_STOP)
+				{
+					SysTickDelay(100);
+					Motor_TurnLeftBlockingMode(30);
+					//Motor_TurnToAbsoluteYawAngle(0);
+					FlagDown=0;
+				}
+			}
+		}
+			}
+	else if(FlagStop==2)
+	{
+		_GoLine();
+		_FindPointGo();
+		if(_UpHillOrDownHillFeedBack()==UP)
+		{
+			FlagUp=1;	
+		}
+		if(FlagUp==1)
+			{
+				if(_UpHillOrDownHillFeedBack()==FlatGround)
+			  {
+					UpdateMotorState(MOTOR_STOP);
+				}
+			}
+	}
+	else if(FlagStop==0)
+	{
+	if(_FlagBack==0)
+	{
+		Motor_TurnRightBlockingMode(180);
+		UpdateMotorState(MOTOR_FRONT);
+		_FlagBack=1;
+	}
+	else if(_FlagBack==1)
+	{
+		_GoLineLowSpeed();
+		if(_UpHillOrDownHillFeedBack()== DOWN)
+		{
+			FlagDown=1;
+		}
+	}
+		if(FlagDown==1)
+		{
+			if(_UpHillOrDownHillFeedBack()==FlatGround)
+			{
+				_GoLine();
+				_FindPointStop();
+				if(UpgradeMotorState() == MOTOR_STOP)
+				{
+					Motor_TurnRightBlockingMode(40);
+					FlagDown=0;
+					//SetMotorDutyRatio(0.04,0.04);
+					//SysTickDelay(100);
+				}
+			}
+			else if(_UpHillOrDownHillFeedBack()==DOWN)
+			{
+				_GoLineLowSpeed();
+			}
+		}
+	}
+}

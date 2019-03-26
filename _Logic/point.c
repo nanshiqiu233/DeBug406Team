@@ -1,6 +1,20 @@
 #include "point.h"
 static int _times=5;
 static int _LastTimeButtomValue=0;
+uint32_t _DValue[7];
+int PointFlag=0;
+uint32_t _FindMax(uint32_t L[])
+{
+	uint32_t _max=0;
+	for(int i=0;i<=6;i++)
+	{
+		if(L[i]>=_max)
+		{
+			_max=L[i];
+		}
+	}
+	return _max;
+}
 uint32_t _CalculationADC(void)
 {
 		const AdcData_t * adcData;
@@ -28,46 +42,83 @@ uint32_t _UpdateButtomValue(void)
 }
 void _FindPointStop(void)
 {
-		const AdcData_t * adcData;
+	const AdcData_t * adcData;
 	adcData = UpdateButtom();
-	uint32_t temp=0;
+	uint32_t MaxDvalue;
+	uint32_t _Time=0;
 	_LastTimeButtomValue=_UpdateButtomValue();
-	for(int i=0; i<=7; i++)
+	for(int i=0; i<=6; i++)
 	{
-		temp+=adcData->array[0][i];
+		_DValue[i]=abs(adcData->array[0][i]-adcData->array[0][i+1]);
+		//printf("%d,",_DValue[i]);
 	}
-	if(_LastTimeButtomValue-temp>=4650&&(GetLeftLaserState()==Changed||GetRightLaserState()==Changed))
-	{
-		FlagPoint=1;
-		UpdateMotorState(MOTOR_STOP);
-		SysTickDelay(200);
-		ClearLLaserChangePendingBit();
-		ClearRLaserChangePendingBit();
-	}
-		else
-	{
-		ClearLLaserChangePendingBit();
-		ClearRLaserChangePendingBit();
-	}
+	//printf("\r\n");
+	MaxDvalue=_FindMax(_DValue);
+	//printf("%d\r\n",MaxDvalue);
 	
+	for(int i=0;i<=6;i++)
+	{
+		if(MaxDvalue/2>_DValue[i])
+		{
+			_Time++;
+		}
+	}
+	//printf("%d",_Time);
+			if(_Time<=4)
+		{
+			PointFlag++;
+			if(PointFlag>=2)
+			{
+			//printf("1");
+			FlagPoint=1;
+			UpdateMotorState(MOTOR_STOP);
+			ClearLLaserChangePendingBit();
+			ClearRLaserChangePendingBit();
+			PointFlag=0;
+			}
+			
+		}
+		else
+		{
+			ClearLLaserChangePendingBit();
+			ClearRLaserChangePendingBit();
+		}
 }
 void _FindPointGo()
 {
 	const AdcData_t * adcData;
 	adcData = UpdateButtom();
-	uint32_t temp=0;
+	uint32_t MaxDvalue;
+	uint32_t _Time=0;
 	_LastTimeButtomValue=_UpdateButtomValue();
-	for(int i=0; i<=7; i++)
+	for(int i=0; i<=6; i++)
 	{
-		temp+=adcData->array[0][i];
+		_DValue[i]=abs(adcData->array[0][i]-adcData->array[0][i+1]);
+		//printf("%d,",_DValue[i]);
 	}
-	if(_LastTimeButtomValue-temp>=3500&&(IsLLaserChange() == Changed||IsRLaserChange() == Changed))
+	//printf("\r\n");
+	MaxDvalue=_FindMax(_DValue);
+	//printf("%d\r\n",MaxDvalue);
+	
+	for(int i=0;i<=6;i++)
 	{
+		if(MaxDvalue/2>_DValue[i])
+		{
+			_Time++;
+		}
+	}
+	if(_Time<=4)
+	{
+		PointFlag++;
+		if(PointFlag>=2)
+		{
 		FlagPoint=2;
-		SetMotorDutyRatio(0.06,0.06);
-		SysTickDelay(200);
+		SetMotorDutyRatio(0.04,0.04);
+		SysTickDelay(75);
 		ClearLLaserChangePendingBit();
 		ClearRLaserChangePendingBit();
+		PointFlag=0;
+		}
 	}
 	else
 	{

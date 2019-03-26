@@ -39,7 +39,7 @@ void _UpHillOrDownHillCheck(void)
 		_UpOrDown=UP;
 	}
 
-	else if((Gyro_GetPitchAngle()-PrimaryRollAngle>7)&&(Gyro_GetPitchAngle()-PrimaryRollAngle<100))
+	else if((Gyro_GetPitchAngle()-PrimaryRollAngle>6)&&(Gyro_GetPitchAngle()-PrimaryRollAngle<100))
 	{
 		_UpOrDown=DOWN;
 	}

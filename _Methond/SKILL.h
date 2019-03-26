@@ -16,6 +16,7 @@ void ThreeTOFour(void);
 void OneTOTwo(void);
 void TwoTOThree(void);
 void _resetlaser(void);
+void TwoTOFour(void);
 extern int FlagUp;
 extern int FlagDown;
 extern int _FlagBack;
