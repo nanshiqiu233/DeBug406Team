@@ -21,6 +21,13 @@ void InitFlag()
     FlagDown=0;
     _FlagBack=0;
 		TurnFlag=0;
+	 FlagUp=0;
+ FlagDown=0;
+ _FlagBack=0;
+ FlagPoint=0;
+ TurnFlag=0;
+ FlagStop=0;
+ FlagBalance=0;
 }
 void ThreeTOFour(void)
 {
