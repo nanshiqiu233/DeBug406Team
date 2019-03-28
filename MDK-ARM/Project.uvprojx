@@ -1468,6 +1468,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Shell</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Shell\SHELL.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Shell_H</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Shell_H\SHELL.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -2937,6 +2957,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Shell</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Shell\SHELL.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Shell_H</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Shell_H\SHELL.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -4402,6 +4442,26 @@
               <FileName>SKILL.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Methond\SKILL.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Shell</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Shell\SHELL.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Shell_H</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Shell_H\SHELL.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -5923,6 +5983,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Shell</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Shell\SHELL.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Shell_H</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Shell_H\SHELL.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -7389,6 +7469,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Shell</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Shell\SHELL.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Shell_H</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Shell_H\SHELL.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -8749,6 +8849,26 @@
               <FileName>SKILL.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Methond\SKILL.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Shell</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Shell\SHELL.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Shell_H</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Shell_H\SHELL.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -10119,6 +10239,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Shell</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Shell\SHELL.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Shell_H</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Shell_H\SHELL.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -11432,6 +11572,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Shell</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Shell\SHELL.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Shell_H</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Shell_H\SHELL.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -12697,6 +12857,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Shell</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Shell\SHELL.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Shell_H</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Shell_H\SHELL.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -13958,6 +14138,26 @@
               <FileName>SKILL.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\_Methond\SKILL.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Shell</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Shell\SHELL.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Shell_H</GroupName>
+          <Files>
+            <File>
+              <FileName>SHELL.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Shell_H\SHELL.h</FilePath>
             </File>
           </Files>
         </Group>
