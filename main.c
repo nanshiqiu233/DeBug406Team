@@ -55,7 +55,9 @@ int main(void)
 			#endif
 			_Timer();
 			_resetlaser();
-			ThreeTOFour();
+			//ThreeTOFour();
+			//Motor_TurnLeftBlockingMode(180);
+			//TwoTOThree();
 			ClearLLaserChangePendingBit();
 			ClearRLaserChangePendingBit();
 			_UpdateTick20ms = 0;

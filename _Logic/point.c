@@ -107,18 +107,15 @@ void _FindPointGo()
 			_Time++;
 		}
 	}
-	if(_Time<=4)
+	if(_Time<=4||adcData->array[0][0]<3200||adcData->array[0][7]<3200)
 	{
 		PointFlag++;
-		if(PointFlag>=2)
-		{
 		FlagPoint=2;
 		SetMotorDutyRatio(0.04,0.04);
-		SysTickDelay(75);
+		SysTickDelay(100);
 		ClearLLaserChangePendingBit();
 		ClearRLaserChangePendingBit();
 		PointFlag=0;
-		}
 	}
 	else
 	{

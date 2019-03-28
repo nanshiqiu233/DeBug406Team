@@ -64,8 +64,7 @@ void ThreeTOFour(void)
 							if(UpgradeMotorState() == MOTOR_STOP)
 								{
 									//printf("low\r\n");
-									Motor_TurnRightBlockingMode(180);
-									SysTickDelay(200);
+									Motor_TurnLeftBlockingMode(180);
 									UpdateMotorState(MOTOR_FRONT);
 									_FlagBack=1;
 									_GoLineLowSpeed();
@@ -76,7 +75,7 @@ void ThreeTOFour(void)
 								{
 									//printf("flagback\r\n");
 									_GoLineLowSpeed();
-									if(_UpHillOrDownHillFeedBack()== DOWN)
+									if(_UpHillOrDownHillFeedBack()== FlatGround)
 								{
 										_FlagBack=0;
 										FlagUp=0;
@@ -89,6 +88,8 @@ void ThreeTOFour(void)
 								//_ArrivePlatform();
 								if(_UpHillOrDownHillFeedBack()==FlatGround)
 								{
+									SetMotorDutyRatio(0.05,0.05);
+									SysTickDelay(100);
 								UpdateMotorState(MOTOR_STOP);
 								}
 								//printf("7777777777777\r\n");
