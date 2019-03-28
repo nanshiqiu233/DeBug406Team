@@ -31,7 +31,7 @@ int main(void)
   Encoder_Init();
 	Laser_Init();
 	int i=0;
-	// if you want yo measure CPU usage, please uncomment below code.
+// if you want yo measure CPU usage, please uncomment below code.
 //	#define CPU_USAGE_TEST
 	#ifdef CPU_USAGE_TEST
 	CPU_UsageTestInit();
@@ -61,14 +61,7 @@ int main(void)
 				}
 			
 			_resetlaser();
-			//OneTOTwo();
-			//TwoTOThree();
-		//TwoTOFour();
 			ThreeTOFour();
-			//printf("%d\r\n",_IsBalanceFeedBack());
-			//while(1)
-				//_GoLine();
-				//_FindPointStop();
 			ClearLLaserChangePendingBit();
 			ClearRLaserChangePendingBit();
 			_UpdateTick20ms = 0;
