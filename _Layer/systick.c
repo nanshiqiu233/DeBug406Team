@@ -62,7 +62,7 @@ void _StateMachineTick_Interrupt(void)
 	
 	counter ++;
 	
-	if(counter > 20)
+	if(counter > 19)
 	{
 		counter = 0;
 		_UpdateTick20ms = 1;

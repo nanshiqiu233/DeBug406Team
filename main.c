@@ -24,6 +24,7 @@ int main(void)
   /* Initialize Step *****************************************************/
 	SysTick_Init();
   STMMiniBoard_Init();
+	SuperSonic_Init();
   Serial_Init();
   MotorPWM_Init();
   Adc_Init();
@@ -53,13 +54,16 @@ int main(void)
 			#ifdef CPU_USAGE_TEST
 			GPIO_SetBits(GPIOD,GPIO_Pin_14);
 			#endif
-			_Timer();
-			_resetlaser();
+			//_Timer();
+			//_resetlaser();
 			//ThreeTOFour();
 			//Motor_TurnLeftBlockingMode(180);
 			//TwoTOThree();
 			ClearLLaserChangePendingBit();
 			ClearRLaserChangePendingBit();
+			
+			
+
 			_UpdateTick20ms = 0;
 				
 			#ifdef CPU_USAGE_TEST
@@ -69,7 +73,9 @@ int main(void)
 		
 //		Motor_TurnRightBlockingMode(180);
 //		Motor_TurnLeftBlockingMode(180);
-//		SysTickDelay(200);
+		SysTickDelay(100);
+		printf("Distant:%f\r\n" , SuperSonic_GetDistant());
+
 	}
 }
 

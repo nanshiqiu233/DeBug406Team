@@ -34,6 +34,7 @@
 #include "point.h"
 #include "UpHillOrDownHill.h"
 #include "motor_turn.h"
+#include "supersonic.h"
 //SKILL
 #include "SKILL.h"
 #include "SHELL.h"
