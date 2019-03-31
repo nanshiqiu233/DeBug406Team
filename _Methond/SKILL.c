@@ -146,6 +146,7 @@ void OneTOTwo(void)
 		{
 		//printf("stop"); 
 		UpdateMotorState(MOTOR_STOP);
+		Stop=1;
 		}
 	}
 }
@@ -158,6 +159,10 @@ void TwoTOThree(void)
 		SetMotorDutyRatio(0.04,0.04);
 		SysTickDelay(500);
 		//FlagStop++;
+	}
+	else if(UpgradeMotorState() == MOTOR_STOP&&FlagStop==2)
+	{
+		Stop=1;
 	}
 	if(FlagStop==1)
 	{
@@ -349,4 +354,9 @@ void TwoTOFour()
 			}
 		}
 	}
+}
+void TestOnly(void)
+{
+	Motor_TurnRightBlockingMode(90);
+	Stop=1; 
 }

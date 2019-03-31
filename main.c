@@ -47,17 +47,12 @@ int main(void)
   while (TRUE)
   {
 		
-		
 		if(_UpdateTick20ms == 1)
 		{
 			#ifdef CPU_USAGE_TEST
 			GPIO_SetBits(GPIOD,GPIO_Pin_14);
 			#endif
-			_Timer();
-			_resetlaser();
-			//ThreeTOFour();
-			//Motor_TurnLeftBlockingMode(180);
-			//TwoTOThree();
+			Match(); 
 			ClearLLaserChangePendingBit();
 			ClearRLaserChangePendingBit();
 			_UpdateTick20ms = 0;
@@ -66,10 +61,6 @@ int main(void)
 			GPIO_ResetBits(GPIOD,GPIO_Pin_14);
 			#endif	
 		}
-		
-//		Motor_TurnRightBlockingMode(180);
-//		Motor_TurnLeftBlockingMode(180);
-//		SysTickDelay(200);
 	}
 }
 

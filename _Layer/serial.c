@@ -7,7 +7,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-static volatile uint8_t _Command_RxBuffer[5] = {0x00};
+volatile uint8_t _Command_RxBuffer[5] = {0x00};
 static volatile uint8_t _Invalid_Data = 0x00;
 static volatile uint8_t _Command_Updated = 0x00;
 
@@ -149,7 +149,7 @@ void Serial_Init(void)
 	GPIO_USART3_Init.GPIO_Pin   = GPIO_Pin_11;
 	GPIO_USART3_Init.GPIO_Mode  = GPIO_Mode_AF;
 	GPIO_USART3_Init.GPIO_OType = GPIO_OType_OD;
-	GPIO_USART3_Init.GPIO_PuPd  = GPIO_PuPd_UP;
+	GPIO_USART3_Init.GPIO_PuPd  = GPIO_PuPd_NOPULL;
 	GPIO_USART3_Init.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOB,&GPIO_USART3_Init);
 
